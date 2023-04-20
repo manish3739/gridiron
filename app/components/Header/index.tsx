@@ -1,66 +1,65 @@
 import React from 'react';
-import { Text, StyleSheet, Image, View, StatusBar, Platform } from 'react-native';
+import { Text, StyleSheet, Image, View, StatusBar, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { verticalScale } from '../../utils/scale';
+import { HEADER_BACK_ICON } from '../../theme/constantImages';
 
-const Header = (props:any) => {
+const Header = (props: any) => {
     const navigation = useNavigation();
     const {
-        HeaderView, HeaderMiddleView, container, MainHeadTxt
+        HeaderView, HeaderMiddleView, container, MainHeadTxt, leftRightImage
     } = styles;
     const {
-        HeaderText, RightImage, leftImg, mncontainer,  MainHeadStyle, HeaderMiddleTxt,statusbarcolor,barStyle
+        HeaderText,
+        RightImage,
+        leftImg,
+        mncontainer,
+        MainHeadStyle,
+        HeaderMiddleTxt,
     } = props;
     return (
         <>
+            <StatusBar
+                translucent
+                barStyle="dark-content"
+            />
             <View style={[container, mncontainer]}>
-                <StatusBar
-                    backgroundColor={statusbarcolor}
-                    barStyle={barStyle}
-                />
                 <View style={[HeaderView]}>
+                    <TouchableOpacity onPress={() => navigation.goBack()}>
                         <Image
-                            resizeMode={"cover"}
-                            style={{ width: 30, height: 30 }}
+                            resizeMode={"contain"}
+                            style={[leftRightImage]}
                             source={leftImg}
                         />
+                    </TouchableOpacity>
                 </View>
                 <View style={[HeaderMiddleView, HeaderMiddleTxt]}>
-                        <Text numberOfLines={1} style={[MainHeadTxt, MainHeadStyle]}>
-                            {HeaderText}
-                        </Text>
+                    <Text numberOfLines={1} style={[MainHeadTxt, MainHeadStyle]}>
+                        {HeaderText}
+                    </Text>
                 </View>
                 <View
                     style={HeaderView}>
-                  <Image
-                        style={{ width: 45, height: 45 }}
+                    <Image
+                        resizeMode={"contain"}
+                        style={[leftRightImage]}
                         source={RightImage}
-                    /> 
+                    />
                 </View>
             </View>
+
         </>
     );
 }
 Header.defaultProps = {
-    HeaderText: "CommonName",
-    RightImage: "",
-    showleftimage: true,
-    showlabel: true,
-    logOutType: 0,
-    statusbarcolor: 'black',
-    leftNav: false,
-    barStyle: 'light-content'
+    HeaderText: "Header text",
+    leftImg: HEADER_BACK_ICON
 };
 const styles = StyleSheet.create({
-    container:
-    {
+    container: {
         alignItems: 'center',
         flexDirection: 'row',
-        backgroundColor: 'black',
-        paddingLeft: 28,
-        paddingRight: 30,
-        paddingTop: 10,
-        paddingBottom: 10,
-        height: Platform.OS === "ios" ? 120 : 65
+        width: '100%'
     },
     HeaderView: {
         flex: 1,
@@ -72,13 +71,14 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center'
     },
-    MainDotView: {
-        flexDirection: 'row'
-    },
     MainHeadTxt: {
-        fontFamily: 'bold',
-        fontSize: 20,
-        color: 'white'
+        fontSize: verticalScale(19),
+        color: 'black',
+        fontWeight: 'bold'
+    },
+    leftRightImage: {
+        height: verticalScale(20),
+        width: verticalScale(20)
     }
 })
 export default Header;

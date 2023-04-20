@@ -1,17 +1,22 @@
 import { StyleSheet } from 'react-native';
+import { colors } from '../../theme/colors';
+import { verticalScale } from '../../utils/scale';
 
 const BaseStyle = StyleSheet.create({
     button: {
-        minWidth: 110,
         alignItems: 'center',
         justifyContent: 'center',
         paddingLeft: 20,
         paddingRight: 20,
-        padding: 10
+        padding: 10,
+        borderRadius: 5,
+        paddingVertical: verticalScale(15),
+        width: '90%',
     },
     buttonLabel: {
-        fontSize: 11,
-        textTransform: 'uppercase',
+        fontSize: verticalScale(16),
+        color: colors.commonWhiteColor,
+        fontWeight: 'bold'
     },
 
 });
@@ -33,32 +38,32 @@ const Styles = StyleSheet.create({
 export const ButtonStyle = StyleSheet.create({
     primaryButton: {
         ...BaseStyle.button,
-        backgroundColor: 'red'
+        backgroundColor: colors.primaryButtonColor,
     },
 
     primaryButtonLabel: {
         ...BaseStyle.buttonLabel,
-        color: 'black',
+        color: colors.commonWhiteColor,
     },
 
     terButton: {
         ...BaseStyle.button,
-        backgroundColor: 'green'
+        backgroundColor: colors.commonWhiteColor,
+        borderWidth: 1.5,
     },
 
     terButtonLabel: {
         ...BaseStyle.buttonLabel,
-        color: 'black',
     },
 
     secondaryButton: {
         ...BaseStyle.button,
-        backgroundColor: 'yellow',
+        backgroundColor: colors.secondaryButtonColor,
     },
 
     secondaryButtonLabel: {
         ...BaseStyle.buttonLabel,
-        color: 'black',
+        color: colors.commonWhiteColor,
     },
 
 });
