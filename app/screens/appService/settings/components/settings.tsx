@@ -1,0 +1,68 @@
+
+import React, { useState, useEffect } from "react";
+// import { connect } from "react-redux";
+import { Alert, Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import Header from "../../../../components/Header";
+import styles from "./styles";
+import { CLOSE_ICON, USER_ICON } from "../../../../theme/constantImages";
+import strings from "../../../../components/locales";
+import { colors } from "../../../../theme/colors";
+import { verticalScale } from "../../../../utils/scale";
+import Button from "../../../../components/Button";
+import { useNavigation } from "@react-navigation/native";
+
+
+const SettingsView = (props: any) => {
+  const navigation: any = useNavigation();
+  return (
+    <ScrollView
+      contentContainerStyle={{ flexGrow: 1 }}
+    >
+      <View style={styles.container}>
+        <View style={styles.firstContain}>
+          <Header
+            HeaderText={strings.settingsLabel}
+            leftImg={false}
+            RightImage={CLOSE_ICON}
+            onPressRightImage={() => navigation.goBack()}
+          />
+        </View>
+        <View style={styles.secondContain}>
+          <TouchableOpacity onPress={() => navigation.navigate('Account')} style={styles.optionContainer}>
+            <Image style={styles.optionImage} resizeMode="contain" source={USER_ICON} />
+            <Text style={styles.optionTextStyle}>{strings.accountLabel}</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.optionContainer}>
+            <Image style={styles.optionImage} resizeMode="contain" source={USER_ICON} />
+            <Text style={styles.optionTextStyle}>{strings.notificationsLabel}</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('InviteFriends')} style={styles.optionContainer}>
+            <Image style={styles.optionImage} resizeMode="contain" source={USER_ICON} />
+            <Text style={styles.optionTextStyle}>{strings.inviteFrndsLabel}</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('HelpScreen')} style={styles.optionContainer}>
+            <Image style={styles.optionImage} resizeMode="contain" source={USER_ICON} />
+            <Text style={styles.optionTextStyle}>{strings.helpText}</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('AboutScreen')} style={styles.optionContainer}>
+            <Image style={styles.optionImage} resizeMode="contain" source={USER_ICON} />
+            <Text style={styles.optionTextStyle}>{strings.aboutLabel}</Text>
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.thirdContain}>
+          <Button
+            buttonText={strings.logoutLabel}
+            onPress={() => { props.setSignUpOnBoarding(8) }}
+            style={{ borderColor: colors.commonThemeColor, marginTop: 20 }}
+            buttonLabelStyle={{ color: colors.commonThemeColor }}
+            buttonType={"tertiary"}
+          />
+        </View>
+
+      </View>
+    </ScrollView>
+  );
+};
+
+export default SettingsView;

@@ -37,7 +37,7 @@ const SignupUserNameView = (props:any) => {
         <View style={styles.thirdContain}>
             <Button
                 buttonText={strings.finishLabel}
-                onPress={() => Alert.alert("Completed onboarding")}
+                onPress={() => props.handleFinishSignUp()}
             />
             <Text style={styles.alreadySignInText}>{strings.alreadySignIn}</Text>
         </View>

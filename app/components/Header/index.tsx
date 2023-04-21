@@ -18,6 +18,11 @@ const Header = (props: any) => {
         HeaderMiddleTxt,
         isGoBack,
         handleBackButton,
+        noMiddleLabel,
+        rightImageStyle,
+        onPressRightImage,
+        headerRightText,
+        headerRightTextStyle,
     } = props;
     return (
         <>
@@ -27,26 +32,32 @@ const Header = (props: any) => {
             />
             <View style={[container, mncontainer]}>
                 <View style={[HeaderView]}>
-                    <TouchableOpacity onPress={() =>  isGoBack ? navigation.goBack() : handleBackButton()}>
-                        <Image
+                    <TouchableOpacity onPress={() => isGoBack ? navigation.goBack() : handleBackButton()}>
+                       {leftImg ? <Image
                             resizeMode={"contain"}
                             style={[leftRightImage]}
                             source={leftImg}
-                        />
+                        />:
+                        <Text></Text>
+                        }
                     </TouchableOpacity>
                 </View>
                 <View style={[HeaderMiddleView, HeaderMiddleTxt]}>
-                    <Text numberOfLines={1} style={[MainHeadTxt, MainHeadStyle]}>
+                    {!noMiddleLabel && <Text numberOfLines={1} style={[MainHeadTxt, MainHeadStyle]}>
                         {HeaderText}
-                    </Text>
+                    </Text>}
                 </View>
                 <View
                     style={HeaderView}>
-                    <Image
-                        resizeMode={"contain"}
-                        style={[leftRightImage]}
-                        source={RightImage}
-                    />
+                    <TouchableOpacity onPress={() => onPressRightImage()}>
+                        {RightImage ? <Image
+                            resizeMode={"contain"}
+                            style={[leftRightImage, rightImageStyle]}
+                            source={RightImage}
+                        />:
+                        <Text style={[headerRightTextStyle]}>{headerRightText}</Text>
+                        }
+                    </TouchableOpacity>
                 </View>
             </View>
 
@@ -61,7 +72,7 @@ const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
         flexDirection: 'row',
-        width: '100%'
+        width: '100%',
     },
     HeaderView: {
         flex: 1,

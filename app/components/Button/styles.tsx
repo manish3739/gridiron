@@ -48,7 +48,7 @@ export const ButtonStyle = StyleSheet.create({
 
     terButton: {
         ...BaseStyle.button,
-        backgroundColor: colors.commonWhiteColor,
+        // backgroundColor: colors.commonWhiteColor,
         borderWidth: 1.5,
     },
 

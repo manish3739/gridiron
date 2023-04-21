@@ -11,12 +11,21 @@ import SignupPasswordView from "./components/signupPassword";
 import SignupPlayerSportView from "./components/signupPlayerSport";
 import SignupPositionPlayerView from "./components/signupPositionPlayer";
 import SignupUserNameView from "./components/signupUserName";
+import { useNavigation } from "@react-navigation/native";
 
-
-const SignUp = (props: any) => {
-
+const SignUp = ({props,navigation}:any) => {
     const [signUpOnBoarding, setSignUpOnBoarding] = useState(0);
     const [isHighSchoolType, setIsHighSchoolType] = useState('');
+    const [isChildrenData, setIsChildrenData] = useState([
+        {
+            label: 'I am 13 years of age or older',
+            isSelected: false
+          },
+          {
+            label: "I am parent managing my child's account",
+            isSelected: false
+          }
+    ]);
 
     // handle league button
     function handleLeagueContinue() {
@@ -27,11 +36,17 @@ const SignUp = (props: any) => {
     function handleAlreadySignIn() {
        Alert.alert("Redirect to signIn");
     };
+    // handle to complete sign up
+    function handleFinishSignUp(params:any) {
+        navigation.navigate('App');
+    }
 
     return (
         <View style={{ flex: 1 }}>
             {signUpOnBoarding == 0 &&
                 <SignupEmailView
+                    isChildrenData={isChildrenData}
+                    setIsChildrenData={setIsChildrenData}
                     setSignUpOnBoarding={setSignUpOnBoarding}
                     handleAlreadySignIn={handleAlreadySignIn}
                 />
@@ -78,6 +93,7 @@ const SignUp = (props: any) => {
                     isHighSchoolType={isHighSchoolType}
                     setSignUpOnBoarding={setSignUpOnBoarding}
                     handleAlreadySignIn={handleAlreadySignIn}
+                    handleFinishSignUp={handleFinishSignUp}
                 />
             }
             {signUpOnBoarding == 8 &&

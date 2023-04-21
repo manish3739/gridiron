@@ -6,21 +6,20 @@ export const windowWidth = Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
   textName: {
-    // fontFamily: FONT_FAMILY_REGULAR,
     fontWeight: '500',
-    fontSize: verticalScale(11),
+    fontSize: verticalScale(13),
     color:'red'
-  },
-  imageStyles: {
-    width: 30,
-    height: 30,
   },
   tabBarContain: {
     marginTop: 10,
     justifyContent: 'center',
     alignItems: 'center',
-    width: 60,
-    height: 50,
+    paddingBottom: 10,
+    borderBottomWidth: 4
   },
+  iconStyles: {
+    width:25,
+    height:25
+  }
 });
 export default styles;

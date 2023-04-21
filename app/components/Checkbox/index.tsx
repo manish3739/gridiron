@@ -4,7 +4,7 @@ import { CHECKED_BOX, UN_CHECKED_BOX } from '../../theme/constantImages';
 import { verticalScale } from '../../utils/scale';
 
 type DataType = {
-    name: string,
+    label: string,
     isSelected: boolean,
 }
 
@@ -13,16 +13,28 @@ interface CheckBoxProps {
     returnData: (value: DataType[]) => void
     isHorizontal?: boolean
     textStyle?: TextStyle
+    isMultiple?: boolean
 }
 const CheckBox = (props: CheckBoxProps) => {
     let horizontal = props?.isHorizontal ? props?.isHorizontal : false;
     function onPressCheckBox(e: any, i: any) {
         let itemsArray = [...props.data];
-        itemsArray[i].isSelected = !itemsArray[i].isSelected;
-        props.returnData(itemsArray)
+        if (props?.isMultiple) {
+            itemsArray[i].isSelected = !itemsArray[i].isSelected;
+            props.returnData(itemsArray)
+        } else {
+            itemsArray.map((item, index) => {
+                if (index == i) {
+                    item.isSelected = true;
+                } else {
+                    item.isSelected = false;
+                }
+                return item;
+            })
+            props.returnData(itemsArray)
+        }
     };
     return (
-        <View style={{}}>
             <FlatList
                 data={props?.data}
                 contentContainerStyle={[horizontal ? styles.contentHorizontalStyle : styles.contentStyle]}
@@ -37,13 +49,12 @@ const CheckBox = (props: CheckBoxProps) => {
                                 >
                                     <Image style={styles.checkBoxStyle} resizeMode='contain' source={val?.item?.isSelected ? CHECKED_BOX : UN_CHECKED_BOX} />
                                 </TouchableOpacity>
-                                <Text style={[styles.itemLabelStyle, props.textStyle]}>{val?.item?.name}</Text>
+                                <Text style={[styles.itemLabelStyle, props.textStyle]}>{val?.item?.label}</Text>
                             </View>
                         </>
                     )
                 }}
             />
-        </View>
     );
 }
 const styles = StyleSheet.create({
@@ -59,7 +70,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: verticalScale(20)
     },
     contentStyle: {
-        paddingHorizontal: verticalScale(20)
+        paddingHorizontal: verticalScale(0),
     },
     itemContainer: {
         flexDirection: 'row',

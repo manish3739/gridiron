@@ -3,6 +3,10 @@ import {
   View, TouchableOpacity, Image, Text, Platform, Dimensions,
 } from 'react-native';
 import styles from './styles';
+import { colors } from '../theme/colors';
+import { HOME_ICON_TAB_BAR, STACK_ICON_TAB_BAR, STORY_ICON_TAB_BAR, USER_ICON_TAB_BAR } from '../theme/constantImages';
+import { DimensionsScale } from '../theme/Dimensions';
+import strings from '../components/locales';
 
 export const windowHeight = Dimensions.get('window').height;
 
@@ -23,7 +27,7 @@ const MyTabBar = ({ state, descriptors, navigation }: any) => {
       <View
         style={{
           flexDirection: 'row',
-          height: Platform.OS === 'ios' ? 76 : 56,
+          height: DimensionsScale.height * 0.1,
           backgroundColor: '#FFFFFF',
           alignItems: 'flex-start',
           justifyContent: 'center',
@@ -73,54 +77,52 @@ const MyTabBar = ({ state, descriptors, navigation }: any) => {
               }}
             >
               {label === 'Home' ? (
-                <View style={styles.tabBarContain}>
+                <View style={[styles.tabBarContain,{ borderBottomColor: isFocused ? colors.commonThemeColor : 'transparent' }]}>
+                  <Image resizeMode='contain' style={[styles.iconStyles,{tintColor: isFocused ? colors.commonThemeColor : colors.blackColorCode }]} source={HOME_ICON_TAB_BAR} />
                   <Text
                     style={[
                       styles.textName,
+                      {color: isFocused ? colors.commonThemeColor : colors.blackColorCode }
                     ]}
                   >
-                    Home
+                    {strings.homeLabel}
                   </Text>
                 </View>
               ) : label === 'Profile' ? (
-                <View style={styles.tabBarContain}>
+                <View style={[styles.tabBarContain,{ borderBottomColor: isFocused ? colors.commonThemeColor : 'transparent' }]}>
+                  <Image resizeMode='contain' style={[styles.iconStyles,{tintColor: isFocused ? colors.commonThemeColor : colors.blackColorCode }]} source={USER_ICON_TAB_BAR} />
                   <Text
                     style={[
                       styles.textName,
+                      {color: isFocused ? colors.commonThemeColor : colors.blackColorCode }
                     ]}
                   >
-                    Profile
+                    {strings.profileLabel}
                   </Text>
                 </View>
               ) : label === 'Challenges' ? (
-                <View style={styles.tabBarContain}>
+                <View style={[styles.tabBarContain,{ borderBottomColor: isFocused ? colors.commonThemeColor : 'transparent' }]}>
+                <Image resizeMode='contain' style={[styles.iconStyles,{tintColor: isFocused ? colors.commonThemeColor : colors.blackColorCode }]} source={STORY_ICON_TAB_BAR} />
                 <Text
                   style={[
                     styles.textName,
+                    {color: isFocused ? colors.commonThemeColor : colors.blackColorCode }
                   ]}
                 >
-                  Challenges
+                  {strings.challengesLabel}
                 </Text>
               </View>
               ) : 
                 label === 'Content' ? (
-                  <View style={styles.tabBarContain}>
+                  <View style={[styles.tabBarContain,{ borderBottomColor: isFocused ? colors.commonThemeColor : 'transparent' }]}>
+                  <Image resizeMode='contain' style={[styles.iconStyles,{tintColor: isFocused ? colors.commonThemeColor : colors.blackColorCode }]} source={STACK_ICON_TAB_BAR} />
                   <Text
                     style={[
                       styles.textName,
+                      {color: isFocused ? colors.commonThemeColor : colors.blackColorCode }
                     ]}
                   >
-                    Content
-                  </Text>
-                </View>
-                ) : label === 'Home' ? (
-                  <View style={styles.tabBarContain}>
-                  <Text
-                    style={[
-                      styles.textName,
-                    ]}
-                  >
-                    Home
+                    {strings.contentLabel}
                   </Text>
                 </View>
                 ) : null}
