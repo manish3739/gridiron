@@ -2,7 +2,6 @@ import React from 'react';
 import { Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { ButtonStyle } from './styles';
 
-
 const Button = (props:any) => {
     const {
         buttonText, style, buttonLabelStyle, onPress, disabled, buttonType
@@ -10,8 +9,6 @@ const Button = (props:any) => {
     const {
         button, buttonLabel
     } = styles;
-
-
     let btnStyle;
     let btnLabelStyle;
     switch (buttonType) {
@@ -43,7 +40,7 @@ const Button = (props:any) => {
     );
 }
 Button.defaultProps = {
-    buttonText: "Submit",
+    buttonText: "Continue",
     buttonType: "primary"
 };
 const styles = StyleSheet.create({

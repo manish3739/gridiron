@@ -16,6 +16,8 @@ const Header = (props: any) => {
         mncontainer,
         MainHeadStyle,
         HeaderMiddleTxt,
+        isGoBack,
+        handleBackButton,
     } = props;
     return (
         <>
@@ -25,7 +27,7 @@ const Header = (props: any) => {
             />
             <View style={[container, mncontainer]}>
                 <View style={[HeaderView]}>
-                    <TouchableOpacity onPress={() => navigation.goBack()}>
+                    <TouchableOpacity onPress={() =>  isGoBack ? navigation.goBack() : handleBackButton()}>
                         <Image
                             resizeMode={"contain"}
                             style={[leftRightImage]}

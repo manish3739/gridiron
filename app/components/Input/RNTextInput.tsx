@@ -1,7 +1,8 @@
 import React from 'react'
-import { View, Text, StyleSheet, Dimensions, StyleProp, ViewStyle, TextInput, TextInputProps, ImageStyle } from 'react-native'
+import { View, Text, StyleSheet, Dimensions, StyleProp, ViewStyle, TextInput, TextInputProps, Image } from 'react-native'
 import { verticalScale } from '../../utils/scale'
 import { colors } from '../../theme/colors';
+import { CHECKED_BOX, HEADER_BACK_ICON } from '../../theme/constantImages';
 
 const { height } = Dimensions.get('screen')
 
@@ -9,24 +10,34 @@ interface RNTextInputProps extends TextInputProps {
     title?: string,
     containerStyle?: StyleProp<ViewStyle>,
     error?: string,
-    leftImage?: any,
-    rightImage?: any,
     sectionStyle?: StyleProp<ViewStyle>,
     showTextLength?: boolean,
     testID?: any;
-    show?: boolean,
-    minHeight?: number,
+    showLeftImage?: boolean,
+    showRightImage?: boolean,
+    textInputContainer?: any,
+    leftIconStyle?: any,
+    rightIconStyle?: any,
+    leftImage?: any,
+    rightImage?: any,
 }
 
 const RNTextInput = (Props: RNTextInputProps) => {
     return (
         <View testID={Props.testID} style={[styles.container, Props.containerStyle]}>
+              {Props.showLeftImage &&
+                <Image style={[styles.leftImageStyle,Props.leftIconStyle]} source={Props.leftImage} />
+              }
                 <TextInput
-                    style={{ ...styles.textInput }}
+                    style={[styles.textInput,Props.textInputContainer]}
                     placeholderTextColor="#00000040"
                     editable
+                    selectionColor={colors.commonGreyColor}
                     {...Props}
                 />
+                {Props.showRightImage &&
+                <Image style={[styles.rightImageStyle,Props.rightIconStyle]} source={Props.rightImage} />
+              }
             {
                 Props.error !== undefined && (!!Props.error) &&
                 <Text style={styles.error}>{Props?.error}</Text>
@@ -48,7 +59,7 @@ const styles = StyleSheet.create({
         marginTop: 4,
     },
     textInput: {
-        paddingLeft: 10,
+        paddingLeft: verticalScale(20),
         paddingVertical: verticalScale(15),
         fontSize: verticalScale(18),
         fontWeight:'bold',
@@ -58,6 +69,20 @@ const styles = StyleSheet.create({
         borderColor: '#d4cfd0',
         borderRadius: 7,
         flexDirection: "row",
-        alignItems: "center"
+        alignItems: "center",
     },
+    leftImageStyle: {
+        height:20,
+        width:20,
+        position:'absolute',
+        top:verticalScale(40),
+        left:10
+    },
+    rightImageStyle: {
+        height:20,
+        width:20,
+        position:'absolute',
+        top:verticalScale(40),
+        right:10
+    }
 })
