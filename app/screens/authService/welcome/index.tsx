@@ -2,12 +2,13 @@
 import React from "react";
 import { View } from 'react-native';
 import { connect } from "react-redux";
-import LoginView from "./components/login";
+import WelcomeView from "./welcome/welcomeScreen";
 
-const Login = (props:any) => {
+
+const Welcome = (props:any) => {
     return (
         <View style={{flex:1}}>
-               <LoginView />
+               <WelcomeView/>
         </View>
     );
 };
@@ -18,4 +19,4 @@ const mapDispatchToProps = (dispatch:any) => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(Login);
+export default connect(null, mapDispatchToProps)(Welcome );

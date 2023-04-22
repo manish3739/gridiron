@@ -20,11 +20,13 @@ interface RNTextInputProps extends TextInputProps {
     rightIconStyle?: any,
     leftImage?: any,
     rightImage?: any,
+    textName?:any
 }
 
 const RNTextInput = (Props: RNTextInputProps) => {
     return (
         <View testID={Props.testID} style={[styles.container, Props.containerStyle]}>
+            <Text style={styles.textStyle}>{Props.textName}</Text>
               {Props.showLeftImage &&
                 <Image style={[styles.leftImageStyle,Props.leftIconStyle]} source={Props.leftImage} />
               }
@@ -58,15 +60,18 @@ const styles = StyleSheet.create({
         marginLeft: 7,
         marginTop: 4,
     },
+    textStyle:{
+      color:"#000",
+      marginTop:10
+    },
     textInput: {
         paddingLeft: verticalScale(20),
         paddingVertical: verticalScale(15),
         fontSize: verticalScale(18),
         fontWeight:'bold',
         color: colors.commonGreyColor,
-        marginVertical:20,
         borderWidth: 2,
-        borderColor: '#d4cfd0',
+        borderColor: '#ccc',
         borderRadius: 7,
         flexDirection: "row",
         alignItems: "center",

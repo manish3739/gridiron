@@ -1,5 +1,7 @@
 //*> Home
 export const HEADER_BACK_ICON = require('../assets/Header/back.png');
+export const NO_IMAGE_PROFILE = require('../assets/Header/noImage.png');
+
 export const DRAWER_ICON = require('../assets/Header/menu.png');
 export const CLOSE_ICON = require('../assets/Header/close.png');
 export const INFORMATION_ICON = require('../assets/Home/question.png');

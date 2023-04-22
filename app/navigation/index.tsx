@@ -3,11 +3,13 @@ import { NavigationContainer, StackActions } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MyTabBar from './tabBar';
-import Login from '../screens/authService/login';
 import Home from '../screens/appService/home';
 import Profile from '../screens/appService/profile';
 import Challenges from '../screens/appService/challenges';
 import Content from '../screens/appService/content';
+import PrivacyPolicy from '../screens/appService/privacypolicy';
+import SignIn from '../screens/authService/signin/index';
+import WelcomeView from '../screens/authService/welcome/welcome/welcomeScreen';
 import Signup from '../screens/authService/signup';
 import Settings from '../screens/appService/settings';
 import Account from '../screens/appService/account';
@@ -83,6 +85,7 @@ const AppStackScreen = () => {
   return (
     <AppStack.Navigator screenOptions={{ headerShown: false }}>
       <AppStack.Screen component={TabStack} name="HomeTab" />
+      <AppStack.Screen component={PrivacyPolicy} name="PrivacyPolicy" />
       <AppStack.Screen component={Settings} name="Settings" />
       <AppStack.Screen component={Account} name="Account" />
       <AppStack.Screen component={VerifyAccount} name="VerifyAccount" />
@@ -101,9 +104,9 @@ const AppStackScreen = () => {
 const AuthStackScreen = () => {
   return (
     <AuthStack.Navigator screenOptions={{ headerShown: false }}>
+      <AuthStack.Screen component={WelcomeView} name="WelcomeView" />
+      <AuthStack.Screen component={SignIn} name="SignIn" />
       <AuthStack.Screen component={Signup} name="Signup" />
-      <AuthStack.Screen component={Login} name="Login" />
-
     </AuthStack.Navigator>
   );
 };
@@ -112,7 +115,7 @@ const Route = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-            <Stack.Screen name="App" component={AppStackScreen} />
+            {/* <Stack.Screen name="App" component={AppStackScreen} /> */}
             <Stack.Screen name="Auth" component={AuthStackScreen} />
       </Stack.Navigator>
     </NavigationContainer>
