@@ -9,4 +9,5 @@ export const colors = {
   commonGreyColor:"#bab8b9",
   blackColorCode:"#293845",
   commonLightGreyColor:"#788896",
+  darkGreyColor:"#bbb"
 };

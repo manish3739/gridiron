@@ -2,12 +2,12 @@
 import React from "react";
 import { View } from 'react-native';
 import { connect } from "react-redux";
-import PrivacyPolicyView from "./components/privacypolicy";
+import ContentTitleSaveView from "./components/ContentTitleSave";
 
-const PrivacyPolicy = (props:any) => {
+const ContentTitleSave = (props:any) => {
     return (
         <View style={{flex:1}}>
-               <PrivacyPolicyView />
+               <ContentTitleSaveView />
         </View>
     );
 };
@@ -18,4 +18,4 @@ const mapDispatchToProps = (dispatch:any) => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(PrivacyPolicy);
+export default connect(null, mapDispatchToProps)(ContentTitleSave);

@@ -22,10 +22,13 @@ import HelpScreen from '../screens/appService/helpScreen';
 import ReportProblem from '../screens/appService/reportProblem';
 import AboutScreen from '../screens/appService/aboutScreen';
 import InformationScreen from '../screens/appService/informationScreen';
-import Privacypolicy from '../screens/appService/privacyPolicy';
 import FAQScreen from '../screens/appService/FAQScreen';
 import TermsAndCondition from '../screens/appService/termsAndCondition';
 import MyChallenges from '../screens/appService/myChallenges';
+import privacypolicy from '../screens/appService/privacypolicy';
+import NewContentView from '../screens/appService/newContent/components/newContent';
+import ContentTitleView from '../screens/appService/contentTitle/components/contentTitle';
+import ContentTitleSaveView from '../screens/appService/contentTitleSave/components/ContentTitleSave';
 
 const Stack: any = createStackNavigator();
 const AppStack: any = createStackNavigator();
@@ -89,7 +92,7 @@ const AppStackScreen = () => {
   return (
     <AppStack.Navigator screenOptions={{ headerShown: false }}>
       <AppStack.Screen component={TabStack} name="HomeTab" />
-      <AppStack.Screen component={Privacypolicy} name="PrivacyPolicy" />
+      <AppStack.Screen component={privacypolicy} name="PrivacyPolicy" />
       <AppStack.Screen component={FAQScreen} name="FAQScreen" />
       <AppStack.Screen component={TermsAndCondition} name="TermsAndCondition" />
       <AppStack.Screen component={Settings} name="Settings" />
@@ -105,6 +108,13 @@ const AppStackScreen = () => {
       <AppStack.Screen component={AboutScreen} name="AboutScreen" />
       <AppStack.Screen component={InformationScreen} name="InformationScreen" />
       <AppStack.Screen component={MyChallenges} name="MyChallenges" />
+      <AppStack.Screen component={NewContentView} name="NewContentView" />
+      <AppStack.Screen component={ContentTitleView} name="ContentTitleView" />
+      <AppStack.Screen component={ContentTitleSaveView} name="ContentTitleSaveView" />
+
+
+
+
     </AppStack.Navigator>
   );
 };
