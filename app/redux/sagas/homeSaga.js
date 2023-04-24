@@ -1,9 +1,9 @@
-import { put, takeEvery, call } from 'redux-saga/effects';
+import { put, call } from 'redux-saga/effects';
 import services from '../../services/apiServices/index';
 import * as type from '../../utils/Constants';
 import * as commonActions from '../actions/commonActions';
 
-export function* getCategories(action: { payload: { successCallBack: (arg0: any) => void; failureCallBack: (arg0: null) => void; }; }) {
+export function* getCategories(action) {
 
     try {
         yield put(commonActions.startSpinner());
@@ -19,6 +19,7 @@ export function* getCategories(action: { payload: { successCallBack: (arg0: any)
             action.payload.failureCallBack(null);
         }
     } catch (e) {
+        console.log("e GET_CATEGORIES_FAILED:", e);
         yield put({ type: type.GET_CATEGORIES_FAILED, message: e.message });
     }
 }

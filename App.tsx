@@ -10,6 +10,7 @@ import { store } from './app/redux/store/createStore';
 import { NavigationContainer } from '@react-navigation/native';
 import AppLoader from './app/components/AppLoader/AppLoader';
 import Navigation from './app/navigation';
+import { AuthProvider } from './app/contexts/Auth';
 
 const App = () => {
 
@@ -39,10 +40,12 @@ const App = () => {
   }, []);
   return (
     <Provider store={store}>
-        <View style={{flex:1}}>
-            {/* <AppLoader /> */}
-            <Navigation />
-        </View>
+      <View style={{ flex: 1 }}>
+        <AuthProvider>
+          <Navigation />
+        </AuthProvider>
+      </View>
+
     </Provider>
   );
 };

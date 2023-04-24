@@ -1,53 +1,60 @@
 
 import React, { useState, useEffect } from "react";
 // import { connect } from "react-redux";
-import { ScrollView, Text, View } from 'react-native';
+import { FlatList, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import styles from "./styles";
 import Header from "../../../../components/Header";
 import { useNavigation } from "@react-navigation/native";
 import { colors } from "../../../../theme/colors";
 import { USER_ICON } from "../../../../theme/constantImages";
+import strings from "../../../../components/locales";
+import { verticalScale } from "../../../../utils/scale";
 
 
 const ChallengesView = (props: any) => {
     const navigation: any = useNavigation();
     return (
-        <ScrollView
-            contentContainerStyle={{ flexGrow: 1 }}
-        >
-            <View style={styles.container}>
-                <View style={styles.firstContain}>
-                    <Header
-                        noMiddleLabel={true}
-                        leftImg={false}
-                        RightImage={USER_ICON}
-                        headerRightText={"My Challenges"}
-                        isRightHeaderText={true}
-                        headerRightTextStyle={{ color: colors.commonThemeColor }}
-                        isLeftHeaderText={true}
-                        leftHeaderContainer={{ flex: 2 }}
-                        HeaderMiddleTxt={{ flex: 1 }}
-                        rightHeaderContainer={{ flex: 3, alignItems: 'flex-end' }}
-                        leftHeaderText={"IQ Challenges"}
-                        rightImageStyle={styles.rightIconStyle}
-                        onPressRightImage={() => navigation.navigate('MyChallenges')}
-                    />
-                </View>
-                <View style={styles.secondContain}>
-                    <View style={{ flex: 2, backgroundColor: 'red' }}>
+        <View style={styles.container}>
+            <View style={styles.firstContain}>
+                <Header
+                    noMiddleLabel={true}
+                    leftImg={false}
+                    RightImage={USER_ICON}
+                    headerRightText={"My Challenges"}
+                    isRightHeaderText={true}
+                    headerRightTextStyle={{ color: colors.commonThemeColor }}
+                    isLeftHeaderText={true}
+                    leftHeaderContainer={{ flex: 2 }}
+                    HeaderMiddleTxt={{ flex: 1 }}
+                    rightHeaderContainer={{ flex: 3, alignItems: 'flex-end' }}
+                    leftHeaderText={"IQ Challenges"}
+                    rightImageStyle={styles.rightIconStyle}
+                    onPressRightImage={() => navigation.navigate('MyChallenges')}
+                />
+            </View>
+            <View style={styles.secondContain}>
+                <FlatList
+                    data={props.challengesList}
+                    // @ts-ignore
+                    renderItem={(item: {
+                        [x: string]: any; label: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal | null | undefined;
+                    }, index: any) => {
+                        return (
+                            <TouchableOpacity onPress={() => navigation.navigate('CompletedChallenges', { challengeDetail: item?.item.label })} style={styles.listMainContainer}>
+                                <Text style={[styles.boxTextStyle, { fontSize: verticalScale(19), paddingVertical: 20,paddingBottom:10 }]}>{item?.item.label}</Text>
+                                <Text style={styles.scoreMainView}>{item?.item?.description}</Text>
+                                <Text style={[styles.scoreMainView,{textAlign:'right'}]}>{item?.item?.score} points</Text>
+                            </TouchableOpacity>
+                        )
+                    }}
+                />
+            </View>
 
-                    </View>
-                    <View style={{ flex: 4, backgroundColor: 'green' }}>
-
-                    </View>
-                </View>
-
-                <View style={styles.thirdContain}>
-
-                </View>
+            <View style={styles.thirdContain}>
 
             </View>
-        </ScrollView>
+
+        </View>
     );
 };
 
