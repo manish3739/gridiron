@@ -55,6 +55,21 @@ const strings = new LocalizedStrings({
         IQChallengesLabel: "IQ Challenges",
         completedLabel: "Completed",
         scoreLabel: "Score",
+        all:"All",
+        name:'Key Gray',
+        information:"QB - Ohio - Junior",
+        editProfile:"Edit Profile",
+        shareProfile:"Share Profile",
+        addNew:"Add New",
+        save:"Save",
+        NewContect:"New Content",
+        title:"Title",
+        ContectTitle:"[Contant Title]",
+        edit:"Edit",
+        date:"3/17/23",
+        editTitle:"Edit Title",
+        editCaption:"Edit Caption",
+        deleteContent:"Delete Content"
     },
     fr: {
         continue: "test"
