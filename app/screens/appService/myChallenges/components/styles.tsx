@@ -1,5 +1,6 @@
 import { Dimensions, StyleSheet } from 'react-native';
 import { verticalScale } from '../../../../utils/scale';
+import { colors } from '../../../../theme/colors';
 
 export const windowWidth = Dimensions.get('window').width;
 export const windowHeight = Dimensions.get('window').height;
@@ -10,17 +11,22 @@ const styles = StyleSheet.create({
     firstContain: {
         justifyContent: 'center',
         alignItems: 'center',
-        flex: 1
+        flex: 0.5,
+        paddingTop: 20
     },
     secondContain: {
-        flex: 3.5,
-        alignItems: 'center'
+        flex: 5.5,
+        paddingHorizontal: verticalScale(20),
     },
-    thirdContain: {
-        flex: 1.5,
-        justifyContent: 'center',
-        alignItems: 'center'
+    boxTextStyle: {
+        color: colors.blackColorCode,
+        fontSize: verticalScale(16),
+        fontWeight: 'bold'
     },
+    greyTextStyle: {
+        color: colors.commonLightGreyColor,
+        fontSize: 13
+    }
 });
 
 export default styles;

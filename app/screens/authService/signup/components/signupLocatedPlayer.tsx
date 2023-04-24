@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from "react";
-import { Text, View } from 'react-native';
+import { Text, View, TouchableOpacity } from 'react-native';
 import Header from "../../../../components/Header";
 import styles from "./styles";
 import AnimatedProgress from "../../../../components/AnimatedProgressBar";
@@ -37,7 +37,9 @@ const SignupLocatedPlayerView = (props:any) => {
             <Button
                 onPress={() => props.setSignUpOnBoarding(6)}
             />
-            <Text style={styles.alreadySignInText}>{strings.alreadySignIn}</Text>
+              <TouchableOpacity onPress={() => props.handleAlreadySignIn()}>
+                    <Text style={styles.alreadySignInText}>{strings.alreadySignIn}</Text>
+            </TouchableOpacity>
         </View>
     </View>
     );

@@ -7,7 +7,6 @@ import Home from '../screens/appService/home';
 import Profile from '../screens/appService/profile';
 import Challenges from '../screens/appService/challenges';
 import Content from '../screens/appService/content';
-import PrivacyPolicy from '../screens/appService/privacypolicy';
 import SignIn from '../screens/authService/signin/index';
 import WelcomeView from '../screens/authService/welcome/welcome/welcomeScreen';
 import Signup from '../screens/authService/signup';
@@ -22,6 +21,11 @@ import InviteFriends from '../screens/appService/inviteFriends';
 import HelpScreen from '../screens/appService/helpScreen';
 import ReportProblem from '../screens/appService/reportProblem';
 import AboutScreen from '../screens/appService/aboutScreen';
+import InformationScreen from '../screens/appService/informationScreen';
+import Privacypolicy from '../screens/appService/privacyPolicy';
+import FAQScreen from '../screens/appService/FAQScreen';
+import TermsAndCondition from '../screens/appService/termsAndCondition';
+import MyChallenges from '../screens/appService/myChallenges';
 
 const Stack: any = createStackNavigator();
 const AppStack: any = createStackNavigator();
@@ -85,7 +89,9 @@ const AppStackScreen = () => {
   return (
     <AppStack.Navigator screenOptions={{ headerShown: false }}>
       <AppStack.Screen component={TabStack} name="HomeTab" />
-      <AppStack.Screen component={PrivacyPolicy} name="PrivacyPolicy" />
+      <AppStack.Screen component={Privacypolicy} name="PrivacyPolicy" />
+      <AppStack.Screen component={FAQScreen} name="FAQScreen" />
+      <AppStack.Screen component={TermsAndCondition} name="TermsAndCondition" />
       <AppStack.Screen component={Settings} name="Settings" />
       <AppStack.Screen component={Account} name="Account" />
       <AppStack.Screen component={VerifyAccount} name="VerifyAccount" />
@@ -97,6 +103,8 @@ const AppStackScreen = () => {
       <AppStack.Screen component={HelpScreen} name="HelpScreen" />
       <AppStack.Screen component={ReportProblem} name="ReportProblem" />
       <AppStack.Screen component={AboutScreen} name="AboutScreen" />
+      <AppStack.Screen component={InformationScreen} name="InformationScreen" />
+      <AppStack.Screen component={MyChallenges} name="MyChallenges" />
     </AppStack.Navigator>
   );
 };
@@ -115,7 +123,7 @@ const Route = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-            {/* <Stack.Screen name="App" component={AppStackScreen} /> */}
+            <Stack.Screen name="App" component={AppStackScreen} />
             <Stack.Screen name="Auth" component={AuthStackScreen} />
       </Stack.Navigator>
     </NavigationContainer>

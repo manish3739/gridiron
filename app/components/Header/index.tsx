@@ -3,6 +3,7 @@ import { Text, StyleSheet, Image, View, StatusBar, TouchableOpacity } from 'reac
 import { useNavigation } from '@react-navigation/native';
 import { verticalScale } from '../../utils/scale';
 import { HEADER_BACK_ICON } from '../../theme/constantImages';
+import { colors } from '../../theme/colors';
 
 const Header = (props: any) => {
     const navigation = useNavigation();
@@ -23,6 +24,11 @@ const Header = (props: any) => {
         onPressRightImage,
         headerRightText,
         headerRightTextStyle,
+        leftHeaderText,
+        isLeftHeaderText,
+        rightHeaderContainer,
+        leftHeaderContainer,
+        isRightHeaderText,
     } = props;
     return (
         <>
@@ -31,14 +37,15 @@ const Header = (props: any) => {
                 barStyle="dark-content"
             />
             <View style={[container, mncontainer]}>
-                <View style={[HeaderView]}>
+                <View style={[HeaderView, leftHeaderContainer]}>
                     <TouchableOpacity onPress={() => isGoBack ? navigation.goBack() : handleBackButton()}>
-                       {leftImg ? <Image
+                        {leftImg && <Image
                             resizeMode={"contain"}
                             style={[leftRightImage]}
                             source={leftImg}
-                        />:
-                        <Text></Text>
+                        />}
+                        {isLeftHeaderText &&
+                            <Text style={styles.leftHeaderLabelText}>{leftHeaderText}</Text>
                         }
                     </TouchableOpacity>
                 </View>
@@ -48,14 +55,17 @@ const Header = (props: any) => {
                     </Text>}
                 </View>
                 <View
-                    style={HeaderView}>
-                    <TouchableOpacity onPress={() => onPressRightImage()}>
-                        {RightImage ? <Image
+                    style={[HeaderView, rightHeaderContainer]}>
+                    <TouchableOpacity onPress={() => onPressRightImage()} style={{ flexDirection: 'row', alignItems: 'center' }}>
+                        {RightImage && <Image
                             resizeMode={"contain"}
                             style={[leftRightImage, rightImageStyle]}
                             source={RightImage}
-                        />:
-                        <Text style={[headerRightTextStyle]}>{headerRightText}</Text>
+                        />
+                        }
+                        {isRightHeaderText &&
+                            <Text style={[styles.leftHeaderLabelText, headerRightTextStyle]}>{headerRightText}</Text>
+
                         }
                     </TouchableOpacity>
                 </View>
@@ -73,6 +83,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flexDirection: 'row',
         width: '100%',
+        paddingHorizontal: 20
     },
     HeaderView: {
         flex: 1,
@@ -92,6 +103,11 @@ const styles = StyleSheet.create({
     leftRightImage: {
         height: verticalScale(20),
         width: verticalScale(20)
+    },
+    leftHeaderLabelText: {
+        fontSize: verticalScale(17),
+        fontWeight: 'bold',
+        color: colors.blackColorCode
     }
 })
 export default Header;

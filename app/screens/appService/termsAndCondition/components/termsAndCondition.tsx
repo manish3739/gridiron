@@ -1,15 +1,15 @@
 
 import React from "react";
 // import { connect } from "react-redux";
-import { ScrollView, View } from 'react-native';
+import {  Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import Header from "../../../../components/Header";
+import styles from "./styles";
 import {  RIGHT_ARROW } from "../../../../theme/constantImages";
 import strings from "../../../../components/locales";
 import { useNavigation } from "@react-navigation/native";
-import styles from "./styles";
 
 
-const PrivacyPolicyView = (props: any) => {
+const TermsAndConditionView = (props: any) => {
   const navigation: any = useNavigation();
   return (
     <ScrollView
@@ -18,7 +18,7 @@ const PrivacyPolicyView = (props: any) => {
       <View style={styles.container}>
         <View style={styles.firstContain}>
           <Header
-            HeaderText={strings.privacyPolicyLabel}
+            HeaderText={strings.termsAndConditionLabel}
             leftImg={true}
             isGoBack={true}
           />
@@ -31,4 +31,4 @@ const PrivacyPolicyView = (props: any) => {
   );
 };
 
-export default PrivacyPolicyView;
+export default TermsAndConditionView;

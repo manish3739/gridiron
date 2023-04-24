@@ -9,7 +9,7 @@ import { useNavigation } from "@react-navigation/native";
 import styles from "./styles";
 
 
-const PrivacyPolicyView = (props: any) => {
+const FAQScreenView = (props: any) => {
   const navigation: any = useNavigation();
   return (
     <ScrollView
@@ -18,7 +18,7 @@ const PrivacyPolicyView = (props: any) => {
       <View style={styles.container}>
         <View style={styles.firstContain}>
           <Header
-            HeaderText={strings.privacyPolicyLabel}
+            HeaderText={strings.faqsLabel}
             leftImg={true}
             isGoBack={true}
           />
@@ -31,4 +31,4 @@ const PrivacyPolicyView = (props: any) => {
   );
 };
 
-export default PrivacyPolicyView;
+export default FAQScreenView;

@@ -8,6 +8,11 @@ export const INFORMATION_ICON = require('../assets/Home/question.png');
 
 // settings
 export const USER_ICON = require('../assets/Settings/user.png');
+export const INVITE_FRIEND_ICON = require('../assets/Settings/add-friend.png');
+export const HELP_ICON = require('../assets/Settings/chat.png');
+export const NOTIFICATION_ICON = require('../assets/Settings/bell.png');
+export const ABOUT_ICON = require('../assets/Settings/info.png');
+export const LOGOUT_ICON = require('../assets/Settings/logout.png');
 
 // accounts
 export const RIGHT_ARROW = require('../assets/Accounts/right-arrow.png');

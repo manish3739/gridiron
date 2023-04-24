@@ -16,8 +16,7 @@ const SignInView = (props: any) => {
      <View style={{marginBottom:50}}>
      <Header
         HeaderText={strings.SignIn}
-        isGoBack={false}
-        handleBackButton={() => navigation.goBack()}
+        isGoBack={true}
       />
      </View>
       <RNTextInput

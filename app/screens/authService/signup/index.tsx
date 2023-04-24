@@ -34,7 +34,7 @@ const SignUp = ({props,navigation}:any) => {
     };
     // handle to navigate sign in page
     function handleAlreadySignIn() {
-       Alert.alert("Redirect to signIn");
+        navigation.navigate('SignIn');
     };
     // handle to complete sign up
     function handleFinishSignUp(params:any) {

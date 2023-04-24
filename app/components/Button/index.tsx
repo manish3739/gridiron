@@ -1,10 +1,11 @@
 import React from 'react';
-import { Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import { ButtonStyle } from './styles';
+import { LOGOUT_ICON } from '../../theme/constantImages';
 
-const Button = (props:any) => {
+const Button = (props: any) => {
     const {
-        buttonText, style, buttonLabelStyle, onPress, disabled, buttonType
+        buttonText, style, buttonLabelStyle, onPress, disabled, buttonType, leftBtnImage, leftIconStyle
     } = props;
     const {
         button, buttonLabel
@@ -31,9 +32,11 @@ const Button = (props:any) => {
             disabled={disabled}
             onPress={onPress}
             style={[btnStyle, style]}>
-                
+            {leftBtnImage &&
+                <Image resizeMode='contain' style={[styles.leftImageButton,leftIconStyle]} source={LOGOUT_ICON} />
+                }
             <Text
-             style={[btnLabelStyle, buttonLabelStyle]}>
+                style={[btnLabelStyle, buttonLabelStyle]}>
                 {buttonText}
             </Text>
         </TouchableOpacity>
@@ -49,7 +52,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         paddingLeft: 20,
         paddingRight: 20,
-        padding: 10
+        padding: 10,
     },
     buttonLabel: {
         fontSize: 20,
@@ -57,5 +60,9 @@ const styles = StyleSheet.create({
         textTransform: 'uppercase',
         letterSpacing: 10
     },
+    leftImageButton: {
+        width: 20,
+        height: 20
+    }
 })
 export default Button;

@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from "react";
-import { Text, View } from 'react-native';
+import { Text, View, TouchableOpacity } from 'react-native';
 import AnimatedProgress from "../../../../components/AnimatedProgressBar";
 import Button from "../../../../components/Button";
 import styles from "./styles";
@@ -37,7 +37,9 @@ const SignupLeagueView = (props:any) => {
             <Button
                 onPress={() => props.handleLeagueContinue()}
             />
-            <Text style={styles.alreadySignInText}>{strings.alreadySignIn}</Text>
+             <TouchableOpacity onPress={() => props.handleAlreadySignIn()}>
+                    <Text style={styles.alreadySignInText}>{strings.alreadySignIn}</Text>
+            </TouchableOpacity>
         </View>
     </View>
     );

@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from "react";
-import { Alert, Text, View } from 'react-native';
+import { Alert, Text, View, TouchableOpacity } from 'react-native';
 import AnimatedProgress from "../../../../components/AnimatedProgressBar";
 import { DimensionsScale } from "../../../../theme/Dimensions";
 import Button from "../../../../components/Button";
@@ -14,10 +14,10 @@ const SignupPasswordView = (props: any) => {
             <View style={styles.firstContain}>
                 <Header
                     isGoBack={false}
-                HeaderText={strings.playerSignUp}
+                    HeaderText={strings.playerSignUp}
                     handleBackButton={() => props.setSignUpOnBoarding(0)}
                 />
-            <Text>Password</Text>
+                <Text>Password</Text>
 
             </View>
             <View style={styles.secondContain}>
@@ -36,7 +36,9 @@ const SignupPasswordView = (props: any) => {
                 <Button
                     onPress={() => props.setSignUpOnBoarding(2)}
                 />
-                <Text style={styles.alreadySignInText}>{strings.alreadySignIn}</Text>
+                <TouchableOpacity onPress={() => props.handleAlreadySignIn()}>
+                    <Text style={styles.alreadySignInText}>{strings.alreadySignIn}</Text>
+                </TouchableOpacity>
             </View>
         </View>
     );

@@ -47,6 +47,10 @@ const strings = new LocalizedStrings({
         profileLabel: "Profile",
         challengesLabel: "Challenges",
         contentLabel: "Content",
+        informationLabel: "Information",
+        termsAndConditionLabel: "Terms & Conditions",
+        faqsLabel: "FAQs",
+        myChallengesLabel: "My Challenges",
     },
     fr: {
         continue: "test"

@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from "react";
-import { Text, View } from 'react-native';
+import { Text, View, TouchableOpacity } from 'react-native';
 import styles from "./styles";
 import Header from "../../../../components/Header";
 import AnimatedProgress from "../../../../components/AnimatedProgressBar";
@@ -8,7 +8,7 @@ import { DimensionsScale } from "../../../../theme/Dimensions";
 import Button from "../../../../components/Button";
 import strings from "../../../../components/locales";
 
-const SignupInformationView = (props:any) => {
+const SignupInformationView = (props: any) => {
     return (
         <View style={styles.container}>
             <View style={styles.firstContain}>
@@ -17,7 +17,7 @@ const SignupInformationView = (props:any) => {
                     HeaderText={strings.playerSignUp}
                     handleBackButton={() => props.setSignUpOnBoarding(1)}
                 />
-            <Text>Information</Text>
+                <Text>Information</Text>
 
             </View>
             <View style={styles.secondContain}>
@@ -36,7 +36,9 @@ const SignupInformationView = (props:any) => {
                 <Button
                     onPress={() => props.setSignUpOnBoarding(3)}
                 />
-                <Text style={styles.alreadySignInText}>{strings.alreadySignIn}</Text>
+                <TouchableOpacity onPress={() => props.handleAlreadySignIn()}>
+                    <Text style={styles.alreadySignInText}>{strings.alreadySignIn}</Text>
+                </TouchableOpacity>
             </View>
         </View>
     );

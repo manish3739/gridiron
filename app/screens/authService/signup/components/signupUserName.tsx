@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from "react";
-import { Alert, Text, View } from 'react-native';
+import { Alert, Text, View, TouchableOpacity } from 'react-native';
 import Button from "../../../../components/Button";
 import styles from "./styles";
 import { DimensionsScale } from "../../../../theme/Dimensions";
@@ -39,7 +39,9 @@ const SignupUserNameView = (props:any) => {
                 buttonText={strings.finishLabel}
                 onPress={() => props.handleFinishSignUp()}
             />
-            <Text style={styles.alreadySignInText}>{strings.alreadySignIn}</Text>
+             <TouchableOpacity onPress={() => props.handleAlreadySignIn()}>
+                    <Text style={styles.alreadySignInText}>{strings.alreadySignIn}</Text>
+            </TouchableOpacity>
         </View>
     </View>
     );

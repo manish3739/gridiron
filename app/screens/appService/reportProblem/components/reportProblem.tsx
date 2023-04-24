@@ -23,6 +23,7 @@ const ReportProblemView = (props: any) => {
             HeaderText={strings.reportaProblemLabel}
             leftImg={true}
             isGoBack={true}
+            isRightHeaderText={true}
             headerRightText={strings.sendLabel}
             headerRightTextStyle={styles.headerTextStyle}
             onPressRightImage={()=> navigation.navigate('HelpScreen')}
