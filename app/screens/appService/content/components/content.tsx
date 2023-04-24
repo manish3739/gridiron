@@ -41,7 +41,6 @@ const ContentView = (props: any) => {
   const navigation: any = useNavigation();
   
   return (
-    <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
       <View style={styles.container}>
         <View style={styles.firstContain}>
           <Header
@@ -57,7 +56,7 @@ const ContentView = (props: any) => {
           />
         </View>
         <View style={styles.secondContain}>
-          <View style={{}}>
+          <View style={{alignItems:"center"}}>
             <Image
               resizeMode="contain"
               style={styles.noProfile}
@@ -81,11 +80,9 @@ const ContentView = (props: any) => {
               buttonLabelStyle={{ color: colors.commonWhiteColor }}
               buttonType={"tertiary"}
             />
+            
           </View>
-
-        
-        </View>
-        <View style={{ }}>
+          <View style={{ }}>
             <View
               style={styles.list}
             >
@@ -119,16 +116,21 @@ const ContentView = (props: any) => {
              : null}
            
           </View>
+          
 
-        <View style={styles.thirdContain}></View>
+        
+        </View>
+       
+
+        <View style={styles.thirdContain}>
         <Button
               buttonText={strings.addNew}
               onPress={() => navigation.navigate('NewContentView')}
                style={styles.addNew}
            
-            />
+            /></View>
+        
       </View>
-    </ScrollView>
   );
 };
 

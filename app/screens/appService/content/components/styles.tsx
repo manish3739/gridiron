@@ -14,11 +14,11 @@ const styles = StyleSheet.create({
     flex: 0.5,
   },
   secondContain: {
-    //  flex: 0.5,
-    alignItems: "center",
+     flex: 2,
+    // alignItems: "center",
   },
   thirdContain: {
-    flex: 0.5,
+    flex: 0.3,
     alignItems: "center",
   },
   btnTabActive: {
@@ -38,6 +38,8 @@ const styles = StyleSheet.create({
   button: {
     flexDirection: "row",
     margin: 10,
+    alignItems:"center",
+    justifyContent:"center"
   },
   btnTab: {
     width: Dimensions.get("window").width / 2.5,

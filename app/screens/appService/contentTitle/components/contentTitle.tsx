@@ -16,7 +16,6 @@ const ContentTitleView = (props: any) => {
   const navigation: any = useNavigation();
 
   return (
-    <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
       <View style={styles.container}>
         <View style={styles.firstContain}>
           <Header
@@ -56,7 +55,6 @@ const ContentTitleView = (props: any) => {
 
         <View style={styles.thirdContain}></View>
       </View>
-    </ScrollView>
   );
 };
 

@@ -11,14 +11,14 @@ const styles = StyleSheet.create({
   firstContain: {
     justifyContent: "center",
     alignItems: "center",
-    flex: 3,
+    flex: 1.3,
   },
   secondContain: {
-    flex: 0.5,
+    flex: 4,
     alignItems: "center",
   },
   thirdContain: {
-    flex: 0.5,
+    // flex: 0.5,
     alignItems: "center",
   },
   btnTabActive: {
