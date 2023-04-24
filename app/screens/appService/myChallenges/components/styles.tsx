@@ -16,7 +16,6 @@ const styles = StyleSheet.create({
     },
     secondContain: {
         flex: 5.5,
-        paddingHorizontal: verticalScale(20),
     },
     boxTextStyle: {
         color: colors.blackColorCode,
@@ -26,6 +25,33 @@ const styles = StyleSheet.create({
     greyTextStyle: {
         color: colors.commonLightGreyColor,
         fontSize: 13
+    },
+    mainInformationContain: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        paddingHorizontal: verticalScale(15),
+        paddingTop: 15
+    },
+    IQTextConatiner: {
+        alignItems: 'center', 
+        paddingTop: verticalScale(20) 
+    },
+    mainGreyContainer: {
+        backgroundColor: '#F8F9FA', 
+        paddingTop: verticalScale(20), 
+        marginTop: verticalScale(20),
+        paddingHorizontal:verticalScale(15)
+    },
+    listMainContainer: {
+        backgroundColor: '#D1EFEC', 
+        marginHorizontal: 15, 
+        paddingHorizontal: 10,
+        marginVertical:10
+    },
+    scoreMainView: {
+        fontSize: verticalScale(16), 
+        color: colors.blackColorCode, 
+        paddingVertical: 20
     }
 });
 

@@ -9,7 +9,7 @@ const strings = new LocalizedStrings({
         welcome:"Welcome to Gridiron Stat!",
         SignIn:"Sign in",
         SignUp:'Sign Up',
-        ForgetPassword:"Forget Password?",
+        ForgetPassword:"Forgot Password?",
         DontHaveAccount:"Don't have an account?",
         Email: 'Email',
         Password:"Password",
@@ -65,7 +65,11 @@ const strings = new LocalizedStrings({
         date:"3/17/23",
         editTitle:"Edit Title",
         editCaption:"Edit Caption",
-        deleteContent:"Delete Content"
+        deleteContent:"Delete Content",
+        totalIQLabel: "Total IQ",
+        IQChallengesLabel: "IQ Challenges",
+        completedLabel: "Completed",
+        scoreLabel: "Score",
     },
     fr: {
         continue: "test"

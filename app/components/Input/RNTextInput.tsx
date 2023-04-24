@@ -20,7 +20,8 @@ interface RNTextInputProps extends TextInputProps {
     rightIconStyle?: any,
     leftImage?: any,
     rightImage?: any,
-    textName?:any
+    textName?:any,
+    isError?:any,
 }
 
 const RNTextInput = (Props: RNTextInputProps) => {
@@ -41,7 +42,7 @@ const RNTextInput = (Props: RNTextInputProps) => {
                 <Image style={[styles.rightImageStyle,Props.rightIconStyle]} source={Props.rightImage} />
               }
             {
-                Props.error !== undefined && (!!Props.error) &&
+                Props.isError &&
                 <Text style={styles.error}>{Props?.error}</Text>
             }
         </View>
@@ -69,7 +70,7 @@ const styles = StyleSheet.create({
         paddingVertical: verticalScale(15),
         fontSize: verticalScale(18),
         fontWeight:'bold',
-        color: colors.commonGreyColor,
+        color: colors.blackColorCode,
         borderWidth: 2,
         borderColor: '#ccc',
         borderRadius: 7,

@@ -3,12 +3,14 @@ import * as type from '../../utils/Constants'
 
 export default class Api {
 
-    static loginAPI(action: { login: any; password: any; }) {
+    static loginAPI(action: any) {
+    console.log("action api login:", action);
 
-        const login_url = url.BASE_URL + `login`;
+        const login_url = "";
+        // const login_url = url.BASE_URL + `login`;
         const users = {
             "user": {
-                "login": action.login,
+                "email": action.email,
                 "password": action.password
             }
         }
@@ -20,7 +22,10 @@ export default class Api {
             },
             body: JSON.stringify(users)
         })
-            .then(res => res.json())
+            .then(res => {
+                 return res.json()
+            	
+            })
             .then((data) => {
                 return data;
             })
@@ -28,10 +33,12 @@ export default class Api {
                 throw e;
             });
     }
- 
-    static getCategoriesAPI(action: any) {
 
-        const getCategories_url = url.BASE_URL+`api/v1/categories`;
+
+    static getCategoriesAPI() {
+
+        const getCategories_url = "";
+        // const getCategories_url = url.BASE_URL+`api/v1/categories`;
         return fetch(getCategories_url, {
             method: type.GET_API,
             headers: {
@@ -47,4 +54,5 @@ export default class Api {
                 throw e;
             });
     }
+
 }

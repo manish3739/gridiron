@@ -3,25 +3,29 @@
 import * as type from '../../utils/Constants'
 
 const initialState = {
+    loginResult: [],
+    signUpResult: [],
     loading: false,
     error: null,
-    categories: [],
+    forgotPassword: [],
+    resetPassword: [],
 };
+
 // Redux : Counter Reducer
-const homeReducer = (state = initialState, action:any) => {
+const userReducer = (state = initialState, action:any) => {
     switch (action.type) {
-        case type.GET_CATEGORIES_REQUESTED:
+        case type.LOGIN_USER_REQUESTED:
             return {
                 ...state,
                 loading: true,
             }
-        case type.GET_CATEGORIES_SUCCESS:
+        case type.LOGIN_USER_SUCCESS:
             return {
                 ...state,
-                categories: action.categories,
+                loginResult: action.loginResult,
                 loading: false,
             };
-        case type.GET_CATEGORIES_FAILED:
+        case type.LOGIN_USERS_FAILED:
             return {
                 ...state,
                 loading: false,
@@ -33,4 +37,4 @@ const homeReducer = (state = initialState, action:any) => {
     }
 }
 
-export default homeReducer;
+export default userReducer;

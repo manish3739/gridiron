@@ -53,7 +53,7 @@ const SettingsView = (props: any) => {
         <View style={styles.thirdContain}>
           <Button
             buttonText={strings.logoutLabel}
-            onPress={() => { navigation.navigate('Auth') }}
+            onPress={() => props.handleLogout()}
             style={{ borderColor: colors.commonThemeColor, flexDirection: 'row' }}
             buttonLabelStyle={{ color: colors.commonThemeColor }}
             buttonType={"tertiary"}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavigationContainer, StackActions } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -29,6 +29,9 @@ import privacypolicy from '../screens/appService/privacypolicy';
 import NewContentView from '../screens/appService/newContent/components/newContent';
 import ContentTitleView from '../screens/appService/contentTitle/components/contentTitle';
 import ContentTitleSaveView from '../screens/appService/contentTitleSave/components/ContentTitleSave';
+import CompletedChallenges from '../screens/appService/completedChallenges';
+import { useAuth } from '../contexts/Auth';
+import { ActivityIndicator, View } from 'react-native';
 
 const Stack: any = createStackNavigator();
 const AppStack: any = createStackNavigator();
@@ -80,10 +83,10 @@ const TabStack = () => {
       screenOptions={{ headerShown: false }}
       tabBar={(props: any) => <MyTabBar {...props} />}
     >
-      <Tab.Screen name="Home" component={HomeStack}  />
-      <Tab.Screen name="Profile" component={ProfileStack}  />
-      <Tab.Screen name="Challenges" component={ChallengesStack}  />
-      <Tab.Screen name="Content" component={ContentStack}  />
+      <Tab.Screen name="Home" component={HomeStack} />
+      <Tab.Screen name="Profile" component={ProfileStack} />
+      <Tab.Screen name="Challenges" component={ChallengesStack} />
+      <Tab.Screen name="Content" component={ContentStack} />
     </Tab.Navigator>
   );
 };
@@ -115,6 +118,7 @@ const AppStackScreen = () => {
 
 
 
+      <AppStack.Screen component={CompletedChallenges} name="CompletedChallenges" />
     </AppStack.Navigator>
   );
 };
@@ -130,13 +134,25 @@ const AuthStackScreen = () => {
 };
 
 const Route = () => {
+  const { authData, loading } = useAuth();
+
   return (
-    <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
-            <Stack.Screen name="App" component={AppStackScreen} />
+    loading ?
+      <View
+        style={{
+          flex: 1,
+          justifyContent: 'center',
+        }}>
+        <ActivityIndicator color={'#000'} animating={true} size="small" />
+      </View> :
+      <NavigationContainer>
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+          {authData ?
+            <Stack.Screen name="App" component={AppStackScreen} /> :
             <Stack.Screen name="Auth" component={AuthStackScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
+          }
+        </Stack.Navigator>
+      </NavigationContainer>
   );
 };
 export default Route;
