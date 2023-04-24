@@ -1,5 +1,7 @@
 import { Dimensions, StyleSheet } from "react-native";
 import { colors } from "../../../../theme/colors";
+import { DimensionsScale } from "../../../../theme/Dimensions";
+import { verticalScale } from "../../../../utils/scale";
 
 
 export const windowWidth = Dimensions.get("window").width;
@@ -14,11 +16,11 @@ const styles = StyleSheet.create({
     flex: 0.5,
   },
   secondContain: {
-    //  flex: 0.5,
-    alignItems: "center",
+     flex: 2,
+    // alignItems: "center",
   },
   thirdContain: {
-    flex: 0.5,
+    flex: 0.3,
     alignItems: "center",
   },
   btnTabActive: {
@@ -26,8 +28,8 @@ const styles = StyleSheet.create({
     borderColor:colors.primaryButtonColor
   },
   noProfile: {
-    height: 100,
-    width: 100,
+    height: verticalScale(100),
+    width: verticalScale(100),
     borderRadius: 50,
   },
   name: {
@@ -37,7 +39,9 @@ const styles = StyleSheet.create({
   },
   button: {
     flexDirection: "row",
-    margin: 10,
+    alignItems:"center",
+    justifyContent:'space-between',
+    paddingHorizontal:verticalScale(30)
   },
   btnTab: {
     width: Dimensions.get("window").width / 2.5,
@@ -47,18 +51,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     fontSize:16
   },
-  buttonEdit:{
-    borderColor: colors.darkGreyColor,
+  buttonEdit: {
+    borderWidth:0,
     marginTop: 20,
-    width: 150,
-    backgroundColor: colors.darkGreyColor,
-    marginRight: 10,
-  },
-  shareButton:{
-    borderColor: colors.darkGreyColor,
-    marginTop: 20,
-    width: 150,
-    backgroundColor: colors.darkGreyColor,
+    width: DimensionsScale.width*0.4,
+    paddingVertical: 7,
+    backgroundColor: "#788896",
   },
   addNew:{
     alignItems:"center",

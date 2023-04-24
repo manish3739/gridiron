@@ -1,6 +1,6 @@
 import { Dimensions, StyleSheet } from "react-native";
-import { colors } from "../../../../theme/colors";
-
+import { DimensionsScale } from "../../../../theme/Dimensions";
+import { verticalScale } from "../../../../utils/scale";
 
 export const windowWidth = Dimensions.get("window").width;
 export const windowHeight = Dimensions.get("window").height;
@@ -11,25 +11,24 @@ const styles = StyleSheet.create({
   firstContain: {
     justifyContent: "center",
     alignItems: "center",
-    flex: 3,
+    flex: 1,
   },
   secondContain: {
-    flex: 0.5,
-    alignItems: "center",
-  },
-  thirdContain: {
-    flex: 0.5,
+    flex: 5,
     alignItems: "center",
   },
   btnTabActive: {
     backgroundColor: "pink",
   },
   noProfile: {
-    height: 300,
-    width: 300,
+    height: DimensionsScale.height*0.4,
+    width: DimensionsScale.width*0.9,
   },
- 
- 
+  textInputContainer: {
+    width: '100%', 
+    alignItems:'center',
+    paddingTop:verticalScale(12)
+  }
 });
 
 export default styles;

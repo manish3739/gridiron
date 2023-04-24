@@ -70,10 +70,7 @@ const strings = new LocalizedStrings({
         editTitle:"Edit Title",
         editCaption:"Edit Caption",
         deleteContent:"Delete Content",
-        totalIQLabel: "Total IQ",
-        IQChallengesLabel: "IQ Challenges",
-        completedLabel: "Completed",
-        scoreLabel: "Score",
+        descriptionCaptionLabel: "Write a description for your content",
     },
     fr: {
         continue: "test"

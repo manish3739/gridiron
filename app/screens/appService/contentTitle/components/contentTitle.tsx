@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import { connect } from "react-redux";
 import { Image, ScrollView, View } from "react-native";
 import styles from "./styles";
 import Header from "../../../../components/Header";
@@ -11,52 +10,46 @@ import { useNavigation } from "@react-navigation/native";
 import strings from "../../../../components/locales";
 import { colors } from "../../../../theme/colors";
 import RNTextInput from "../../../../components/Input/RNTextInput";
+import { DimensionsScale } from "../../../../theme/Dimensions";
 
 const ContentTitleView = (props: any) => {
   const navigation: any = useNavigation();
 
   return (
-    <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-      <View style={styles.container}>
-        <View style={styles.firstContain}>
-          <Header
-            HeaderText={strings.ContectTitle}
-            leftHeaderContainer={{ flex: 0.7 }}
-            leftImg={true}
-            isGoBack={true}
-            isRightHeaderText={true}
-            headerRightText={strings.edit}
-            headerRightTextStyle={{ color: colors.primaryButtonColor }}
-            onPressRightImage={() =>
-              navigation.navigate("ContentTitleSaveView")
-            }
-          />
-        </View>
-        <View style={styles.secondContain}>
-          <View style={{}}>
-            <Image
-              resizeMode="contain"
-              style={styles.noProfile}
-              source={NO_IMAGE_PROFILE}
-            />
-          </View>
-        </View>
-
-        <View style={{ flex: 4, alignItems: "center" }}>
-          <RNTextInput
-            textName={strings.date}
-            editable={true}
-            keyboardType="default"
-            showLeftImage={true}
-            showRightImage={true}
-            placeholderTextColor="#00000040"
-            textInputContainer={{ height: 150 }}
-          />
-        </View>
-
-        <View style={styles.thirdContain}></View>
+    <View style={styles.container}>
+      <View style={styles.firstContain}>
+        <Header
+          HeaderText={strings.ContectTitle}
+          leftHeaderContainer={{ flex: 0.7 }}
+          leftImg={true}
+          isGoBack={true}
+          isRightHeaderText={true}
+          headerRightText={strings.edit}
+          headerRightTextStyle={{ color: colors.primaryButtonColor }}
+          onPressRightImage={() =>
+            navigation.navigate("ContentTitleSaveView")
+          }
+        />
       </View>
-    </ScrollView>
+      <View style={styles.secondContain}>
+        <Image
+          style={styles.noProfile}
+          source={NO_IMAGE_PROFILE}
+        />
+        <RNTextInput
+          textName={strings.date}
+          editable={true}
+          keyboardType="default"
+          showLeftImage={true}
+          showRightImage={true}
+          placeholderTextColor="#00000040"
+          multiline={true}
+          numberOfLines={5}
+          textInputContainer={{ fontSize: 14, height: DimensionsScale.height / 5, paddingTop: 15 }}
+        />
+      </View>
+
+    </View>
   );
 };
 

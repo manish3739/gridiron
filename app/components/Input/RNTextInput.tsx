@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     },
     textStyle:{
       color:"#000",
-      marginTop:10
+      paddingVertical:verticalScale(6)
     },
     textInput: {
         paddingLeft: verticalScale(20),
