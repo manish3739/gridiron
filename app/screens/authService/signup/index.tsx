@@ -16,6 +16,10 @@ import { useNavigation } from "@react-navigation/native";
 const SignUp = ({props,navigation}:any) => {
     const [signUpOnBoarding, setSignUpOnBoarding] = useState(0);
     const [isHighSchoolType, setIsHighSchoolType] = useState('');
+    const [registerData, setRegisterData] = useState({
+        email: "",
+    });
+    console.log("registerData:", registerData);
     const [isChildrenData, setIsChildrenData] = useState([
         {
             label: 'I am 13 years of age or older',
@@ -49,6 +53,8 @@ const SignUp = ({props,navigation}:any) => {
                     setIsChildrenData={setIsChildrenData}
                     setSignUpOnBoarding={setSignUpOnBoarding}
                     handleAlreadySignIn={handleAlreadySignIn}
+                    setRegisterData={setRegisterData}
+                    registerData={registerData}
                 />
             }
             {signUpOnBoarding == 1 &&

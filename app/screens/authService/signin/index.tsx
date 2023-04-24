@@ -15,8 +15,7 @@ const SignInLogin = (props: any) => {
     const loginValidationSchema = yup.object().shape({
         email: yup
             .string()
-            .label('test')
-            .email("Please enter valid email")
+            .matches(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please enter valid email')
             .required('Email Address is Required'),
         password: yup
             .string()
@@ -34,7 +33,7 @@ const SignInLogin = (props: any) => {
                 login: email,
                 password: password
             }
-            props.login(data, (res:any) => onLoginSuccessCallBack(res), (err:any) => onLoginUserFailureCallBack(err),)
+            props.login(data, (res: any) => onLoginSuccessCallBack(res), (err: any) => onLoginUserFailureCallBack(err),)
             await auth.signIn(email, password);
         } catch (error) {
             console.log("error:", error);
@@ -42,10 +41,10 @@ const SignInLogin = (props: any) => {
 
     }
 
-    function onLoginSuccessCallBack(params:any) {
+    function onLoginSuccessCallBack(params: any) {
         console.log("onLoginSuccessCallBack:", params);
     }
-    function onLoginUserFailureCallBack(params:any) {
+    function onLoginUserFailureCallBack(params: any) {
         console.log("onLoginUserFailureCallBack:", params);
     }
 
