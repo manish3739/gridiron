@@ -115,10 +115,6 @@ const AppStackScreen = () => {
       <AppStack.Screen component={NewContentView} name="NewContentView" />
       <AppStack.Screen component={ContentTitleView} name="ContentTitleView" />
       <AppStack.Screen component={ContentTitleSaveView} name="ContentTitleSaveView" />
-
-
-
-
     </AppStack.Navigator>
   );
 };

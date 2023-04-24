@@ -69,7 +69,11 @@ const strings = new LocalizedStrings({
         date:"3/17/23",
         editTitle:"Edit Title",
         editCaption:"Edit Caption",
-        deleteContent:"Delete Content"
+        deleteContent:"Delete Content",
+        totalIQLabel: "Total IQ",
+        IQChallengesLabel: "IQ Challenges",
+        completedLabel: "Completed",
+        scoreLabel: "Score",
     },
     fr: {
         continue: "test"
