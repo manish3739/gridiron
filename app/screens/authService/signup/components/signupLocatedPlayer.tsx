@@ -18,8 +18,6 @@ const SignupLocatedPlayerView = (props:any) => {
                 HeaderText={strings.playerSignUp}
                 handleBackButton={() => props.setSignUpOnBoarding(4)}
             />
-        <Text>player located</Text>
-
         </View>
         <View style={styles.secondContain}>
             <AnimatedProgress
@@ -31,6 +29,7 @@ const SignupLocatedPlayerView = (props:any) => {
                 style={{ marginVertical: 10 }}
                 height={15}
             />
+            <Text style={styles.mainOnBoardingLabel}>{strings.whereYouLocated}</Text>
         </View>
 
         <View style={styles.thirdContain}>

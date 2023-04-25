@@ -1,8 +1,7 @@
 export type AuthData = {
-  email: string;
-  password: string;
+  token: string;
 };
-const signIn = (email: string, _password: string): Promise<AuthData> => {
+const signIn = (token:string): Promise<AuthData> => {
   // this is a mock of an API call, in a real app
   // will be need connect with some real API,
   // send email and password, and if credential is corret
@@ -10,8 +9,7 @@ const signIn = (email: string, _password: string): Promise<AuthData> => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve({
-        email: email,
-        password: _password,
+        token: token,
       });
     }, 1000);
   });

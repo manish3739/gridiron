@@ -7,7 +7,6 @@ import AnimatedProgress from "../../../../components/AnimatedProgressBar";
 import { DimensionsScale } from "../../../../theme/Dimensions";
 import Button from "../../../../components/Button";
 import strings from "../../../../components/locales";
-// import { connect } from "react-redux";
 
 const SignupPlayerSportView = (props:any) => {
     return (
@@ -18,8 +17,6 @@ const SignupPlayerSportView = (props:any) => {
                     HeaderText={strings.playerSignUp}
                     handleBackButton={() => props.setSignUpOnBoarding(2)}
                 />
-            <Text>player sport</Text>
-
             </View>
             <View style={styles.secondContain}>
                 <AnimatedProgress
@@ -31,6 +28,8 @@ const SignupPlayerSportView = (props:any) => {
                     style={{ marginVertical: 10 }}
                     height={15}
                 />
+                <Text style={styles.mainOnBoardingLabel}>{strings.chooseSportLabel}</Text>
+
             </View>
 
             <View style={styles.thirdContain}>

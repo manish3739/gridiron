@@ -30,18 +30,28 @@ const styles = StyleSheet.create({
     mainOnBoardingLabel: {
         fontWeight: 'bold',
         fontSize: verticalScale(22),
-        color: colors.blackColorCode
+        color: colors.blackColorCode,
+        paddingTop: verticalScale(13),
+        textAlign: 'center',
+        lineHeight: verticalScale(30),
+        marginHorizontal: verticalScale(35)
     },
     mainBoldLabelStyle: {
-        color: '#788896',
+        color: colors.secondaryGreyColor,
         fontSize: verticalScale(13),
         textAlign: 'center',
         width: '80%',
         lineHeight: 20,
     },
     animatedContainer: {
-        alignItems: 'center', 
-        width:'100%'
+        alignItems: 'center',
+        width: '100%'
+    },
+    checkBoxContainer: {
+        alignItems: 'flex-start',
+        width: '100%',
+        paddingHorizontal: verticalScale(25),
+        paddingTop: verticalScale(20)
     }
 });
 

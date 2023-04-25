@@ -79,14 +79,14 @@ const styles = StyleSheet.create({
   mainContain: {
     flex: 1,
     margin: 3,
-    backgroundColor: '#E3E8ED',
+    backgroundColor: colors.commonLightGreyColor,
     alignItems: 'center',
     justifyContent: 'center'
   },
   videoIconStyle: {
     width: 50,
     height: 50,
-    tintColor: '#9EADBA'
+    tintColor: colors.secondaryGreyColor,
   }
 });
 

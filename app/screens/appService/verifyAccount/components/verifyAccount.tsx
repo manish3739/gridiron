@@ -33,8 +33,7 @@ const VerifyAccountView = (props: any) => {
         </Text>
         <Button
             buttonText={strings.uploadPhotoLabel}
-            onPress={() => { props.setSignUpOnBoarding(8) }}
-            style={{ borderColor: colors.commonThemeColor, marginTop: 20 }}
+            style={{ borderColor: colors.commonThemeColor, marginTop: 20, alignSelf:'center' }}
             buttonLabelStyle={{ color: colors.commonThemeColor }}
             buttonType={"tertiary"}
           />
