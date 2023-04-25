@@ -17,6 +17,10 @@ export const LOGOUT_ICON = require('../assets/Settings/logout.png');
 // accounts
 export const RIGHT_ARROW = require('../assets/Accounts/right-arrow.png');
 
+// accounts
+export const VIDEO_ICON = require('../assets/Content/youtube.png');
+export const GALLERY_ICON = require('../assets/Content/gallery.png');
+
 
 // tabbar 
 export const USER_ICON_TAB_BAR = require('../assets/TabBar/user.png');

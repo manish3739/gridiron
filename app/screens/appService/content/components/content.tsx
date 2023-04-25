@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 // import { connect } from "react-redux";
 import {
   Dimensions,
-  FlatList,
   Image,
   ScrollView,
   Text,
@@ -13,18 +12,30 @@ import styles from "./styles";
 import Header from "../../../../components/Header";
 import {
   DRAWER_ICON,
+  GALLERY_ICON,
   NO_IMAGE_PROFILE,
-  USER_ICON,
+  VIDEO_ICON,
 } from "../../../../theme/constantImages";
-import { useNavigation } from "@react-navigation/native";
 import strings from "../../../../components/locales";
 import { colors } from "../../../../theme/colors";
 import Button from "../../../../components/Button";
 import { verticalScale } from "../../../../utils/scale";
-
-
+import { FlatList } from "react-native-gesture-handler";
 
 const ContentView = (props: any) => {
+  const data = [
+    { id: 'a', value: 'A' },
+    { id: 'b', value: 'B' },
+    { id: 'c', value: 'C' },
+    { id: 'd', value: 'D' },
+    { id: 'e', value: 'E' },
+    { id: 'f', value: 'F' },
+    { id: 'f', value: 'G' },
+    { id: 'f', value: 'H' },
+    { id: 'f', value: 'I' },
+  ];
+  const numColumns = 3;
+  const size = Dimensions.get('window').width / numColumns;
   return (
     <View style={styles.container}>
       <View style={styles.firstContain}>
@@ -72,35 +83,46 @@ const ContentView = (props: any) => {
           <View
             style={styles.list}
           >
-            {props.listTab.map((e:any) => {
-              return(
+            {props.listTab.map((e: any) => {
+              return (
                 <TouchableOpacity onPress={() => props.setStatusFilter(e.status)}
-                style={[styles.btnTab, props.status === e.status && styles.btnTabActive]}>
+                  style={[styles.btnTab, props.status === e.status && styles.btnTabActive]}>
 
-                <Text style={{fontSize:verticalScale(14),color:props.status === e.status ? colors.commonThemeColor:colors.blackColorCode}}>{e.status}</Text>
-              </TouchableOpacity>
+                  <Text style={{ fontSize: verticalScale(14), color: props.status === e.status ? colors.commonThemeColor : colors.blackColorCode }}>{e.status}</Text>
+                </TouchableOpacity>
               )
             }
             )}
-
           </View>
           {props.status === 'Photos' ? (
-            <View>
-              <Image
-                resizeMode="contain"
-                style={styles.photos}
-                source={NO_IMAGE_PROFILE}
+            <View style={styles.gridMainContainer}>
+              <FlatList
+                data={data}
+                renderItem={({ item }) => (
+                  <View
+                    style={[styles.mainContain,{ width: size, height: size + 10}]}>
+                      <Image resizeMode="contain" style={styles.videoIconStyle} source={GALLERY_ICON} />
+                  </View>
+                )}
+                keyExtractor={item => item.id}
+                numColumns={numColumns}
               />
             </View>
           ) : props.status === 'Videos' ?
             (
-              <View>
-                <Image
-                  resizeMode="contain"
-                  style={styles.photos}
-                  source={NO_IMAGE_PROFILE}
-                />
-              </View>
+              <View style={styles.gridMainContainer}>
+              <FlatList
+                data={data}
+                renderItem={({ item }) => (
+                  <View
+                    style={[styles.mainContain,{ width: size, height: size + 10}]}>
+                      <Image resizeMode="contain" style={styles.videoIconStyle} source={VIDEO_ICON} />
+                  </View>
+                )}
+                keyExtractor={item => item.id}
+                numColumns={numColumns}
+              />
+            </View>
             )
             : null}
         </View>
@@ -111,7 +133,7 @@ const ContentView = (props: any) => {
           onPress={() => props.navigation.navigate('NewContentView')}
           style={styles.addNew}
         />
-        </View>
+      </View>
     </View>
   );
 };

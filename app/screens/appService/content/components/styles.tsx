@@ -13,19 +13,18 @@ const styles = StyleSheet.create({
   firstContain: {
     justifyContent: "center",
     alignItems: "center",
-    flex: 0.5,
+    flex: 1,
   },
   secondContain: {
-     flex: 2,
-    // alignItems: "center",
+    flex: 4.5,
   },
   thirdContain: {
-    flex: 0.3,
-    alignItems: "center",
+    flex: 0.5,
+    alignItems: "center"
   },
   btnTabActive: {
-    borderBottomWidth:3,
-    borderColor:colors.primaryButtonColor
+    borderBottomWidth: 3,
+    borderColor: colors.primaryButtonColor
   },
   noProfile: {
     height: verticalScale(100),
@@ -39,42 +38,55 @@ const styles = StyleSheet.create({
   },
   button: {
     flexDirection: "row",
-    alignItems:"center",
-    justifyContent:'space-between',
-    paddingHorizontal:verticalScale(30)
+    alignItems: "center",
+    justifyContent: 'space-between',
+    paddingHorizontal: verticalScale(15)
   },
   btnTab: {
     width: Dimensions.get("window").width / 2.5,
     flexDirection: "row",
-    
     padding: 10,
     justifyContent: "center",
-    fontSize:16
+    fontSize: 16
   },
   buttonEdit: {
-    borderWidth:0,
+    borderWidth: 0,
     marginTop: 20,
-    width: DimensionsScale.width*0.4,
+    width: '49%',
     paddingVertical: 7,
     backgroundColor: "#788896",
+},
+  addNew: {
+    alignItems: "center",
+    justifyContent: "center",
+    textAlign: "center",
+    width: 200,
   },
-  addNew:{
-    alignItems:"center",
-    justifyContent:"center",
-    textAlign:"center",
-    width:200,
-    marginBottom:20
+
+  photos: {
+    marginTop: 10,
+    width: 100,
+    height: 100,
+    borderRadius: 1
   },
- 
-  photos:{
-    marginTop:10,
-    width:100,
-    height:100,
-    borderRadius:1
-  },
-  list:{
+  list: {
     flexDirection: "row",
     alignSelf: "center",
+  },
+  gridMainContainer: {
+    height: DimensionsScale.height / 2.8
+  },
+  mainContain: {
+    flex: 1,
+    margin: 3,
+    backgroundColor: '#E3E8ED',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  videoIconStyle: {
+    width: 50,
+    height: 50,
+    tintColor: '#9EADBA'
   }
 });
 

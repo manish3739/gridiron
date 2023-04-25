@@ -10,9 +10,6 @@ import { useNavigation } from "@react-navigation/native";
 const HomeView = (props: any) => {
   const navigation: any = useNavigation();
   return (
-    <ScrollView
-      contentContainerStyle={{ flexGrow: 1 }}
-    >
       <View style={styles.container}>
         <View style={styles.firstContain}>
           <Header
@@ -36,7 +33,6 @@ const HomeView = (props: any) => {
         </View>
 
       </View>
-    </ScrollView>
   );
 };
 
