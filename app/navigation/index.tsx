@@ -31,7 +31,7 @@ import { ActivityIndicator, View } from 'react-native';
 import NewContentView from '../screens/appService/newContent/components/newContent';
 import ContentTitleView from '../screens/appService/contentTitle/components/contentTitle';
 import ContentTitleSaveView from '../screens/appService/contentTitleSave/components/ContentTitleSave';
-import PrivacyPolicy from '../screens/appService/privacyPolicy';
+import PrivacyPolicyView from '../screens/appService/privacypolicy/components/privacypolicy';
 
 const Stack: any = createStackNavigator();
 const AppStack: any = createStackNavigator();
@@ -95,7 +95,7 @@ const AppStackScreen = () => {
   return (
     <AppStack.Navigator screenOptions={{ headerShown: false }}>
       <AppStack.Screen component={TabStack} name="HomeTab" />
-      <AppStack.Screen component={PrivacyPolicy} name="PrivacyPolicy" />
+      <AppStack.Screen component={PrivacyPolicyView} name="PrivacyPolicy" />
       <AppStack.Screen component={FAQScreen} name="FAQScreen" />
       <AppStack.Screen component={TermsAndCondition} name="TermsAndCondition" />
       <AppStack.Screen component={Settings} name="Settings" />
