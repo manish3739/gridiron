@@ -39,11 +39,13 @@ const Header = (props: any) => {
             <View style={[container, mncontainer]}>
                 <View style={[HeaderView, leftHeaderContainer]}>
                     <TouchableOpacity onPress={() => isGoBack ? navigation.goBack() : handleBackButton()}>
-                        {leftImg && <Image
+                        {leftImg && 
+                        <Image
                             resizeMode={"contain"}
                             style={[leftRightImage]}
                             source={leftImg}
-                        />}
+                        />
+                        }
                         {isLeftHeaderText &&
                             <Text style={styles.leftHeaderLabelText}>{leftHeaderText}</Text>
                         }

@@ -6,24 +6,23 @@ import Header from "../../../../components/Header";
 import styles from "./styles";
 import {
   DRAWER_ICON,
-  GALLERY_ICON,
   NO_IMAGE_PROFILE,
-  VIDEO_ICON,
+  
 } from "../../../../theme/constantImages";
-import { useNavigation } from "@react-navigation/native";
 import strings from "../../../../components/locales";
 import { colors } from "../../../../theme/colors";
 import Button from "../../../../components/Button";
 import { verticalScale } from "../../../../utils/scale";
-import { DimensionsScale } from "../../../../theme/Dimensions";
-import { FlatList } from "react-native-gesture-handler";
+import Stats from "./Stats";
+import Training from "./Training";
+import About from "./About";
 
 
 const ProfileView = (props: any) => {
-  const navigation: any = useNavigation();
 
   return (
-    <><View style={styles.firstContain}>
+    <View style={styles.container}>
+    <View style={styles.firstContain}>
       <Header
         noMiddleLabel={true}
         leftImg={false}
@@ -34,7 +33,8 @@ const ProfileView = (props: any) => {
         leftHeaderText={"Test" + " " + "verified"}
         rightImageStyle={{ tintColor: "#8B99A5" }}
         onPressRightImage={() => props.navigation.navigate("Settings")} />
-    </View><View style={styles.secondContain}>
+    </View>
+    <View style={styles.secondContain}>
         <View style={{ alignItems: "center" }}>
           <Image
             resizeMode="contain"
@@ -42,22 +42,55 @@ const ProfileView = (props: any) => {
             source={NO_IMAGE_PROFILE} />
           <Text style={styles.name}>{strings.name}</Text>
           <Text>{strings.information}</Text>
+          <Text style={styles.verify}>{strings.verify}</Text>
+
         </View>
         <View style={styles.button}>
           <Button
             buttonText={strings.editProfile}
-            onPress={() => { }}
             style={styles.buttonEdit}
             buttonLabelStyle={{ color: colors.commonWhiteColor }}
             buttonType={"tertiary"} />
           <Button
             buttonText={strings.shareProfile}
-            onPress={() => { }}
             style={styles.buttonEdit}
             buttonLabelStyle={{ color: colors.commonWhiteColor }}
             buttonType={"tertiary"} />
         </View>
-      </View></>
+        </View>
+        <View style={styles.listTab}>
+          <View style={styles.list}>
+            {props.listTab.map((e: any) => {
+              return (
+                <TouchableOpacity onPress={() => props.setStatusFilter(e.status)}
+                  style={[styles.btnTab, props.status === e.status && styles.btnTabActive]}>
+
+                  <Text style={{ fontSize: verticalScale(14), color: props.status === e.status ? colors.commonThemeColor : colors.blackColorCode }}>{e.status}</Text>
+                </TouchableOpacity>
+              )
+            }
+            )}
+            
+          </View>
+          {props.status === 'Stats' ? (
+            <View style={styles.container}>
+              <Stats data1={props.data1} passingData={props.passingData} rushingData={props.rushingData}/>
+              
+            </View>
+          ) : props.status === 'Training' ?
+            (
+              <View style={styles.container}>
+                <Training data={props.data}/>
+             
+            </View>
+            )
+            : 
+            <View style={styles.container}>
+              <About/>
+            </View>
+            }
+        </View>
+      </View>
   );
 };
 
