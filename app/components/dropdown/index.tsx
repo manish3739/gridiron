@@ -4,11 +4,12 @@ import { USER_ICON } from '../../theme/constantImages';
 import { Dropdown } from './components';
 import { verticalScale } from '../../utils/scale';
 import { colors } from '../../theme/colors';
+import { DimensionsScale } from '../../theme/Dimensions';
 
 const DropDownView = (props: any) => {
  
   const [selected, setSelected] = useState([]);
-   const { dropDownMainStyle, placeholder, data_list, labelField, valueField } = props;
+   const { dropDownMainStyle, placeholder, data_list, labelField, valueField, renderSelectedItem } = props;
   return (
     <View testID={props.testID} >
       <Dropdown
@@ -24,7 +25,8 @@ const DropDownView = (props: any) => {
         searchPlaceholder="Search..."
         value={selected}
         onChange={(item: any) => {
-          setSelected(item);
+          setSelected(item)
+          renderSelectedItem(item)
         }}
       />
     </View>
@@ -40,16 +42,16 @@ DropDownView.defaultProps = {
   data_list: data,
   labelField: "label",
   valueField: "value",
+  selected: [],
 };
 
 const styles = StyleSheet.create({
   dropdown: {
-    width: 90,
+    width: DimensionsScale.width*0.3,
     paddingHorizontal:10,
     backgroundColor: 'transparent',
-    borderBottomColor: 'gray',
-    borderBottomWidth: 0.5,
-    borderWidth:0.5,
+    borderColor:colors.commonGreyColor,
+    borderWidth:2,
     borderRadius:5
   },
   selectedTextStyle: {
@@ -57,15 +59,9 @@ const styles = StyleSheet.create({
     color: colors.blackColorCode
   },
   iconStyle: {
-    width: 12,
-    height: 12,
+    width: 11,
+    height: 11,
     tintColor:colors.blackColorCode
-  },
-  icon: {
-    marginRight: 5,
-  },
-  selectedStyle: {
-    borderRadius: 12,
   },
 });
 export default React.memo(DropDownView)
