@@ -107,6 +107,10 @@ const strings = new LocalizedStrings({
         emailIsRequired: "Email address is required",
         passwordIsRequired: "Password is required",
         chooseUniqueUsername: "Choose a unique username",
+        season:'Season',
+        sports:"Sport",
+        position:"Position",
+        EditProfile:"Edit Profile"
     },
     fr: {
         continue: "test"

@@ -28,10 +28,11 @@ import MyChallenges from '../screens/appService/myChallenges';
 import CompletedChallenges from '../screens/appService/completedChallenges';
 import { useAuth } from '../contexts/Auth';
 import { ActivityIndicator, View } from 'react-native';
-import NewContentView from '../screens/appService/newContent/components/newContent';
-import ContentTitleView from '../screens/appService/contentTitle/components/contentTitle';
-import ContentTitleSaveView from '../screens/appService/contentTitleSave/components/ContentTitleSave';
 import PrivacyPolicyView from '../screens/appService/privacypolicy/components/privacypolicy';
+import newContent from '../screens/appService/newContent';
+import editProfile from '../screens/appService/editProfile';
+import contentTitleSave from '../screens/appService/contentTitleSave';
+import contentTitle from '../screens/appService/contentTitle';
 
 const Stack: any = createStackNavigator();
 const AppStack: any = createStackNavigator();
@@ -112,9 +113,11 @@ const AppStackScreen = () => {
       <AppStack.Screen component={InformationScreen} name="InformationScreen" />
       <AppStack.Screen component={MyChallenges} name="MyChallenges" />
       <AppStack.Screen component={CompletedChallenges} name="CompletedChallenges" />
-      <AppStack.Screen component={NewContentView} name="NewContentView" />
-      <AppStack.Screen component={ContentTitleView} name="ContentTitleView" />
-      <AppStack.Screen component={ContentTitleSaveView} name="ContentTitleSaveView" />
+      <AppStack.Screen component={newContent} name="newContent" />
+      <AppStack.Screen component={contentTitle} name="contentTitle" />
+      <AppStack.Screen component={contentTitleSave} name="contentTitleSave" />
+      <AppStack.Screen component={editProfile} name="editProfile" />
+
     </AppStack.Navigator>
   );
 };

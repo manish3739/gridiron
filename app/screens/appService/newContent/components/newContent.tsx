@@ -29,7 +29,7 @@ const NewContentView = (props: any) => {
           isRightHeaderText={true}
           headerRightText={strings.save}
           headerRightTextStyle={{ color: colors.primaryButtonColor }}
-          onPressRightImage={() => navigation.navigate('ContentTitleView')}
+          onPressRightImage={() => navigation.navigate('contentTitle')}
         />
       </View>
       <View style={styles.secondContain}>

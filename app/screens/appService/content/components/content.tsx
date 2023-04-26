@@ -130,7 +130,7 @@ const ContentView = (props: any) => {
       <View style={styles.thirdContain}>
         <Button
           buttonText={strings.addNew}
-          onPress={() => props.navigation.navigate('NewContentView')}
+          onPress={() => props.navigation.navigate('newContent')}
           style={styles.addNew}
         />
       </View>

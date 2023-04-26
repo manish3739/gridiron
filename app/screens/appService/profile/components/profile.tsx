@@ -16,9 +16,11 @@ import { verticalScale } from "../../../../utils/scale";
 import Stats from "./Stats";
 import Training from "./Training";
 import About from "./About";
+import { useNavigation } from "@react-navigation/native";
 
 
 const ProfileView = (props: any) => {
+  const navigation: any = useNavigation();
 
   return (
     <View style={styles.container}>
@@ -47,6 +49,7 @@ const ProfileView = (props: any) => {
         </View>
         <View style={styles.button}>
           <Button
+          onPress={() => navigation.navigate('editProfile')}
             buttonText={strings.editProfile}
             style={styles.buttonEdit}
             buttonLabelStyle={{ color: colors.commonWhiteColor }}

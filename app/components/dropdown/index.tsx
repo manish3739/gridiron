@@ -9,9 +9,10 @@ import { DimensionsScale } from '../../theme/Dimensions';
 const DropDownView = (props: any) => {
  
   const [selected, setSelected] = useState([]);
-   const { dropDownMainStyle, placeholder, data_list, labelField, valueField, renderSelectedItem } = props;
+   const { dropDownMainStyle, placeholder, data_list, labelField, valueField, renderSelectedItem, dropDownLabelText, textLabelStyle } = props;
   return (
     <View testID={props.testID} >
+      <Text style={[styles.text, textLabelStyle]}>{dropDownLabelText}</Text>
       <Dropdown
         style={[styles.dropdown,dropDownMainStyle]}
         selectedTextStyle={styles.selectedTextStyle}
@@ -52,7 +53,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     borderColor:colors.commonGreyColor,
     borderWidth:2,
-    borderRadius:5
+    borderRadius:5,
+    marginLeft:10
   },
   selectedTextStyle: {
     fontSize: verticalScale(13),
@@ -63,5 +65,11 @@ const styles = StyleSheet.create({
     height: 11,
     tintColor:colors.blackColorCode
   },
+  text:{
+    marginLeft:10,
+    fontSize:15,
+    fontWeight:"bold"
+  }
+  
 });
 export default React.memo(DropDownView)

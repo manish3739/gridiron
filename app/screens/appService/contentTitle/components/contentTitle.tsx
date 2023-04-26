@@ -27,7 +27,7 @@ const ContentTitleView = (props: any) => {
           headerRightText={strings.edit}
           headerRightTextStyle={{ color: colors.primaryButtonColor }}
           onPressRightImage={() =>
-            navigation.navigate("ContentTitleSaveView")
+            navigation.navigate("contentTitleSave")
           }
         />
       </View>
