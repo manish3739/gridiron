@@ -4,10 +4,8 @@ import styles from './styles';
 import { FlatList } from 'react-native';
 import strings from '../../../../components/locales';
 import Button from '../../../../components/Button';
-import { useNavigation } from '@react-navigation/native';
 import { verticalScale } from '../../../../utils/scale';
 
-const countries = ["Egypt", "Canada", "Australia", "Ireland"];
 
 
 const Training = (props:any) => {

@@ -2,13 +2,10 @@ import { View, Text, FlatList, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
 import styles from "./styles";
 import strings from "../../../../components/locales";
-import { ScrollView } from "react-native";
 import Button from "../../../../components/Button";
-import { DimensionsScale } from "../../../../theme/Dimensions";
 import { verticalScale } from "../../../../utils/scale";
 import { colors } from "../../../../theme/colors";
 
-const countries = ["Egypt", "Canada", "Australia", "Ireland"];
 
 const Stats = (props: any) => {
   const [state, setState]: any = useState(null);
