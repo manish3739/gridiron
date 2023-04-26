@@ -81,7 +81,7 @@ const AccountView = (props: any) => {
         <View style={styles.thirdContain}>
           <Button
             buttonText={strings.deleteAccountLabel}
-            onPress={() => { props.setSignUpOnBoarding(8) }}
+            onPress={() => {}}
             style={{ borderColor: colors.secondaryButtonColor, marginTop: 20 }}
             buttonLabelStyle={{ color: colors.secondaryButtonColor }}
             buttonType={"tertiary"}

@@ -25,23 +25,26 @@ const Profile = (props: any) => {
   ];
   const data = [
     {
-      number: "102",
-      name: "Vertical",
+      number: "4.50",
+      name: "40 Yard Dash",
       id: 1,
     },
     {
-      number: "47",
-      name: "Square",
-      id: 1,
-    },
-    {
-      number: "03",
+      number: "350",
+      nameText:"(lbs)",
       name: "Branch Press",
       id: 1,
     },
     {
-      number: "78",
-      name: "40 Yard Dash",
+      number: "450",
+      nameText:"(lbs)",
+      name: "Squat",
+      id: 1,
+    },
+    {
+      number: "36",
+      nameText:"(in)",
+      name: "Vertical",
       id: 1,
     },
   ];

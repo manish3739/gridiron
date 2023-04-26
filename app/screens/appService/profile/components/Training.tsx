@@ -1,6 +1,5 @@
 import { View, Text, TouchableOpacity, ScrollView } from 'react-native'
 import React, { useState }  from 'react'
-import DropDown from '../../../../components/DropDown'
 import styles from './styles';
 import { FlatList } from 'react-native';
 import strings from '../../../../components/locales';
@@ -9,39 +8,18 @@ import { useNavigation } from '@react-navigation/native';
 import { verticalScale } from '../../../../utils/scale';
 
 const countries = ["Egypt", "Canada", "Australia", "Ireland"];
-const data = [
-  {
-    number: "102",
-    name: "Vertical",
-    id: 1,
-  },
-  {
-    number: "47",
-    name: "Square",
-    id: 1,
-  },
-  {
-    number: "03",
-    name: "Branch Press",
-    id: 1,
-  },
-  {
-    number: "78",
-    name: "40 Yard Dash",
-    id: 1,
-  },
-];
+
 
 const Training = (props:any) => {
   const [state, setState]:any = useState(null);
 
   return (
-    <ScrollView
-    contentContainerStyle={{ flexGrow: 1 }}
-
-    >
+    <FlatList
+  data={[]}
+  keyExtractor={(item, index) => `key-${index}`}
+  ListHeaderComponent={() => (
+    <View>
     <View style={styles.TrainerContainer}>
-       <DropDown data={countries} label={"Season"} />
        <FlatList
   data={props.data}
   numColumns={2}
@@ -51,7 +29,11 @@ const Training = (props:any) => {
        <TouchableOpacity style={[styles.trainerFlatlist,{
       borderColor: state === item ? '#ccc' :"#fff", borderWidth:1
        }]} onPress={() => setState(item)}>
+        <View>
         <Text style={styles.trainerName}>{item.name}</Text>
+        <Text style={styles.nametext}>{item.nameText}</Text>
+        </View>
+
         <Text style={styles.trainerNumber}>{item.number}</Text>
       </TouchableOpacity>
      </View>
@@ -66,7 +48,16 @@ const Training = (props:any) => {
       </View>
       
     </View>
-    </ScrollView>
+    </View>
+   
+  )}
+  
+  renderItem={({ item, index}) => (
+    <>
+    </>
+  )}
+/>
+
     
   )
 }

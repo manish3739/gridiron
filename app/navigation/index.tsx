@@ -131,6 +131,7 @@ const AuthStackScreen = () => {
 
 const Route = () => {
   const { authData, loading } = useAuth();
+  console.log("authData:", authData);
 
   return (
     loading ?

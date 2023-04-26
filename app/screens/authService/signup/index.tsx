@@ -12,37 +12,102 @@ import SignupPlayerSportView from "./components/signupPlayerSport";
 import SignupPositionPlayerView from "./components/signupPositionPlayer";
 import SignupUserNameView from "./components/signupUserName";
 import { useNavigation } from "@react-navigation/native";
+import { useAuth } from "../../../contexts/Auth";
 
-const SignUp = ({props,navigation}:any) => {
+const SignUp = ({ props, navigation }: any) => {
+    const auth = useAuth();
     const [signUpOnBoarding, setSignUpOnBoarding] = useState(0);
     const [isHighSchoolType, setIsHighSchoolType] = useState('');
     const [registerData, setRegisterData] = useState({
         email: "",
+        password: "",
+        firstName: "",
+        lastName: "",
+        ageVerification: "",
+        gender: "",
+        playerPosition: [],
+        username: "",
     });
     console.log("registerData:", registerData);
     const [isChildrenData, setIsChildrenData] = useState([
         {
             label: 'I am 13 years of age or older',
             isSelected: false
-          },
-          {
+        },
+        {
             label: "I am parent managing my child's account",
             isSelected: false
-          }
+        }
+    ]);
+    const [isSportData, setIsSportData] = useState([
+        {
+            label: 'Male',
+            isSelected: false
+        },
+        {
+            label: "Female",
+            isSelected: false
+        },
+        {
+            label: "Rather not specified",
+            isSelected: false
+        }
+    ]);
+    const [playerPositions, setPlayerPositions] = useState([
+        {
+            label: 'Quarterback',
+            isSelected: false
+        },
+        {
+            label: 'Running Back',
+            isSelected: false
+        },
+        {
+            label: 'Wide Receiver',
+            isSelected: false
+        },
+        {
+            label: 'Offensive Lineman',
+            isSelected: false
+        },
+        {
+            label: 'Defensive Lineman',
+            isSelected: false
+        },
+        {
+            label: 'Tightend',
+            isSelected: false
+        },
+        {
+            label: 'Defensive Back',
+            isSelected: false
+        },
+        {
+            label: 'Kicker',
+            isSelected: false
+        },
+        {
+            label: 'Punter',
+            isSelected: false
+        },
+        {
+            label: 'Linebacker',
+            isSelected: false
+        },
     ]);
 
     // handle league button
     function handleLeagueContinue() {
-       setIsHighSchoolType('isHighSchool');
-       setSignUpOnBoarding(7);
+        setIsHighSchoolType('isHighSchool');
+        setSignUpOnBoarding(7);
     };
     // handle to navigate sign in page
     function handleAlreadySignIn() {
         navigation.navigate('SignIn');
     };
     // handle to complete sign up
-    function handleFinishSignUp(params:any) {
-        navigation.navigate('App');
+    async function handleFinishSignUp(params: any) {
+       await auth.signIn('@authToken');
     }
 
     return (
@@ -61,12 +126,18 @@ const SignUp = ({props,navigation}:any) => {
                 <SignupPasswordView
                     setSignUpOnBoarding={setSignUpOnBoarding}
                     handleAlreadySignIn={handleAlreadySignIn}
+                    setRegisterData={setRegisterData}
+                    registerData={registerData}
                 />
             }
             {signUpOnBoarding == 2 &&
                 <SignupInformationView
+                    isSportData={isSportData}
+                    setIsSportData={setIsSportData}
                     setSignUpOnBoarding={setSignUpOnBoarding}
                     handleAlreadySignIn={handleAlreadySignIn}
+                    setRegisterData={setRegisterData}
+                    registerData={registerData}
                 />
             }
             {signUpOnBoarding == 3 &&
@@ -77,6 +148,8 @@ const SignUp = ({props,navigation}:any) => {
             }
             {signUpOnBoarding == 4 &&
                 <SignupPositionPlayerView
+                    playerPositions={playerPositions}
+                    setPlayerPositions={setPlayerPositions}
                     setSignUpOnBoarding={setSignUpOnBoarding}
                     handleAlreadySignIn={handleAlreadySignIn}
                 />
@@ -100,6 +173,8 @@ const SignUp = ({props,navigation}:any) => {
                     setSignUpOnBoarding={setSignUpOnBoarding}
                     handleAlreadySignIn={handleAlreadySignIn}
                     handleFinishSignUp={handleFinishSignUp}
+                    setRegisterData={setRegisterData}
+                    registerData={registerData}
                 />
             }
             {signUpOnBoarding == 8 &&

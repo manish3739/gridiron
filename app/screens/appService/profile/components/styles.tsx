@@ -71,6 +71,7 @@ const styles = StyleSheet.create({
     marginTop: 15,
     alignItems: "center",
     paddingTop: 10,
+    borderWidth:1
   },
   viewState: {
     marginTop: 7,
@@ -121,12 +122,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#eee",
   },
   trainerFlatlist: {
-    height: DimensionsScale.height / 6,
+    height: DimensionsScale.height / 5,
     width: DimensionsScale.width * 0.4,
     backgroundColor: "#fff",
     margin: 10,
     alignItems: "center",
-    justifyContent: "space-around",
+    justifyContent: "space-evenly",
   },
   view: {
     justifyContent: "space-around",
@@ -135,11 +136,12 @@ const styles = StyleSheet.create({
   },
   trainerName: {
     color: colors.commonGreyColor,
-    fontSize: 15,
+    fontSize: 17,
   },
   trainerNumber: {
     color: "#000",
-    fontSize: 18,
+    fontSize: 20,
+    fontWeight:"bold"
   },
   about: {
     fontWeight: "bold",
@@ -175,6 +177,10 @@ const styles = StyleSheet.create({
     color: "#000",
     marginTop: 10,
   },
+  nametext:{
+    textAlign:"center",
+    color:colors.commonGreyColor
+  }
 });
 
 export default styles;

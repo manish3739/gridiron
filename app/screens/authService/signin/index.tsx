@@ -7,25 +7,28 @@ import { useNavigation } from "@react-navigation/native";
 import * as yup from 'yup';
 import { useAuth } from "../../../contexts/Auth";
 import * as user from "../../../redux/actions/userActions";
+import strings from "../../../components/locales";
 
 const SignInLogin = (props: any) => {
     const auth = useAuth();
     const navigation: any = useNavigation();
+    const [loginData, setLoginData] = useState({
+        email: "",
+        password: ""
+    });
+    const [showPassword, setShowPassword] = useState(false);
 
     const loginValidationSchema = yup.object().shape({
         email: yup
             .string()
             .matches(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please enter valid email')
-            .required('Email Address is Required'),
+            .required(strings.emailIsRequired),
         password: yup
             .string()
             .min(8, ({ min }) => `Password must be at least ${min} characters`)
-            .required('Password is required'),
+            .required(strings.passwordIsRequired),
     });
-    const [loginData, setLoginData] = useState({
-        email: "",
-        password: ""
-    });
+   
 
     async function handleLogin(email: string, password: string) {
         try {
@@ -34,7 +37,7 @@ const SignInLogin = (props: any) => {
                 password: password
             }
             props.login(data, (res: any) => onLoginSuccessCallBack(res), (err: any) => onLoginUserFailureCallBack(err),)
-            await auth.signIn(email, password);
+            await auth.signIn('@authToken');
         } catch (error) {
             console.log("error:", error);
         }
@@ -51,6 +54,8 @@ const SignInLogin = (props: any) => {
     return (
         <View style={{ flex: 1 }}>
             <SignInView
+                showPassword={showPassword}
+                setShowPassword={setShowPassword}
                 handleLogin={handleLogin}
                 loginData={loginData}
                 setLoginData={setLoginData}

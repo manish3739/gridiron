@@ -70,6 +70,7 @@ const strings = new LocalizedStrings({
         editTitle:"Edit Title",
         editCaption:"Edit Caption",
         deleteContent:"Delete Content",
+        choosePasswordLabel:"Choose a password",
         descriptionCaptionLabel: "Write a description for your content",
         vs:'vs.',
         viewState:'View Stats',
@@ -93,7 +94,19 @@ const strings = new LocalizedStrings({
         graduation:'Graduation Date',
         graduationYear:"2023",
         GPA:"GPA",
-        gpanumber:"3.9"
+        gpanumber:"3.9",
+        fullNameLabel: "What is your full name?",
+        firstNameLabel: "First Name",
+        lastNameLabel: "Last Name",
+        chooseSportLabel: "Choose the sport you play",
+        choosePositionLabel: "Choose the positions you play",
+        whereYouLocated: "Where are you located?",
+        chooseGraduation: "Choose your highschool and when you will graduate",
+        chooseLeagueLabel: "Choose your league",
+        chooseUserNameLabel: "Choose your unique username",
+        emailIsRequired: "Email address is required",
+        passwordIsRequired: "Password is required",
+        chooseUniqueUsername: "Choose a unique username",
     },
     fr: {
         continue: "test"

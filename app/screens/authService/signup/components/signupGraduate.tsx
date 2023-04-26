@@ -19,8 +19,6 @@ const SignupGraduateView = (props: any) => {
                     isGoBack={false}
                     handleBackButton={() => props.setSignUpOnBoarding(5)}
                 />
-                <Text>player graduate</Text>
-
             </View>
             <View style={styles.secondContain}>
                 <AnimatedProgress
@@ -32,6 +30,7 @@ const SignupGraduateView = (props: any) => {
                     style={{ marginVertical: 10 }}
                     height={15}
                 />
+               <Text style={styles.mainOnBoardingLabel}>{strings.chooseGraduation}</Text>
             </View>
 
             <View style={styles.thirdContain}>
