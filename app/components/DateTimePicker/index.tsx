@@ -1,8 +1,6 @@
 import { StyleSheet, Text, View, Platform, TouchableOpacity, Image, Modal } from 'react-native';
 
 import DateTimePickerModal from "react-native-modal-datetime-picker";
-
-// import DateTimePickerModal from '@react-native-community/datetimepicker';
 import { useState } from 'react';
 import { DimensionsScale } from '../../theme/Dimensions';
 import { colors } from '../../theme/colors';
@@ -13,12 +11,14 @@ import { verticalScale } from '../../utils/scale';
 interface RNDatePickerProps {
   pickerContainer?: any,
   renderDate?: any,
-  renderTime?: any
+  renderTime?: any,
+  isDatePicker?: any,
+  isTimePicker?: any,
 }
 
-export default function DatePicker(props: RNDatePickerProps) {
+export default function DateTimePicker(props: RNDatePickerProps) {
 
-  const { pickerContainer, renderDate, renderTime } = props;
+  const { pickerContainer, renderDate, renderTime, isDatePicker, isTimePicker } = props;
 
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
   const [isTimePickerVisible, setTimePickerVisibility] = useState(false);
@@ -65,23 +65,26 @@ export default function DatePicker(props: RNDatePickerProps) {
         onConfirm={handleTimeConfirm}
         onCancel={hideTimePicker}
       />
-      <View style={[styles.pickerMainContain]}>
-        <TouchableOpacity onPress={showDatePicker} style={[styles.pickerContainer, pickerContainer]}>
-          <Text style={styles.selectedDateTimeStyle}>{moment(date).format('DD/MM/YYYY')}</Text>
-        </TouchableOpacity>
-        <Image style={styles.pickerIconStyle} source={CALENDER_ICON} />
-      </View>
-
-      <View style={[styles.pickerMainContain]}>
-        <TouchableOpacity onPress={showTimePicker} style={[styles.pickerContainer, pickerContainer]}>
-          <Text style={styles.selectedDateTimeStyle}>{moment(time).format("hh:mm A")}</Text>
-        </TouchableOpacity>
-        <Image style={styles.pickerIconStyle} source={CLOCK_ICON} />
-      </View>
+      {isDatePicker &&
+        <View style={[styles.pickerMainContain]}>
+          <TouchableOpacity onPress={showDatePicker} style={[styles.pickerContainer, pickerContainer]}>
+            <Text style={styles.selectedDateTimeStyle}>{moment(date).format('DD/MM/YYYY')}</Text>
+          </TouchableOpacity>
+          <Image style={styles.pickerIconStyle} source={CALENDER_ICON} />
+        </View>
+      }
+      {isTimePicker &&
+        <View style={[styles.pickerMainContain]}>
+          <TouchableOpacity onPress={showTimePicker} style={[styles.pickerContainer, pickerContainer]}>
+            <Text style={styles.selectedDateTimeStyle}>{moment(time).format("hh:mm A")}</Text>
+          </TouchableOpacity>
+          <Image style={styles.pickerIconStyle} source={CLOCK_ICON} />
+        </View>
+      }
     </>
   );
 }
-DatePicker.propTypes = {
+DateTimePicker.propTypes = {
 
 }
 

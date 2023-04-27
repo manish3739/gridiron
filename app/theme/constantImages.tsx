@@ -42,3 +42,6 @@ export const UN_CHECKED_BOX = require('../assets/CheckBox/unchecked.png');
 // date time picker component
 export const CALENDER_ICON = require('../assets/DateTimePicker/calendar.png');
 export const CLOCK_ICON = require('../assets/DateTimePicker/clock.png');
+
+// image picker component
+export const CAMERA_PICKER_ICON = require('../assets/ImagePicker/photo-camera-interface-symbol-for-button.png');

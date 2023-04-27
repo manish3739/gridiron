@@ -84,6 +84,9 @@ const strings = new LocalizedStrings({
         emailIsRequired: "Email address is required",
         passwordIsRequired: "Password is required",
         chooseUniqueUsername: "Choose a unique username",
+        selectImageLabel: "Select Image",
+        takePhotoLabel: "Take Photo",
+        chooseFromLibrary: "Choose From Library",
     },
     fr: {
         continue: "test"
