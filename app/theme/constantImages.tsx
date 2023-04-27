@@ -38,3 +38,7 @@ export const STACK_ICON_TAB_BAR = require('../assets/TabBar/stack.png');
 // checkbox component
 export const CHECKED_BOX = require('../assets/CheckBox/checkbox.png');
 export const UN_CHECKED_BOX = require('../assets/CheckBox/unchecked.png');
+
+// date time picker component
+export const CALENDER_ICON = require('../assets/DateTimePicker/calendar.png');
+export const CLOCK_ICON = require('../assets/DateTimePicker/clock.png');

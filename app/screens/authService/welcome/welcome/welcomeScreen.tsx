@@ -7,6 +7,7 @@ import { GALLERY_ICON } from "../../../../theme/constantImages";
 import Button from "../../../../components/Button";
 import { colors } from "../../../../theme/colors";
 import { useNavigation } from "@react-navigation/native";
+import DatePicker from "../../../../components/DateTimePicker";
 
 const WelcomeView = (props: any) => {
 
@@ -18,9 +19,13 @@ const WelcomeView = (props: any) => {
             </View>
             <View style={styles.secondContainer}>
            <View style={styles.Image}>
-           <Image
+           {/* <Image
                  style={styles.imageStyle}
                 source={GALLERY_ICON}
+            /> */}
+            <DatePicker
+            renderDate={(date:any) => console.log("datee",date)}
+            renderTime={(time:any) => console.log("time",time)}
             />
            </View>
            </View>
