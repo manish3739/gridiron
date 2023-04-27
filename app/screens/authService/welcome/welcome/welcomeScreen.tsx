@@ -7,7 +7,7 @@ import Button from "../../../../components/Button";
 import { colors } from "../../../../theme/colors";
 import { useNavigation } from "@react-navigation/native";
 import { CAMERA_PICKER_ICON, GALLERY_ICON, USER_ICON } from "../../../../theme/constantImages";
-// import FormImagePicker from "../../../../components/ImagePicker/ImagePicker";
+import FormImagePicker from "../../../../components/ImagePicker/ImagePicker";
 
 const WelcomeView = () => {
 
@@ -47,7 +47,7 @@ const WelcomeView = () => {
                                 </View>
                             </>
                         )}
-                    /> */}
+                    />  */}
                 </View>
             </View>
             <View style={styles.thirdContainer}>

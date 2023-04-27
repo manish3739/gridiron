@@ -15,7 +15,8 @@ const options: any = {
     skipBackup: true,
     path: "images"
   },
-  includeBase64: true
+  includeBase64: true,
+  cropping : true
 };
 
 
