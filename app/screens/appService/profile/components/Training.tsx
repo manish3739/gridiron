@@ -12,6 +12,7 @@ const Training = (props: any) => {
   const [state, setState]: any = useState(null);
 
   return (
+    <>
     <FlatList
       data={[]}
       keyExtractor={(item, index) => `key-${index}`}
@@ -81,6 +82,7 @@ const Training = (props: any) => {
       )}
       renderItem={({ item, index }) => <></>}
     />
+    </>
   );
 };
 

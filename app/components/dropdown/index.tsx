@@ -1,35 +1,74 @@
+// @ts-ignore
 import React, { useState } from 'react'
 import { View, Text, StyleSheet, Image } from 'react-native'
 import { USER_ICON } from '../../theme/constantImages';
-import { Dropdown } from './components';
+import { Dropdown, MultiSelect } from './components';
 import { verticalScale } from '../../utils/scale';
 import { colors } from '../../theme/colors';
 import { DimensionsScale } from '../../theme/Dimensions';
-
-const DropDownView = (props: any) => {
-
+interface RNDropDownProps {
+  dropDownMainStyle?: any,
+  placeholder?: any,
+  data_list?: any,
+  labelField?: any,
+  valueField?: any,
+  renderSelectedItem?: any,
+  testID?: any,
+  isMultiple?: boolean,
+  textLabelStyle?:any,
+  dropDownLabelText?: any
+}
+const DropDownView = (props: RNDropDownProps) => {
   const [selected, setSelected] = useState([]);
-   const { dropDownMainStyle, placeholder, data_list, labelField, valueField, renderSelectedItem, dropDownLabelText, textLabelStyle } = props;
+  const { dropDownMainStyle, placeholder, data_list, labelField, valueField, renderSelectedItem, textLabelStyle,  dropDownLabelText} = props;
   return (
     <View testID={props.testID} >
-      <Text style={[styles.text, textLabelStyle]}>{dropDownLabelText}</Text>
-      <Dropdown
-        style={[styles.dropdown, dropDownMainStyle]}
-        selectedTextStyle={styles.selectedTextStyle}
-        iconStyle={styles.iconStyle}
-        placeholderStyle={[styles.placeholderStyle]}
-        search={true}
-        data={data_list}
-        labelField={labelField}
-        valueField={valueField}
-        placeholder={placeholder}
-        searchPlaceholder="Search..."
-        value={selected}
-        onChange={(item: any) => {
-          setSelected(item)
-          renderSelectedItem(item)
-        }}
-      />
+      {props.isMultiple &&
+      <>
+        <Text style={[styles.text, textLabelStyle]}>{dropDownLabelText}</Text>
+        <MultiSelect
+          style={[styles.dropdown, dropDownMainStyle]}
+          iconStyle={styles.iconStyle}
+          placeholderStyle={[styles.placeholderStyle]}
+          search={true}
+          data={data_list}
+          // @ts-ignore
+          labelField={labelField}
+          // @ts-ignore
+          valueField={valueField}
+          placeholder={placeholder}
+          value={selected}
+          itemTextStyle={{color:colors.blackColorCode}}
+          renderSelectedValues={(item:any) => renderSelectedItem(item)}
+          onChange={(item:any) => {
+            setSelected(item)
+          }}
+        />
+        </>
+         }
+        {!props.isMultiple &&
+        <>
+        <Text style={[styles.text, textLabelStyle]}>{dropDownLabelText}</Text>
+
+        <Dropdown
+          style={[styles.dropdown, dropDownMainStyle]}
+          selectedTextStyle={styles.selectedTextStyle}
+          iconStyle={styles.iconStyle}
+          placeholderStyle={[styles.placeholderStyle]}
+          search={true}
+          data={data_list}
+          labelField={labelField}
+          valueField={valueField}
+          placeholder={placeholder}
+          value={selected}
+          onChange={(item: any) => {
+            console.log("item", item)
+            // setSelected(item)
+            // renderSelectedItem(item)
+          }}
+        />
+        </>
+}
     </View>
   )
 }
@@ -45,16 +84,15 @@ DropDownView.defaultProps = {
   valueField: "value",
   selected: [],
 };
-
 const styles = StyleSheet.create({
   dropdown: {
     width: DimensionsScale.width * 0.3,
     paddingHorizontal: 10,
     backgroundColor: 'transparent',
-    borderColor:colors.commonGreyColor,
-    borderWidth:2,
-    borderRadius:5,
-    marginLeft:10
+    borderColor: colors.commonGreyColor,
+    borderWidth: 2,
+    borderRadius: 5,
+    marginVertical: 10
   },
   selectedTextStyle: {
     fontSize: verticalScale(14),
@@ -65,16 +103,14 @@ const styles = StyleSheet.create({
     height: 14,
     tintColor: colors.blackColorCode
   },
-  text:{
-    marginLeft:10,
-    fontSize:15,
-    fontWeight:"bold",
-    color:"#000"
-  },
-  
   placeholderStyle: {
     color: colors.blackColorCode,
     fontSize: verticalScale(15),
-  }
+  },
+  text:{
+    fontSize:verticalScale(15),
+    fontWeight:"bold",
+    color:"#000"
+  },
 });
 export default React.memo(DropDownView)

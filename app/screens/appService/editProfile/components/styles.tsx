@@ -8,21 +8,22 @@ export const windowHeight = Dimensions.get("window").height;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    marginHorizontal: verticalScale(20),
   },
   firstContain: {
     justifyContent: "center",
     alignItems: "center",
     flex: 1,
-    marginTop: 40,
+    marginTop: verticalScale(50),
   },
   secondContain: {
-    flex: 2,
+    flex: 1,
     textAlign: "center",
     justifyContent: "center",
     marginTop: verticalScale(30),
   },
   name: {
-    fontSize: 16,
+    fontSize: verticalScale(16),
     fontWeight: "bold",
     color: colors.primaryButtonColor,
     marginTop: verticalScale(5),
@@ -39,40 +40,37 @@ const styles = StyleSheet.create({
   },
   about: {
     fontWeight: "bold",
-    fontSize: 18,
+    fontSize: verticalScale(18),
     color: "#000",
-    marginLeft: verticalScale(32),
+    marginLeft: verticalScale(10),
   },
   fourthContainer: {
     flex: 2,
-
-    marginHorizontal: verticalScale(10),
   },
   birthdayView: {
     flexDirection: "row",
-    justifyContent: "center",
+    justifyContent: "space-around",
     marginTop: verticalScale(20),
   },
 
   schoolContainer: {
     flexDirection: "row",
     marginTop: verticalScale(15),
-    alignItems: "center",
     marginLeft: verticalScale(45),
-    justifyContent: "space-evenly",
+    justifyContent: "space-around",
   },
   graduation: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "space-around",
     marginTop: verticalScale(15),
   },
   footbal: {
     fontWeight: "bold",
-    fontSize: 18,
+    fontSize: verticalScale(18),
     color: "#000",
-    marginLeft: verticalScale(20),
-    marginTop: 15,
+    marginLeft: verticalScale(6),
+    marginTop: verticalScale(15),
   },
   footbalContainer: {
     flexDirection: "row",

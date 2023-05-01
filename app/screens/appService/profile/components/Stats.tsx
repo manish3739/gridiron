@@ -17,7 +17,7 @@ const Stats = (props: any) => {
       ListHeaderComponent={() => (
         <View>
           <View style={styles.StatsContainer}>
-            <View style={{ flexDirection: "row" }}>
+            <View style={{ flexDirection: "row", justifyContent:"space-evenly" }}>
               <Dropdown
               dropDownMainStyle={{width:DimensionsScale.width*0.25}}
               dropDownLabelText={strings.season}

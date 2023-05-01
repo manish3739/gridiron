@@ -7,11 +7,11 @@ import Button from "../../../../components/Button";
 import { colors } from "../../../../theme/colors";
 import { useNavigation } from "@react-navigation/native";
 import { CAMERA_PICKER_ICON, GALLERY_ICON, USER_ICON } from "../../../../theme/constantImages";
-import FormImagePicker from "../../../../components/ImagePicker/ImagePicker";
+import Dropdown from "../../../../components/dropdown";
+// import FormImagePicker from "../../../../components/ImagePicker/ImagePicker";
+// import DateTimePicker from "../../../../components/DateTimePicker";
 
 const WelcomeView = () => {
-
-    const [imagePicker, setImagePicker] = useState();
     const navigation: any = useNavigation();
     return (
         <View style={styles.welcomeScreen}>
@@ -24,6 +24,71 @@ const WelcomeView = () => {
                         style={styles.imageStyle}
                         source={GALLERY_ICON}
                     />
+                    {/* <Dropdown
+                    labelField={'name'}
+                    placeholder={'State'}
+                    data_list={[
+                        {
+                            name: 'Delhi',
+                            value: 1
+                        },
+                        {
+                            name: 'Andhra Pradesh',
+                            value: 2
+                        },
+                        {
+                            name: 'Madhya Pradesh',
+                            value: 3
+                        },
+                        {
+                            name: 'Tamil Nadu',
+                            value: 4
+                        },
+                        {
+                            name: 'Punjab',
+                            value: 5
+                        },
+                       
+                    ]}
+                    isMultiple={false}
+                />
+                <Dropdown
+                    renderSelectedItem={(value: any) => {
+                        console.log("value",value);
+                    }}
+                    labelField={'name'}
+                    placeholder={'City'}
+                    data_list={[
+                        {
+                            name: 'Indore',
+                            value: 1
+                        },
+                        {
+                            name: 'Bhopal',
+                            value: 2
+                        },
+                        {
+                            name: 'Jabalpur',
+                            value: 3
+                        },
+                        {
+                            name: 'Dewas',
+                            value: 4
+                        },
+                        {
+                            name: 'Ujjain',
+                            value: 5
+                        },
+                       
+                    ]}
+                    isMultiple={true}
+                /> */}
+                    {/* <DateTimePicker
+                        isDatePicker={true}
+                        isTimePicker={true}
+                        renderTime={(time:any) => console.log("time",time)}
+                        renderDate={(date:any) => console.log("date",date)}
+                    /> */}
                     {/* <FormImagePicker
                         onImageChange={(source: any) => {
                             setImagePicker(source.uri);

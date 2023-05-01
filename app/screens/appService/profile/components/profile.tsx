@@ -5,8 +5,10 @@ import { Alert, Image, ScrollView, Text, TouchableOpacity, View } from 'react-na
 import Header from "../../../../components/Header";
 import styles from "./styles";
 import {
+  CAMERA_PICKER_ICON,
   DRAWER_ICON,
   NO_IMAGE_PROFILE,
+  USER_ICON,
   
 } from "../../../../theme/constantImages";
 import strings from "../../../../components/locales";
@@ -17,10 +19,12 @@ import Stats from "./Stats";
 import Training from "./Training";
 import About from "./About";
 import { useNavigation } from "@react-navigation/native";
+import FormImagePicker from "../../../../components/ImagePicker/ImagePicker";
 
 
 const ProfileView = (props: any) => {
   const navigation: any = useNavigation();
+  const[imagePicker, setImagePicker] = useState(null)
 
   return (
     <View style={styles.container}>
@@ -38,10 +42,42 @@ const ProfileView = (props: any) => {
     </View>
     <View style={styles.secondContain}>
         <View style={{ alignItems: "center" }}>
-          <Image
+        <FormImagePicker
+                        onImageChange={(source: any) => {
+                             setImagePicker(source.uri);
+                        }}
+                        showPreview={true}
+                        renderTrigger={(selectImg: any) => (
+                            <>
+                                <View >
+                                    <View>
+                                        <View style={{ alignItems: 'center', justifyContent: 'center', width: 100, height: 100, borderRadius: 90, backgroundColor: colors.secondaryGreyColor }}>
+                                            {imagePicker ?
+                                                <Image style={{ width: 100, height: 100, borderRadius: 90 }} source={{ uri: imagePicker }} />
+                                                :
+                                                <Image style={{ tintColor: colors.commonLightGreyColor, width: 40, height: 40 }} source={USER_ICON} />
+                                            }
+                                        </View>
+                                        <TouchableOpacity onPress={() => selectImg()} style={{ height: 30, width: 30, position: 'absolute', right: 0, bottom: 5, backgroundColor: colors.commonGreyColor, justifyContent: 'center', alignItems: 'center', borderRadius: 30 }}>
+                                            <Image style={{ height: 15, width: 15, tintColor: colors.commonLightGreyColor }} source={CAMERA_PICKER_ICON} />
+                                        </TouchableOpacity>
+                                    </View>
+                                </View>
+                            </>
+                        )}
+                    />
+
+
+
+
+
+
+
+
+          {/* <Image
             resizeMode="contain"
             style={styles.noProfile}
-            source={NO_IMAGE_PROFILE} />
+            source={NO_IMAGE_PROFILE} /> */}
           <Text style={styles.name}>{strings.name}</Text>
           <Text>{strings.information}</Text>
           <Text style={styles.verify}>{strings.verify}</Text>

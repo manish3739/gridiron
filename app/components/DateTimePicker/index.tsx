@@ -45,6 +45,7 @@ export default function DateTimePicker(props: RNDatePickerProps) {
     hideDatePicker();
   };
   const handleTimeConfirm = (date: any) => {
+    console.log("date",date)
     setTime(date);
     renderDate(date);
     hideTimePicker();

@@ -28,11 +28,11 @@ import MyChallenges from '../screens/appService/myChallenges';
 import CompletedChallenges from '../screens/appService/completedChallenges';
 import { useAuth } from '../contexts/Auth';
 import { ActivityIndicator, View } from 'react-native';
-import PrivacyPolicyView from '../screens/appService/privacypolicy/components/privacypolicy';
 import newContent from '../screens/appService/newContent';
 import editProfile from '../screens/appService/editProfile';
 import contentTitleSave from '../screens/appService/contentTitleSave';
 import contentTitle from '../screens/appService/contentTitle';
+import privacypolicy from '../screens/appService/privacypolicy';
 
 const Stack: any = createStackNavigator();
 const AppStack: any = createStackNavigator();
@@ -96,7 +96,7 @@ const AppStackScreen = () => {
   return (
     <AppStack.Navigator screenOptions={{ headerShown: false }}>
       <AppStack.Screen component={TabStack} name="HomeTab" />
-      <AppStack.Screen component={PrivacyPolicyView} name="PrivacyPolicy" />
+      <AppStack.Screen component={privacypolicy} name="PrivacyPolicy" />
       <AppStack.Screen component={FAQScreen} name="FAQScreen" />
       <AppStack.Screen component={TermsAndCondition} name="TermsAndCondition" />
       <AppStack.Screen component={Settings} name="Settings" />

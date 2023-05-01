@@ -3,7 +3,6 @@ import React from "react";
 // import { connect } from "react-redux";
 import { ScrollView, View } from 'react-native';
 import Header from "../../../../components/Header";
-import {  RIGHT_ARROW } from "../../../../theme/constantImages";
 import strings from "../../../../components/locales";
 import { useNavigation } from "@react-navigation/native";
 import styles from "./styles";

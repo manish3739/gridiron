@@ -115,7 +115,6 @@ const styles = StyleSheet.create({
   },
   StatsContainer: {
     backgroundColor: "#eee",
-    // flex: 1,
     paddingBottom: 10,
   },
   TrainerContainer: {
