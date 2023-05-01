@@ -9,10 +9,8 @@ import {
 import Header from "../../../../components/Header";
 import styles from "./styles";
 import {
-  CAMERA_PICKER_ICON,
   DRAWER_ICON,
   NO_IMAGE_PROFILE,
-  USER_ICON,
 } from "../../../../theme/constantImages";
 import strings from "../../../../components/locales";
 import { colors } from "../../../../theme/colors";
@@ -22,11 +20,9 @@ import Stats from "./Stats";
 import Training from "./Training";
 import About from "./About";
 import { useNavigation } from "@react-navigation/native";
-import FormImagePicker from "../../../../components/ImagePicker/ImagePicker";
 
 const ProfileView = (props: any) => {
   const navigation: any = useNavigation();
-
   return (
     <View style={styles.container}>
       <View style={styles.firstContain}>
@@ -70,7 +66,7 @@ const ProfileView = (props: any) => {
       </View>
       <View style={styles.listTab}>
         <View style={styles.list}>
-          {props.listTab.map((e: any) => {
+          {props?.listTab.map((e: any) => {
             return (
               <TouchableOpacity
                 onPress={() => props.setStatusFilter(e.status)}

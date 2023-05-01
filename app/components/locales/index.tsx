@@ -64,7 +64,7 @@ const strings = new LocalizedStrings({
         save:"Save",
         NewContect:"New Content",
         title:"Title",
-        ContectTitle:"[Contant Title]",
+        ContectTitle:"[Content Title]",
         edit:"Edit",
         date:"3/17/23",
         editTitle:"Edit Title",

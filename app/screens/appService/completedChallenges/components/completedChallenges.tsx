@@ -14,9 +14,6 @@ import { useNavigation } from "@react-navigation/native";
 const CompletedChallengesView = (props: any) => {
   const navigation: any = useNavigation();
   return (
-    <ScrollView
-      contentContainerStyle={{ flexGrow: 1 }}
-    >
       <View style={styles.container}>
         <View style={styles.firstContain}>
           <Header
@@ -30,7 +27,6 @@ const CompletedChallengesView = (props: any) => {
       
         </View>
       </View>
-    </ScrollView>
   );
 };
 

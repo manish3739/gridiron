@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: colors.blackColorCode,
         borderWidth: 2,
-        borderColor: '#ccc',
+        borderColor: colors.commonGreyColor,
         borderRadius: 7,
         flexDirection: "row",
          alignItems: "center",

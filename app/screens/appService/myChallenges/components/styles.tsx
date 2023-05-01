@@ -1,18 +1,24 @@
-import { Dimensions, StyleSheet } from 'react-native';
+import { Dimensions, Platform, PlatformIOSStatic, StyleSheet } from 'react-native';
 import { verticalScale } from '../../../../utils/scale';
 import { colors } from '../../../../theme/colors';
 
 export const windowWidth = Dimensions.get('window').width;
 export const windowHeight = Dimensions.get('window').height;
+
+let platformIOS: any;
+if (Platform.OS === 'ios') {
+  platformIOS = Platform as PlatformIOSStatic
+}
+
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
     },
     firstContain: {
         justifyContent: 'center',
         alignItems: 'center',
         flex: 0.5,
-        paddingTop: 20
+        paddingTop: platformIOS?.isPad ? 0 : verticalScale(20)
     },
     secondContain: {
         flex: 5.5,
@@ -23,7 +29,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     greyTextStyle: {
-        color: colors.commonLightGreyColor,
+        color: colors.secondaryGreyColor,
         fontSize: 13
     },
     mainInformationContain: {

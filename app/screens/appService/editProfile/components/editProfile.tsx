@@ -1,8 +1,6 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { Image, ScrollView, View } from "react-native";
 import styles from "./styles";
-
-import { useNavigation } from "@react-navigation/native";
 import strings from "../../../../components/locales";
 import { colors } from "../../../../theme/colors";
 import RNTextInput from "../../../../components/Input/RNTextInput";
@@ -17,11 +15,8 @@ import { TouchableOpacity } from "react-native";
 
 const EditProfileView = (props: any) => {
   const [imagePicker, setImagePicker] = useState(null);
-  const navigation: any = useNavigation();
-
-
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView contentContainerStyle={{flexGrow:1,paddingBottom:verticalScale(20)}} >
       <View style={styles.firstContain}>
         <Header
           HeaderText={strings.EditProfile}
@@ -30,14 +25,13 @@ const EditProfileView = (props: any) => {
           isGoBack={true}
           isRightHeaderText={true}
           headerRightText={strings.save}
+          onPressRightImage={() => {}}
           headerRightTextStyle={{ color: colors.primaryButtonColor }}
-          onPressRightImage={() => navigation.navigate("contentTitle")}
         />
       </View>
-     <View style={{marginHorizontal:verticalScale(20)}}>
-     <View style={styles.secondContain}>
+      <View style={styles.secondContain}>
         <View style={styles.secoundContainerView}>
-        <FormImagePicker
+          <FormImagePicker
             onImageChange={(source: any) => {
               setImagePicker(source.uri);
             }}
@@ -82,7 +76,6 @@ const EditProfileView = (props: any) => {
         <Text style={styles.about}>{strings.about}</Text>
         <RNTextInput
           textStyleProps={{
-            marginLeft: verticalScale(8),
             fontWeight: "bold",
             paddingVertical: 0,
             marginTop: verticalScale(10),
@@ -94,39 +87,30 @@ const EditProfileView = (props: any) => {
           showRightImage={true}
           placeholderTextColor={colors.commonGreyColor}
           textInputContainer={{
-            height: DimensionsScale.height / 19,
             fontSize: verticalScale(12),
             borderRadius: 5,
-            marginLeft: verticalScale(8),
-            width: DimensionsScale.width * 0.86,
-            borderColor: colors.commonGreyColor,
-            borderWidth: 2,
+            width: '100%'
           }}
         />
         <RNTextInput
           textStyleProps={{
-            marginLeft: verticalScale(8),
             fontWeight: "bold",
             paddingVertical: 0,
             marginTop: verticalScale(10),
           }}
           textName={strings.bio}
           editable={true}
+          multiline
+          numberOfLines={5}
           keyboardType="default"
-          showLeftImage={true}
-          showRightImage={true}
           placeholderTextColor={colors.commonGreyColor}
           textInputContainer={{
-            height: DimensionsScale.height / 7,
+            height: DimensionsScale.height / 6,
             fontSize: verticalScale(12),
             borderRadius: 5,
-            marginLeft: verticalScale(8),
-            width: DimensionsScale.width * 0.86,
-            borderColor: colors.commonGreyColor,
-            borderWidth: 2,
             justifyContent: 'flex-start',
-            textAlignVertical: 'top'
-            
+            textAlignVertical: 'top',
+            width: '100%'
           }}
         />
       </View>
@@ -139,7 +123,7 @@ const EditProfileView = (props: any) => {
             }}
             dropDownLabelText={strings.birthday}
             placeholder={""}
-            renderSelectedItem={(value: any) => console.log("value000", value)}
+            renderSelectedItem={(value: any) => console.log("value", value)}
             labelField={"name"}
             data_list={[
               {
@@ -154,12 +138,12 @@ const EditProfileView = (props: any) => {
           />
           <Dropdown
             dropDownMainStyle={{
-              width: DimensionsScale.width * 0.42,
+              width: DimensionsScale.width * 0.4,
               marginTop: 0,
             }}
             dropDownLabelText={strings.Gender}
             placeholder={""}
-            renderSelectedItem={(value: any) => console.log("value000", value)}
+            renderSelectedItem={(value: any) => console.log("value", value)}
             labelField={"name"}
             data_list={[
               {
@@ -176,12 +160,12 @@ const EditProfileView = (props: any) => {
         <View style={[styles.birthdayView, { marginTop: verticalScale(10) }]}>
           <Dropdown
             dropDownMainStyle={{
-              width: DimensionsScale.width * 0.42,
+              width: DimensionsScale.width * 0.4,
               marginTop: 0,
             }}
             dropDownLabelText={strings.height}
             placeholder={""}
-            renderSelectedItem={(value: any) => console.log("value000", value)}
+            renderSelectedItem={(value: any) => console.log("value", value)}
             labelField={"name"}
             data_list={[
               {
@@ -196,12 +180,12 @@ const EditProfileView = (props: any) => {
           />
           <Dropdown
             dropDownMainStyle={{
-              width: DimensionsScale.width * 0.42,
+              width: DimensionsScale.width * 0.4,
               marginTop: 0,
             }}
             dropDownLabelText={strings.weight}
             placeholder={""}
-            renderSelectedItem={(value: any) => console.log("value000", value)}
+            renderSelectedItem={(value: any) => console.log("value", value)}
             labelField={"name"}
             data_list={[
               {
@@ -218,58 +202,60 @@ const EditProfileView = (props: any) => {
         <Text
           style={[
             styles.about,
-            { marginTop: verticalScale(20), marginLeft: verticalScale(10) },
+            { marginTop: verticalScale(20) },
           ]}
         >
           {strings.School}
         </Text>
         <View style={styles.schoolContainer}>
-         
-          <RNTextInput
-            textStyleProps={{
-              fontWeight: "bold",
-              paddingVertical: 0,
-            }}
-            textName={strings.city}
-            editable={true}
-            keyboardType="default"
-            showLeftImage={true}
-            showRightImage={true}
-            placeholderTextColor={colors.commonGreyColor}
-            textInputContainer={{
-              height: DimensionsScale.height / 19,
-              fontSize: verticalScale(12),
-              borderRadius: 5,
-              width: DimensionsScale.width * 0.54,
-              borderColor: colors.commonGreyColor,
-              borderWidth: 2,
-            }}
-          />
-           <Dropdown
-            dropDownMainStyle={{
-              width: DimensionsScale.width * 0.28,
-              marginTop: 0,
-            }}
-            dropDownLabelText={strings.state}
-            placeholder={""}
-            renderSelectedItem={(value: any) => console.log("value000", value)}
-            labelField={"name"}
-            data_list={[
-              {
-                name: "23-24",
-                value: 1,
-              },
-              {
-                name: "22-23",
-                value: 2,
-              },
-            ]}
-          />
+
+          <View style={{ flex: 4, alignItems: 'flex-start' }}>
+            <RNTextInput
+              textStyleProps={{
+                fontWeight: "bold",
+                paddingVertical: 0,
+              }}
+              textName={strings.city}
+              editable={true}
+              keyboardType="default"
+              showLeftImage={true}
+              showRightImage={true}
+              placeholderTextColor={colors.commonGreyColor}
+              textInputContainer={{
+                fontSize: verticalScale(12),
+                borderRadius: 5,
+                paddingVertical: 11
+              }}
+            />
+          </View>
+          <View style={{ flex: 2, alignItems: 'flex-end' }}>
+            <Dropdown
+              dropDownMainStyle={{
+                width: DimensionsScale.width * 0.3,
+                marginTop: 0,
+              }}
+              dropDownLabelText={strings.state}
+              placeholder={""}
+              renderSelectedItem={(value: any) => console.log("value", value)}
+              labelField={"name"}
+              data_list={[
+                {
+                  name: "23-24",
+                  value: 1,
+                },
+                {
+                  name: "22-23",
+                  value: 2,
+                },
+              ]}
+            />
+          </View>
+
+
         </View>
         <View>
           <RNTextInput
             textStyleProps={{
-              marginLeft: verticalScale(8),
               fontWeight: "bold",
               paddingVertical: 0,
               marginTop: verticalScale(1),
@@ -284,10 +270,6 @@ const EditProfileView = (props: any) => {
               height: DimensionsScale.height / 19,
               fontSize: verticalScale(12),
               borderRadius: 5,
-              marginLeft: verticalScale(6),
-              width: DimensionsScale.width * 0.869,
-              borderColor: colors.commonGreyColor,
-              borderWidth: 2,
             }}
           />
         </View>
@@ -299,7 +281,7 @@ const EditProfileView = (props: any) => {
             }}
             dropDownLabelText={strings.graduationYear1}
             placeholder={""}
-            renderSelectedItem={(value: any) => console.log("value000", value)}
+            renderSelectedItem={(value: any) => console.log("value", value)}
             labelField={"name"}
             data_list={[
               {
@@ -319,7 +301,7 @@ const EditProfileView = (props: any) => {
             }}
             dropDownLabelText={strings.GPA}
             placeholder={""}
-            renderSelectedItem={(value: any) => console.log("value000", value)}
+            renderSelectedItem={(value: any) => console.log("value", value)}
             labelField={"name"}
             data_list={[
               {
@@ -339,13 +321,12 @@ const EditProfileView = (props: any) => {
             <Dropdown
               dropDownMainStyle={{
                 width: DimensionsScale.width * 0.32,
-                marginRight: verticalScale(15),
                 marginTop: 0,
               }}
               dropDownLabelText={strings.mainPosition}
               placeholder={""}
               renderSelectedItem={(value: any) =>
-                console.log("value000", value)
+                console.log("value", value)
               }
               labelField={"name"}
               data_list={[
@@ -364,10 +345,13 @@ const EditProfileView = (props: any) => {
                 width: DimensionsScale.width * 0.32,
                 marginTop: 0,
               }}
+              mainContainerStyle={{
+                marginLeft: verticalScale(20)
+              }}
               dropDownLabelText={strings.otherPosition}
               placeholder={""}
               renderSelectedItem={(value: any) =>
-                console.log("value000", value)
+                console.log("value", value)
               }
               labelField={"name"}
               data_list={[
@@ -389,13 +373,12 @@ const EditProfileView = (props: any) => {
             <Dropdown
               dropDownMainStyle={{
                 width: DimensionsScale.width * 0.32,
-                marginRight: verticalScale(15),
                 marginTop: 0,
               }}
               dropDownLabelText={strings.mainPosition}
               placeholder={""}
               renderSelectedItem={(value: any) =>
-                console.log("value000", value)
+                console.log("value", value)
               }
               labelField={"name"}
               data_list={[
@@ -414,10 +397,13 @@ const EditProfileView = (props: any) => {
                 width: DimensionsScale.width * 0.32,
                 marginTop: 0,
               }}
+              mainContainerStyle={{
+                marginLeft: verticalScale(20)
+              }}
               dropDownLabelText={strings.otherPosition}
               placeholder={""}
               renderSelectedItem={(value: any) =>
-                console.log("value000", value)
+                console.log("value", value)
               }
               labelField={"name"}
               data_list={[
@@ -438,19 +424,17 @@ const EditProfileView = (props: any) => {
           <View
             style={[
               styles.footbalContainer,
-              { marginBottom: verticalScale(20) },
             ]}
           >
             <Dropdown
               dropDownMainStyle={{
                 width: DimensionsScale.width * 0.32,
-                marginRight: verticalScale(15),
                 marginTop: 0,
               }}
               dropDownLabelText={strings.mainPosition}
               placeholder={""}
               renderSelectedItem={(value: any) =>
-                console.log("value000", value)
+                console.log("value", value)
               }
               labelField={"name"}
               data_list={[
@@ -469,10 +453,13 @@ const EditProfileView = (props: any) => {
                 width: DimensionsScale.width * 0.32,
                 marginTop: 0,
               }}
+              mainContainerStyle={{
+                marginLeft: verticalScale(20)
+              }}
               dropDownLabelText={strings.otherPosition}
               placeholder={""}
               renderSelectedItem={(value: any) =>
-                console.log("value000", value)
+                console.log("value", value)
               }
               labelField={"name"}
               data_list={[
@@ -488,10 +475,7 @@ const EditProfileView = (props: any) => {
             />
           </View>
         </View>
-
-        <View></View>
       </View>
-     </View>
     </ScrollView>
   );
 };

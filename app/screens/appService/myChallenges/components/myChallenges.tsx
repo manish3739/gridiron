@@ -4,10 +4,8 @@ import { FlatList, Text, TouchableOpacity, View } from 'react-native';
 import Header from "../../../../components/Header";
 import styles from "./styles";
 import strings from "../../../../components/locales";
-import { colors } from "../../../../theme/colors";
 import { verticalScale } from "../../../../utils/scale";
 import { useNavigation } from "@react-navigation/native";
-
 
 const MyChallengesView = (props: any) => {
   const navigation: any = useNavigation();
