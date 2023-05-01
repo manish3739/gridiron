@@ -17,10 +17,11 @@ interface RNDropDownProps {
   isMultiple?: boolean,
   textLabelStyle?:any,
   dropDownLabelText?: any
+  placeHolderMainStyle?: any,
 }
 const DropDownView = (props: RNDropDownProps) => {
   const [selected, setSelected] = useState([]);
-  const { dropDownMainStyle, placeholder, data_list, labelField, valueField, renderSelectedItem, textLabelStyle,  dropDownLabelText} = props;
+  const { dropDownMainStyle, placeholder, data_list, labelField, valueField, renderSelectedItem, textLabelStyle,  dropDownLabelText, placeHolderMainStyle} = props;
   return (
     <View testID={props.testID} >
       {props.isMultiple &&
@@ -29,7 +30,7 @@ const DropDownView = (props: RNDropDownProps) => {
         <MultiSelect
           style={[styles.dropdown, dropDownMainStyle]}
           iconStyle={styles.iconStyle}
-          placeholderStyle={[styles.placeholderStyle]}
+          placeholderStyle={[styles.placeholderStyle,placeHolderMainStyle]}
           search={true}
           data={data_list}
           // @ts-ignore
@@ -54,7 +55,7 @@ const DropDownView = (props: RNDropDownProps) => {
           style={[styles.dropdown, dropDownMainStyle]}
           selectedTextStyle={styles.selectedTextStyle}
           iconStyle={styles.iconStyle}
-          placeholderStyle={[styles.placeholderStyle]}
+          placeholderStyle={[styles.placeholderStyle,placeHolderMainStyle]}
           search={true}
           data={data_list}
           labelField={labelField}
@@ -86,13 +87,12 @@ DropDownView.defaultProps = {
 };
 const styles = StyleSheet.create({
   dropdown: {
-    width: DimensionsScale.width * 0.3,
     paddingHorizontal: 10,
     backgroundColor: 'transparent',
-    borderColor: colors.commonGreyColor,
     borderWidth: 2,
-    borderRadius: 5,
-    marginVertical: 10
+    borderRadius: 7,
+    borderColor: '#c5ced5',
+    width: verticalScale(120)
   },
   selectedTextStyle: {
     fontSize: verticalScale(14),
