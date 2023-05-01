@@ -8,7 +8,6 @@ export const windowHeight = Dimensions.get("window").height;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginHorizontal: verticalScale(20),
   },
   firstContain: {
     justifyContent: "center",

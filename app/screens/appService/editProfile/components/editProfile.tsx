@@ -30,7 +30,8 @@ const EditProfileView = (props: any) => {
           onPressRightImage={() => navigation.navigate("contentTitle")}
         />
       </View>
-      <View style={styles.secondContain}>
+     <View style={{marginHorizontal:verticalScale(20)}}>
+     <View style={styles.secondContain}>
         <View style={styles.secoundContainerView}>
           <Image
             resizeMode="contain"
@@ -452,6 +453,7 @@ const EditProfileView = (props: any) => {
 
         <View></View>
       </View>
+     </View>
     </ScrollView>
   );
 };
