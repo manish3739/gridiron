@@ -21,6 +21,7 @@
     "moment": "^2.29.4",
     "react": "18.1.0",
     "react-native": "0.70.6",
+    "react-native-element-dropdown": "^2.9.0",
     "react-native-fs": "^2.20.0",
     "react-native-gesture-handler": "^2.9.0",
     "react-native-image-picker": "^5.3.1",

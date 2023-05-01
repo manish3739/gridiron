@@ -31,7 +31,7 @@ import { ActivityIndicator, View } from 'react-native';
 import NewContentView from '../screens/appService/newContent/components/newContent';
 import ContentTitleView from '../screens/appService/contentTitle/components/contentTitle';
 import ContentTitleSaveView from '../screens/appService/contentTitleSave/components/ContentTitleSave';
-import PrivacyPolicy from '../screens/appService/privacyPolicy';
+import PrivacyPolicy from '../screens/appService/privacypolicy';
 
 const Stack: any = createStackNavigator();
 const AppStack: any = createStackNavigator();

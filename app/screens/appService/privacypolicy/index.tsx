@@ -2,7 +2,7 @@
 import React from "react";
 import { View } from 'react-native';
 import { connect } from "react-redux";
-import PrivacyPolicyView from "./components/privacyPolicy";
+import PrivacyPolicyView from "./components/privacypolicy";
 
 const PrivacyPolicy = (props:any) => {
     return (

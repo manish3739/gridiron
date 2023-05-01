@@ -55,8 +55,9 @@ const FormImagePicker = ({
         console.log("User tapped custom button: ", response.customButton);
       } else {
         let path = response.uri;
+        console.log("path",path)
         if (Platform.OS === "ios") {
-          path = `~${path.substring(path.indexOf("/Documents"))}`;
+          path = path ? `~${path.substring(path.indexOf("/Documents"))}`: "";
         }
         if (!response.fileName) response.fileName = path?.split("/").pop();
         if (response.width > 1000 || response.height > 1000) {
@@ -100,10 +101,10 @@ const FormImagePicker = ({
           // You can also display the image using data:
           // const source = { uri: 'data:image/jpeg;base64,' + response.data };
           onImageChange({
-            uri: response.assets[0].uri,
-            data: response.assets[0].base64,
-            fileName: response.assets[0].fileName,
-            type: response.assets[0].type
+            uri: response?.assets && response?.assets[0].uri,
+            data: response?.assets && response?.assets[0].base64,
+            fileName: response?.assets && response?.assets[0].fileName,
+            type: response?.assets && response?.assets[0].type
           });
         }
       }
@@ -120,7 +121,7 @@ const FormImagePicker = ({
       } else {
         let path = response.uri;
         if (Platform.OS === "ios") {
-          path = `~${path.substring(path.indexOf("/Documents"))}`;
+          path = path ? `~${path.substring(path.indexOf("/Documents"))}` : "";
         }
         if (!response.fileName) response.fileName = path?.split("/").pop();
         if (response.width > 1000 || response.height > 1000) {

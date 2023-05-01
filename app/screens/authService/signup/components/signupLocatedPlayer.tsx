@@ -31,22 +31,6 @@ const SignupLocatedPlayerView = (props: any) => {
                     height={15}
                 />
                 <Text style={styles.mainOnBoardingLabel}>{strings.whereYouLocated}</Text>
-                <Dropdown
-                    renderSelectedItem={(value: any) => console.log("value000", value)}
-                    labelField={'name'}
-                    data_list={
-                        [
-                            {
-                                name: 'indore',
-                                value: 1
-                            },
-                            {
-                                name: 'bhopal',
-                                value: 2
-                            },
-                        ]
-                    }
-                />
             </View>
 
             <View style={styles.thirdContain}>

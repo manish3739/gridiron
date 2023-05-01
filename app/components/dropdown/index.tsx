@@ -1,34 +1,68 @@
+// @ts-ignore
 import React, { useState } from 'react'
 import { View, Text, StyleSheet, Image } from 'react-native'
 import { USER_ICON } from '../../theme/constantImages';
-import { Dropdown } from './components';
+import { Dropdown, MultiSelect } from './components';
 import { verticalScale } from '../../utils/scale';
 import { colors } from '../../theme/colors';
 import { DimensionsScale } from '../../theme/Dimensions';
 
-const DropDownView = (props: any) => {
+
+interface RNDropDownProps {
+  dropDownMainStyle?: any,
+  placeholder?: any,
+  data_list?: any,
+  labelField?: any,
+  valueField?: any,
+  renderSelectedItem?: any,
+  testID?: any,
+  isMultiple?: boolean,
+}
+const DropDownView = (props: RNDropDownProps) => {
 
   const [selected, setSelected] = useState([]);
   const { dropDownMainStyle, placeholder, data_list, labelField, valueField, renderSelectedItem } = props;
   return (
     <View testID={props.testID} >
-      <Dropdown
-        style={[styles.dropdown, dropDownMainStyle]}
-        selectedTextStyle={styles.selectedTextStyle}
-        iconStyle={styles.iconStyle}
-        placeholderStyle={[styles.placeholderStyle]}
-        search={true}
-        data={data_list}
-        labelField={labelField}
-        valueField={valueField}
-        placeholder={placeholder}
-        searchPlaceholder="Search..."
-        value={selected}
-        onChange={(item: any) => {
-          setSelected(item)
-          renderSelectedItem(item)
-        }}
-      />
+
+      {props.isMultiple &&
+        <MultiSelect
+          style={[styles.dropdown, dropDownMainStyle]}
+          iconStyle={styles.iconStyle}
+          placeholderStyle={[styles.placeholderStyle]}
+          search={true}
+          data={data_list}
+          // @ts-ignore
+          labelField={labelField}
+          // @ts-ignore
+          valueField={valueField}
+          placeholder={placeholder}
+          value={selected}
+          itemTextStyle={{color:colors.blackColorCode}}
+          renderSelectedValues={(item:any) => renderSelectedItem(item)}
+          onChange={(item:any) => {
+            setSelected(item)
+          }}
+        /> }
+        {!props.isMultiple &&
+        <Dropdown
+          style={[styles.dropdown, dropDownMainStyle]}
+          selectedTextStyle={styles.selectedTextStyle}
+          iconStyle={styles.iconStyle}
+          placeholderStyle={[styles.placeholderStyle]}
+          search={true}
+          data={data_list}
+          labelField={labelField}
+          valueField={valueField}
+          placeholder={placeholder}
+          value={selected}
+          onChange={(item: any) => {
+            console.log("item", item)
+            // setSelected(item)
+            // renderSelectedItem(item)
+          }}
+        />
+}
     </View>
   )
 }
