@@ -87,6 +87,8 @@ const strings = new LocalizedStrings({
         selectImageLabel: "Select Image",
         takePhotoLabel: "Take Photo",
         chooseFromLibrary: "Choose From Library",
+        zipCodeLabel: "Zip",
+        cityLabel: "City",
     },
     fr: {
         continue: "test"

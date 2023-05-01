@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     },
     secondContain: {
         flex: 3.5,
-        alignItems: 'center'
+        alignItems: 'center',
     },
     thirdContain: {
         flex: 1.5,
@@ -52,6 +52,45 @@ const styles = StyleSheet.create({
         width: '100%',
         paddingHorizontal: verticalScale(25),
         paddingTop: verticalScale(20)
+    },
+    listContainerStyle: {
+        flexDirection: 'row',
+         flexWrap: 'wrap', 
+        justifyContent: 'center', 
+        alignItems: 'center'
+    },
+    mainContainList: {
+        alignItems: 'center' 
+    },
+    imageViewStyle: {
+        width: verticalScale(150),
+        height: verticalScale(90),
+        backgroundColor: colors.commonLightGreyColor,
+        justifyContent: 'center',
+        alignItems: 'center',
+        margin: verticalScale(15),
+        flexDirection: 'row'
+    },
+    mainImageStyle: {
+        tintColor: colors.secondaryGreyColor,
+        width: verticalScale(45),
+        height: verticalScale(45)
+    },
+    locatedMainStyle: {
+        flexDirection: 'row', 
+        alignItems: 'center', 
+        marginTop: verticalScale(20)
+    },
+    mainBoldStyle: {
+        alignItems: 'center', 
+        width: '100%'
+    },
+    mainGraduateView: {
+        flexDirection: 'row',
+         width: '100%', 
+        justifyContent: 'space-between', 
+        paddingHorizontal: verticalScale(25), 
+        marginVertical: verticalScale(20) 
     }
 });
 
