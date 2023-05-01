@@ -124,8 +124,10 @@ const strings = new LocalizedStrings({
         mainPosition:"Main Position",
         otherPosition:"Other Positions",
         baseball:"Baseball",
-        Basketball:"Basketball"
-
+        Basketball:"Basketball",
+        selectImageLabel: "Select Image",
+        takePhotoLabel: "Take Photo",
+        chooseFromLibrary: "Choose From Library",
     },
     fr: {
         continue: "test"
