@@ -110,7 +110,22 @@ const strings = new LocalizedStrings({
         season:'Season',
         sports:"Sport",
         position:"Position",
-        EditProfile:"Edit Profile"
+        EditProfile:"Edit Profile",
+        ChangePassword:"Change Picture",
+        Name:"Name",
+        bio:'Bio',
+        birthday:"Birthday",
+        Gender:'Gender',
+        School:"School",
+        city:"City",
+        state:'State',
+        graduationYear1:'Graduation Year',
+        footbal:"Football",
+        mainPosition:"Main Position",
+        otherPosition:"Other Positions",
+        baseball:"Baseball",
+        Basketball:"Basketball"
+
     },
     fr: {
         continue: "test"

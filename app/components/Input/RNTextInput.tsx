@@ -21,12 +21,13 @@ interface RNTextInputProps extends TextInputProps {
     isError?: any,
     secureTextEntry?: any,
     handleRightImage?: any,
+    textStyleProps?:any
 }
 
 const RNTextInput = (Props: RNTextInputProps) => {
     return (
         <View testID={Props.testID} style={[styles.container, Props.containerStyle]}>
-            <Text style={styles.textStyle}>{Props.textName}</Text>
+            <Text style={[styles.textStyle, Props.textStyleProps]}>{Props.textName}</Text>
             {Props.showLeftImage &&
                 <Image style={[styles.leftImageStyle, Props.leftIconStyle]} source={Props.leftImage} />
             }

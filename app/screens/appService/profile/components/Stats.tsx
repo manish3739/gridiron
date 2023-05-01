@@ -79,7 +79,7 @@ const Stats = (props: any) => {
 
             <FlatList
               data={props.data1}
-              keyExtractor={(item) => item.name}
+              keyExtractor={(item) => `${item.id}`}
               horizontal
               renderItem={({ item }) => {
                 return (
