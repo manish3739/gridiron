@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
   footbalContainer: {
     flexDirection: "row",
     marginTop: verticalScale(10),
-    marginLeft: verticalScale(10),
+    marginLeft: verticalScale(6),
   },
 });
 

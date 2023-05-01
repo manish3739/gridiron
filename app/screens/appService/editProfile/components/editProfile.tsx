@@ -230,7 +230,7 @@ const EditProfileView = (props: any) => {
         <View>
           <RNTextInput
             textStyleProps={{
-              marginLeft: verticalScale(10),
+              marginLeft: verticalScale(8),
               fontWeight: "bold",
               paddingVertical: 0,
               marginTop: verticalScale(15),
@@ -245,8 +245,8 @@ const EditProfileView = (props: any) => {
               height: DimensionsScale.height / 19,
               fontSize: verticalScale(12),
               borderRadius: 5,
-              marginLeft: verticalScale(8),
-              width: DimensionsScale.width * 0.865,
+              marginLeft: verticalScale(6),
+              width: DimensionsScale.width * 0.869,
               borderColor: colors.commonGreyColor,
               borderWidth: 2,
             }}
