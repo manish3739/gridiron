@@ -8,6 +8,8 @@ import { DimensionsScale } from "../../../../theme/Dimensions";
 import Button from "../../../../components/Button";
 import strings from "../../../../components/locales";
 import { colors } from "../../../../theme/colors";
+import Dropdown from "../../../../components/dropdown";
+import { verticalScale } from "../../../../utils/scale";
 // import { connect } from "react-redux";
 
 const SignupGraduateView = (props: any) => {
@@ -30,7 +32,51 @@ const SignupGraduateView = (props: any) => {
                     style={{ marginVertical: 10 }}
                     height={15}
                 />
-               <Text style={styles.mainOnBoardingLabel}>{strings.chooseGraduation}</Text>
+                <Text style={styles.mainOnBoardingLabel}>{strings.chooseGraduation}</Text>
+                <View style={styles.mainGraduateView}>
+                    <Dropdown
+                        labelField={'name'}
+                        placeholder={'Ohio Highschool'}
+                        data_list={[
+                            {
+                                name: 'Delhi',
+                                value: 1
+                            },
+                            {
+                                name: 'Karnataka',
+                                value: 2
+                            },
+                            {
+                                name: 'Punjab',
+                                value: 3
+                            },
+                        ]}
+                        dropDownMainStyle={{ width: DimensionsScale.width * 0.5 }}
+                        isMultiple={false}
+                    />
+                    <Dropdown
+                        labelField={'name'}
+                        placeholder={'Year'}
+                        data_list={[
+                            {
+                                name: '2020',
+                                value: 1
+                            },
+                            {
+                                name: '2021',
+                                value: 2
+                            },
+                            {
+                                name: '2022',
+                                value: 3
+                            },
+
+                        ]}
+                        dropDownMainStyle={{ width: DimensionsScale.width * 0.3 }}
+                        isMultiple={false}
+                    />
+                </View>
+
             </View>
 
             <View style={styles.thirdContain}>

@@ -15,13 +15,14 @@ interface RNDropDownProps {
   renderSelectedItem?: any,
   testID?: any,
   isMultiple?: boolean,
-  textLabelStyle?:any,
-  dropDownLabelText?: any,
+  placeHolderMainStyle?: any,
+  textLabelStyle?: any,
   mainContainerStyle?: any,
+  dropDownLabelText?: any,
 }
 const DropDownView = (props: RNDropDownProps) => {
   const [selected, setSelected] = useState([]);
-  const { dropDownMainStyle, placeholder, data_list, labelField, valueField, renderSelectedItem, textLabelStyle,  dropDownLabelText, mainContainerStyle } = props;
+  const { dropDownMainStyle, placeholder, data_list, labelField, valueField, renderSelectedItem, textLabelStyle,  dropDownLabelText, mainContainerStyle, placeHolderMainStyle } = props;
   
   return (
     <View testID={props.testID} style={[styles.mainView, mainContainerStyle]} >
@@ -31,7 +32,7 @@ const DropDownView = (props: RNDropDownProps) => {
         <MultiSelect
           style={[styles.dropdown, dropDownMainStyle]}
           iconStyle={styles.iconStyle}
-          placeholderStyle={[styles.placeholderStyle]}
+          placeholderStyle={[styles.placeholderStyle,placeHolderMainStyle]}
           search={true}
           data={data_list}
           // @ts-ignore
@@ -56,7 +57,7 @@ const DropDownView = (props: RNDropDownProps) => {
           style={[styles.dropdown, dropDownMainStyle]}
           selectedTextStyle={styles.selectedTextStyle}
           iconStyle={styles.iconStyle}
-          placeholderStyle={[styles.placeholderStyle]}
+          placeholderStyle={[styles.placeholderStyle,placeHolderMainStyle]}
           search={true}
           data={data_list}
           labelField={labelField}
@@ -90,13 +91,12 @@ const styles = StyleSheet.create({
   mainView: {
   },
   dropdown: {
-    width: DimensionsScale.width * 0.3,
     paddingHorizontal: 10,
     backgroundColor: 'transparent',
-    borderColor: colors.commonGreyColor,
     borderWidth: 2,
-    borderRadius: 5,
-    marginVertical: 10
+    borderRadius: 7,
+    borderColor: '#c5ced5',
+    width: verticalScale(120)
   },
   selectedTextStyle: {
     fontSize: verticalScale(14),
