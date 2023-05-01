@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { Image, ScrollView, View } from "react-native";
 import styles from "./styles";
 
@@ -9,12 +9,16 @@ import RNTextInput from "../../../../components/Input/RNTextInput";
 import { DimensionsScale } from "../../../../theme/Dimensions";
 import { verticalScale } from "../../../../utils/scale";
 import Header from "../../../../components/Header";
-import { NO_IMAGE_PROFILE } from "../../../../theme/constantImages";
+import { CAMERA_PICKER_ICON, USER_ICON } from "../../../../theme/constantImages";
 import { Text } from "react-native";
 import Dropdown from "../../../../components/dropdown";
+import FormImagePicker from "../../../../components/ImagePicker/ImagePicker";
+import { TouchableOpacity } from "react-native";
 
 const EditProfileView = (props: any) => {
+  const [imagePicker, setImagePicker] = useState(null);
   const navigation: any = useNavigation();
+
 
   return (
     <ScrollView style={styles.container}>
@@ -33,10 +37,43 @@ const EditProfileView = (props: any) => {
      <View style={{marginHorizontal:verticalScale(20)}}>
      <View style={styles.secondContain}>
         <View style={styles.secoundContainerView}>
-          <Image
-            resizeMode="contain"
-            style={styles.noProfile}
-            source={NO_IMAGE_PROFILE}
+        <FormImagePicker
+            onImageChange={(source: any) => {
+              setImagePicker(source.uri);
+            }}
+            showPreview={true}
+            renderTrigger={(selectImg: any) => (
+              <>
+                <View>
+                  <View>
+                    <View
+                      style={styles.imagepickerStyle}
+                    >
+                      {imagePicker ? (
+                        <Image
+                          style={styles.picker}
+                          source={{ uri: imagePicker }}
+                        />
+                      ) : (
+                        <Image
+                          style={styles.image2}
+                          source={USER_ICON}
+                        />
+                      )}
+                    </View>
+                    <TouchableOpacity
+                      onPress={() => selectImg()}
+                      style={styles.imagePicker}
+                    >
+                      <Image
+                        style={styles.image}
+                        source={CAMERA_PICKER_ICON}
+                      />
+                    </TouchableOpacity>
+                  </View>
+                </View>
+              </>
+            )}
           />
           <Text style={styles.name}>{strings.ChangePassword}</Text>
         </View>
@@ -87,6 +124,9 @@ const EditProfileView = (props: any) => {
             width: DimensionsScale.width * 0.86,
             borderColor: colors.commonGreyColor,
             borderWidth: 2,
+            justifyContent: 'flex-start',
+            textAlignVertical: 'top'
+            
           }}
         />
       </View>
@@ -184,13 +224,33 @@ const EditProfileView = (props: any) => {
           {strings.School}
         </Text>
         <View style={styles.schoolContainer}>
-          <Dropdown
-            dropDownMainStyle={{
-              width: DimensionsScale.width * 0.3,
-              marginTop: 0,
-              marginRight: verticalScale(55),
+         
+          <RNTextInput
+            textStyleProps={{
+              fontWeight: "bold",
+              paddingVertical: 0,
             }}
-            dropDownLabelText={strings.city}
+            textName={strings.city}
+            editable={true}
+            keyboardType="default"
+            showLeftImage={true}
+            showRightImage={true}
+            placeholderTextColor={colors.commonGreyColor}
+            textInputContainer={{
+              height: DimensionsScale.height / 19,
+              fontSize: verticalScale(12),
+              borderRadius: 5,
+              width: DimensionsScale.width * 0.54,
+              borderColor: colors.commonGreyColor,
+              borderWidth: 2,
+            }}
+          />
+           <Dropdown
+            dropDownMainStyle={{
+              width: DimensionsScale.width * 0.28,
+              marginTop: 0,
+            }}
+            dropDownLabelText={strings.state}
             placeholder={""}
             renderSelectedItem={(value: any) => console.log("value000", value)}
             labelField={"name"}
@@ -205,28 +265,6 @@ const EditProfileView = (props: any) => {
               },
             ]}
           />
-          <RNTextInput
-            textStyleProps={{
-              marginLeft: verticalScale(32),
-              fontWeight: "bold",
-              paddingVertical: 0,
-            }}
-            textName={strings.Name}
-            editable={true}
-            keyboardType="default"
-            showLeftImage={true}
-            showRightImage={true}
-            placeholderTextColor={colors.commonGreyColor}
-            textInputContainer={{
-              height: DimensionsScale.height / 19,
-              fontSize: verticalScale(12),
-              borderRadius: 5,
-              marginLeft: verticalScale(32),
-              width: DimensionsScale.width * 0.53,
-              borderColor: colors.commonGreyColor,
-              borderWidth: 2,
-            }}
-          />
         </View>
         <View>
           <RNTextInput
@@ -234,7 +272,7 @@ const EditProfileView = (props: any) => {
               marginLeft: verticalScale(8),
               fontWeight: "bold",
               paddingVertical: 0,
-              marginTop: verticalScale(15),
+              marginTop: verticalScale(1),
             }}
             textName={strings.school}
             editable={true}
@@ -259,7 +297,7 @@ const EditProfileView = (props: any) => {
               width: DimensionsScale.width * 0.5,
               marginTop: 0,
             }}
-            dropDownLabelText={strings.birthday}
+            dropDownLabelText={strings.graduationYear1}
             placeholder={""}
             renderSelectedItem={(value: any) => console.log("value000", value)}
             labelField={"name"}

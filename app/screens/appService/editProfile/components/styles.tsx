@@ -55,8 +55,8 @@ const styles = StyleSheet.create({
   schoolContainer: {
     flexDirection: "row",
     marginTop: verticalScale(15),
-    marginLeft: verticalScale(45),
     justifyContent: "space-around",
+    marginHorizontal: verticalScale(29),
   },
   graduation: {
     flexDirection: "row",
@@ -75,6 +75,40 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     marginTop: verticalScale(10),
     marginLeft: verticalScale(6),
+  },
+  imagepickerStyle: {
+    alignItems: "center",
+    justifyContent: "center",
+    width: 100,
+    height: 100,
+    borderRadius: 90,
+    backgroundColor: colors.secondaryGreyColor,
+  },
+  picker: { 
+    width: 100, 
+    height: 100, 
+    borderRadius: 90 
+  },
+  imagePicker: {
+    height: 30,
+    width: 30,
+    position: "absolute",
+    right: 0,
+    bottom: 5,
+    backgroundColor: colors.commonGreyColor,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 30,
+  },
+  image: {
+    height: 15,
+    width: 15,
+    tintColor: colors.commonLightGreyColor,
+  },
+  image2: {
+    tintColor: colors.commonLightGreyColor,
+    width: 40,
+    height: 40,
   },
 });
 

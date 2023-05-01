@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
         borderColor: '#ccc',
         borderRadius: 7,
         flexDirection: "row",
-        alignItems: "center",
+         alignItems: "center",
     },
     leftImageStyle: {
         height: 20,
