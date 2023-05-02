@@ -14,11 +14,13 @@ interface RNDatePickerProps {
   renderTime?: any,
   isDatePicker?: any,
   isTimePicker?: any,
+  textDatePicker?:any,
+  textlabelStyle?: any
 }
 
 export default function DateTimePicker(props: RNDatePickerProps) {
 
-  const { pickerContainer, renderDate, renderTime, isDatePicker, isTimePicker } = props;
+  const { pickerContainer, renderDate, renderTime, isDatePicker, isTimePicker, textDatePicker, textlabelStyle } = props;
 
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
   const [isTimePickerVisible, setTimePickerVisibility] = useState(false);
@@ -67,12 +69,19 @@ export default function DateTimePicker(props: RNDatePickerProps) {
         onCancel={hideTimePicker}
       />
       {isDatePicker &&
-        <View style={[styles.pickerMainContain]}>
+      
+       <View>
+        <Text style={[styles.textstyle, textlabelStyle]}>
+          {textDatePicker}
+        </Text>
+         <View style={[styles.pickerMainContain]}>
+          
           <TouchableOpacity onPress={showDatePicker} style={[styles.pickerContainer, pickerContainer]}>
             <Text style={styles.selectedDateTimeStyle}>{moment(date).format('DD/MM/YYYY')}</Text>
           </TouchableOpacity>
           <Image style={styles.pickerIconStyle} source={CALENDER_ICON} />
         </View>
+       </View>
       }
       {isTimePicker &&
         <View style={[styles.pickerMainContain]}>
@@ -94,6 +103,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center'
   },
+  textstyle:{
+  fontWeight:"bold",
+  marginBottom:0,
+  color:"#000"
+  },
   datePicker: {
     justifyContent: 'center',
     alignItems: 'flex-start',
@@ -106,7 +120,6 @@ const styles = StyleSheet.create({
     borderColor: colors.commonGreyColor,
     borderWidth: 2,
     borderRadius: 5,
-    marginVertical: 10,
     height: 44,
     justifyContent: 'center',
     alignItems: 'center'

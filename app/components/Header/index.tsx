@@ -52,7 +52,7 @@ const Header = (props: any) => {
                     </TouchableOpacity>
                 </View>
                 <View style={[HeaderMiddleView, HeaderMiddleTxt]}>
-                    {!noMiddleLabel && <Text numberOfLines={1} style={[MainHeadTxt, MainHeadStyle]}>
+                    {!noMiddleLabel && <Text  style={[MainHeadTxt, MainHeadStyle]}>
                         {HeaderText}
                     </Text>}
                 </View>

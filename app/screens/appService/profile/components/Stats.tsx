@@ -7,9 +7,12 @@ import { verticalScale } from "../../../../utils/scale";
 import { colors } from "../../../../theme/colors";
 import Dropdown from "../../../../components/dropdown";
 import { DimensionsScale } from "../../../../theme/Dimensions";
+import { useNavigation } from "@react-navigation/native";
 
 const Stats = (props: any) => {
   const [state, setState]: any = useState(null);
+  const navigation: any = useNavigation();
+
   return (
     <FlatList
       data={[]}
@@ -150,7 +153,10 @@ const Stats = (props: any) => {
               },
             ]}
           >
-            <Button buttonText={strings.addNew} style={styles.addNew} />
+            <Button buttonText={strings.addNew} style={styles.addNew} 
+            onPress={() => navigation.navigate('newGame')}
+            
+            />
           </View>
         </View>
       )}

@@ -33,6 +33,8 @@ import editProfile from '../screens/appService/editProfile';
 import contentTitleSave from '../screens/appService/contentTitleSave';
 import contentTitle from '../screens/appService/contentTitle';
 import privacypolicy from '../screens/appService/privacypolicy';
+import newGame from '../screens/appService/newGame';
+import gameDetail from '../screens/appService/gameDetail';
 
 const Stack: any = createStackNavigator();
 const AppStack: any = createStackNavigator();
@@ -117,6 +119,9 @@ const AppStackScreen = () => {
       <AppStack.Screen component={contentTitle} name="contentTitle" />
       <AppStack.Screen component={contentTitleSave} name="contentTitleSave" />
       <AppStack.Screen component={editProfile} name="editProfile" />
+      <AppStack.Screen component={newGame} name="newGame" />
+      <AppStack.Screen component={gameDetail} name="gameDetail" />
+
 
     </AppStack.Navigator>
   );

@@ -130,6 +130,23 @@ const strings = new LocalizedStrings({
         chooseFromLibrary: "Choose From Library",
         zipCodeLabel: "Zip",
         cityLabel: "City",
+        newGame:"New Game",
+        game:"Game",
+        inputGame:"Input game title",
+        share:"Share to record stats",
+        enterManually:"Enter Manually",
+        game8 :"Game 8 vs. Cleveland HS 3/15/2023",
+        Quarter:"Quarterback",
+        Attempts:"Attempts",
+        yards:"Yards",
+        Touchdowns:"Touchdowns",
+        Fumbles:"Fumbles",
+        FumblesLost:"Fumbles Lost",
+        saveStats:"Save Stats"
+
+
+        
+
     },
     fr: {
         continue: "test"
