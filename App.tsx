@@ -14,30 +14,30 @@ import { AuthProvider } from './app/contexts/Auth';
 
 const App = () => {
 
-  useEffect(() => {
-    if (Platform.OS === "android") {
-      PermissionsAndroid.requestMultiple([
-        PermissionsAndroid.PERMISSIONS.CAMERA,
-        PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE,
-        PermissionsAndroid.PERMISSIONS.RECORD_AUDIO,
-        PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
-      ]).then((result) => {
-        if (
-          result["android.permission.CAMERA"] &&
-          result["android.permission.READ_EXTERNAL_STORAGE"] &&
-          result["android.permission.RECORD_AUDIO"] &&
-          result["android.permission.WRITE_EXTERNAL_STORAGE"]
-        ) {
-        } else if (
-          result["android.permission.CAMERA"] ||
-          result["android.permission.READ_EXTERNAL_STORAGE"] ||
-          result["android.permission.RECORD_AUDIO"] ||
-          result["android.permission.WRITE_EXTERNAL_STORAGE"]
-        ) {
-        }
-      });
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (Platform.OS === "android") {
+  //     PermissionsAndroid.requestMultiple([
+  //       PermissionsAndroid.PERMISSIONS.CAMERA,
+  //       PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE,
+  //       PermissionsAndroid.PERMISSIONS.RECORD_AUDIO,
+  //       PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
+  //     ]).then((result) => {
+  //       if (
+  //         result["android.permission.CAMERA"] &&
+  //         result["android.permission.READ_EXTERNAL_STORAGE"] &&
+  //         result["android.permission.RECORD_AUDIO"] &&
+  //         result["android.permission.WRITE_EXTERNAL_STORAGE"]
+  //       ) {
+  //       } else if (
+  //         result["android.permission.CAMERA"] ||
+  //         result["android.permission.READ_EXTERNAL_STORAGE"] ||
+  //         result["android.permission.RECORD_AUDIO"] ||
+  //         result["android.permission.WRITE_EXTERNAL_STORAGE"]
+  //       ) {
+  //       }
+  //     });
+  //   }
+  // }, []);
   return (
     <Provider store={store}>
       <View style={{ flex: 1 }}>
