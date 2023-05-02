@@ -5,7 +5,7 @@ export const windowWidth = Dimensions.get('window').width;
 export const windowHeight = Dimensions.get('window').height;
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
     },
     firstContain: {
         justifyContent: 'center',

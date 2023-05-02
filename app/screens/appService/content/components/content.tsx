@@ -21,6 +21,7 @@ import { colors } from "../../../../theme/colors";
 import Button from "../../../../components/Button";
 import { verticalScale } from "../../../../utils/scale";
 import { FlatList } from "react-native-gesture-handler";
+import { useNavigation } from "@react-navigation/native";
 
 const ContentView = (props: any) => {
   const data = [
@@ -36,6 +37,8 @@ const ContentView = (props: any) => {
   ];
   const numColumns = 3;
   const size = Dimensions.get('window').width / numColumns;
+  const navigation: any = useNavigation();
+
   return (
     <View style={styles.container}>
       <View style={styles.firstContain}>
@@ -65,7 +68,7 @@ const ContentView = (props: any) => {
         <View style={styles.button}>
           <Button
             buttonText={strings.editProfile}
-            onPress={() => { }}
+            onPress={() => navigation.navigate("editProfile")}
             style={styles.buttonEdit}
             buttonLabelStyle={{ color: colors.commonWhiteColor }}
             buttonType={"tertiary"}
@@ -98,9 +101,10 @@ const ContentView = (props: any) => {
             <View style={styles.gridMainContainer}>
               <FlatList
                 data={data}
+                contentContainerStyle={{flexGrow:1}}
                 renderItem={({ item }) => (
                   <View
-                    style={[styles.mainContain,{ width: size, height: size + 10}]}>
+                    style={[styles.mainContain,{ width: size, height: size + verticalScale(10) }]}>
                       <Image resizeMode="contain" style={styles.videoIconStyle} source={GALLERY_ICON} />
                   </View>
                 )}
@@ -112,10 +116,11 @@ const ContentView = (props: any) => {
             (
               <View style={styles.gridMainContainer}>
               <FlatList
+                contentContainerStyle={{flexGrow:1}}
                 data={data}
                 renderItem={({ item }) => (
                   <View
-                    style={[styles.mainContain,{ width: size, height: size + 10}]}>
+                    style={[styles.mainContain,{ width: size, height: size + verticalScale(10)}]}>
                       <Image resizeMode="contain" style={styles.videoIconStyle} source={VIDEO_ICON} />
                   </View>
                 )}

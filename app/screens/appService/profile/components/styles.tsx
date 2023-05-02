@@ -1,17 +1,26 @@
-import { Dimensions, StyleSheet } from "react-native";
+import { Dimensions, Platform, PlatformIOSStatic, StyleSheet } from "react-native";
 import { DimensionsScale } from "../../../../theme/Dimensions";
 import { verticalScale } from "../../../../utils/scale";
 import { colors } from "../../../../theme/colors";
 
 export const windowWidth = Dimensions.get("window").width;
 export const windowHeight = Dimensions.get("window").height;
+
+let platformIOS: any;
+if (Platform.OS === 'ios') {
+  platformIOS = Platform as PlatformIOSStatic
+}
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  listTab:{ 
-    marginTop: verticalScale(10), 
-    flex: 3 
+  listTab: {
+    marginTop: verticalScale(10),
+    flex: platformIOS?.isPad ? 3.8 : 3.2,
+  },
+  secondContain: {
+    flex: platformIOS?.isPad ? 1.2 : 1.8,
   },
   firstContain: {
     justifyContent: "center",
@@ -24,9 +33,6 @@ const styles = StyleSheet.create({
     width: "49%",
     paddingVertical: 7,
     backgroundColor: "#788896",
-  },
-  secondContain: {
-    flex: 2,
   },
   name: {
     fontSize: 16,
@@ -71,7 +77,7 @@ const styles = StyleSheet.create({
     marginTop: 15,
     alignItems: "center",
     paddingTop: 10,
-    borderWidth:1
+    borderWidth: 1
   },
   viewState: {
     marginTop: 7,
@@ -107,7 +113,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     textAlign: "center",
-    width: 200,
+    width: DimensionsScale.width / 1.5,
   },
   thirdContain: {
     flex: 0.5,
@@ -140,7 +146,7 @@ const styles = StyleSheet.create({
   trainerNumber: {
     color: "#000",
     fontSize: 20,
-    fontWeight:"bold"
+    fontWeight: "bold"
   },
   about: {
     fontWeight: "bold",
@@ -176,9 +182,9 @@ const styles = StyleSheet.create({
     color: "#000",
     marginTop: 10,
   },
-  nametext:{
-    textAlign:"center",
-    color:colors.commonGreyColor
+  nametext: {
+    textAlign: "center",
+    color: colors.commonGreyColor
   }
 });
 

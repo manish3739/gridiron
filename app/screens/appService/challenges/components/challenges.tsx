@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 // import { connect } from "react-redux";
-import { FlatList, ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import { FlatList, Platform, PlatformIOSStatic, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import styles from "./styles";
 import Header from "../../../../components/Header";
 import { useNavigation } from "@react-navigation/native";
@@ -10,6 +10,10 @@ import { USER_ICON } from "../../../../theme/constantImages";
 import strings from "../../../../components/locales";
 import { verticalScale } from "../../../../utils/scale";
 
+let platformIOS: any;
+if (Platform.OS === 'ios') {
+  platformIOS = Platform as PlatformIOSStatic
+}
 
 const ChallengesView = (props: any) => {
     const navigation: any = useNavigation();
@@ -24,11 +28,12 @@ const ChallengesView = (props: any) => {
                     isRightHeaderText={true}
                     headerRightTextStyle={{ color: colors.commonThemeColor }}
                     isLeftHeaderText={true}
-                    leftHeaderContainer={{ flex: 2 }}
-                    HeaderMiddleTxt={{ flex: 1 }}
-                    rightHeaderContainer={{ flex: 3, alignItems: 'flex-end' }}
+                    leftHeaderContainer={{ flex: platformIOS?.isPad ? 1 : 2 }}
+                    HeaderMiddleTxt={{ flex: platformIOS?.isPad ? 4 : 1 }}
+                    rightHeaderContainer={{ flex: platformIOS?.isPad ? 1 : 3, alignItems: 'flex-end' }}
                     leftHeaderText={"IQ Challenges"}
                     rightImageStyle={styles.rightIconStyle}
+                    mncontainer={{paddingHorizontal:verticalScale(20)}}
                     onPressRightImage={() => navigation.navigate('MyChallenges')}
                 />
             </View>

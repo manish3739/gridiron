@@ -64,7 +64,7 @@ const strings = new LocalizedStrings({
         save:"Save",
         NewContect:"New Content",
         title:"Title",
-        ContectTitle:"[Contant Title]",
+        ContectTitle:"[Content Title]",
         edit:"Edit",
         date:"3/17/23",
         editTitle:"Edit Title",
@@ -142,11 +142,13 @@ const strings = new LocalizedStrings({
         Touchdowns:"Touchdowns",
         Fumbles:"Fumbles",
         FumblesLost:"Fumbles Lost",
-        saveStats:"Save Stats"
-
-
-        
-
+        saveStats:"Save Stats",
+        photoLibraryLabel: "Photo library Permission Required",
+        cameraLibraryLabel: "Camera Permission Required",
+        photoLibraryDescriptionLabel: "App needs access to your Photo library for profile. Please go to app settings and grant permission.",
+        cameraLibraryDescriptionLabel: "App needs access to your camera for profile. Please go to app settings and grant permission.",
+        openSettings: "Open Settings",
+        cancelLabel: "Cancel",
     },
     fr: {
         continue: "test"

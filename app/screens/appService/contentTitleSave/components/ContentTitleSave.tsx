@@ -23,9 +23,9 @@ const ContentTitleSaveView = (props: any) => {
           leftImg={true}
           isGoBack={true}
           isRightHeaderText={true}
+          onPressRightImage={() => {}}
           headerRightText={strings.save}
           headerRightTextStyle={{ color: colors.primaryButtonColor }}
-          onPressRightImage={() => navigation.navigate("ContentTitleView")}
         />
       </View>
       <View style={styles.secondContain}>

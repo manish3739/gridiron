@@ -15,15 +15,17 @@ interface RNDropDownProps {
   renderSelectedItem?: any,
   testID?: any,
   isMultiple?: boolean,
-  textLabelStyle?:any,
-  dropDownLabelText?: any
   placeHolderMainStyle?: any,
+  textLabelStyle?: any,
+  mainContainerStyle?: any,
+  dropDownLabelText?: any,
 }
 const DropDownView = (props: RNDropDownProps) => {
   const [selected, setSelected] = useState([]);
-  const { dropDownMainStyle, placeholder, data_list, labelField, valueField, renderSelectedItem, textLabelStyle,  dropDownLabelText, placeHolderMainStyle} = props;
+  const { dropDownMainStyle, placeholder, data_list, labelField, valueField, renderSelectedItem, textLabelStyle,  dropDownLabelText, mainContainerStyle, placeHolderMainStyle } = props;
+  
   return (
-    <View testID={props.testID} >
+    <View testID={props.testID} style={[styles.mainView, mainContainerStyle]} >
       {props.isMultiple &&
       <>
         <Text style={[styles.text, textLabelStyle]}>{dropDownLabelText}</Text>
@@ -86,6 +88,8 @@ DropDownView.defaultProps = {
   selected: [],
 };
 const styles = StyleSheet.create({
+  mainView: {
+  },
   dropdown: {
     paddingHorizontal: 10,
     backgroundColor: 'transparent',

@@ -20,11 +20,11 @@ const Stats = (props: any) => {
       ListHeaderComponent={() => (
         <View>
           <View style={styles.StatsContainer}>
-            <View style={{ flexDirection: "row", justifyContent:"space-evenly" }}>
+            <View style={{ flexDirection: "row", justifyContent: "space-evenly" }}>
               <Dropdown
-              dropDownMainStyle={{width:DimensionsScale.width*0.25}}
-              dropDownLabelText={strings.season}
-              placeholder={strings.season}
+                dropDownMainStyle={{ width: DimensionsScale.width * 0.25 }}
+                dropDownLabelText={strings.season}
+                placeholder={strings.season}
                 renderSelectedItem={(value: any) =>
                   console.log("value000", value)
                 }
@@ -40,10 +40,10 @@ const Stats = (props: any) => {
                   },
                 ]}
               />
-               <Dropdown
-              dropDownMainStyle={{width:DimensionsScale.width*0.4}}
-              dropDownLabelText={strings.sports}
-              placeholder={strings.sports}
+              <Dropdown
+                dropDownMainStyle={{ width: DimensionsScale.width * 0.4 }}
+                dropDownLabelText={strings.sports}
+                placeholder={strings.sports}
                 renderSelectedItem={(value: any) =>
                   console.log("value000", value)
                 }
@@ -59,10 +59,10 @@ const Stats = (props: any) => {
                   },
                 ]}
               />
-               <Dropdown
-              dropDownMainStyle={{width:DimensionsScale.width*0.2}}
-              dropDownLabelText={strings.position}
-              placeholder={strings.position}
+              <Dropdown
+                dropDownMainStyle={{ width: DimensionsScale.width * 0.2 }}
+                dropDownLabelText={strings.position}
+                placeholder={strings.position}
                 renderSelectedItem={(value: any) =>
                   console.log("value000", value)
                 }

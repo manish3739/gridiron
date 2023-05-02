@@ -15,9 +15,6 @@ import { useNavigation } from "@react-navigation/native";
 const AccountView = (props: any) => {
   const navigation: any = useNavigation();
   return (
-    <ScrollView
-      contentContainerStyle={{ flexGrow: 1 }}
-    >
       <View style={styles.container}>
         <View style={styles.firstContain}>
           <Header
@@ -77,7 +74,6 @@ const AccountView = (props: any) => {
             </View>
           </TouchableOpacity>
         </View>
-
         <View style={styles.thirdContain}>
           <Button
             buttonText={strings.deleteAccountLabel}
@@ -87,9 +83,7 @@ const AccountView = (props: any) => {
             buttonType={"tertiary"}
           />
         </View>
-
       </View>
-    </ScrollView>
   );
 };
 

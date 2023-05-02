@@ -1,4 +1,4 @@
-import { Dimensions, StyleSheet } from "react-native";
+import { Dimensions, Platform, StyleSheet } from "react-native";
 import { colors } from "../../../../theme/colors";
 import { DimensionsScale } from "../../../../theme/Dimensions";
 import { verticalScale } from "../../../../utils/scale";
@@ -16,11 +16,12 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   secondContain: {
-    flex: 4.5,
+    flex: 4,
   },
   thirdContain: {
-    flex: 0.5,
-    alignItems: "center"
+    flex: 1,
+    alignItems: "center",
+    justifyContent: Platform.OS == 'ios' ? "center"  : 'flex-end',
   },
   btnTabActive: {
     borderBottomWidth: 3,
@@ -60,9 +61,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     textAlign: "center",
-    width: 200,
+    width: DimensionsScale.width / 1.5,
   },
-
   photos: {
     marginTop: 10,
     width: 100,

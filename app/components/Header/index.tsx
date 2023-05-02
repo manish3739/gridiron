@@ -43,7 +43,7 @@ const Header = (props: any) => {
                         <Image
                             resizeMode={"contain"}
                             style={[leftRightImage]}
-                            source={leftImg}
+                        source={leftImg}
                         />
                         }
                         {isLeftHeaderText &&
@@ -85,7 +85,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flexDirection: 'row',
         width: '100%',
-        paddingHorizontal: 20
     },
     HeaderView: {
         flex: 1,

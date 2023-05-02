@@ -11,11 +11,11 @@ const styles = StyleSheet.create({
     firstContain: {
         justifyContent: 'center',
         alignItems: 'center',
-        flex: 1,
+        flex: 0.5,
         paddingTop:20
     },
     secondContain: {
-        flex: 3.5,
+        flex: 4,
         paddingHorizontal: verticalScale(20),
         paddingTop:verticalScale(40)
     },
