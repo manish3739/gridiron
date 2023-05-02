@@ -1,6 +1,7 @@
 import { Dimensions, StyleSheet } from "react-native";
 import { DimensionsScale } from "../../../../theme/Dimensions";
 import { verticalScale } from "../../../../utils/scale";
+import { colors } from "../../../../theme/colors";
 
 export const windowWidth = Dimensions.get("window").width;
 export const windowHeight = Dimensions.get("window").height;
@@ -11,8 +12,18 @@ const styles = StyleSheet.create({
   firstContain: {
     justifyContent: "center",
     alignItems: "center",
-    flex: 0.7,
-    paddingTop: verticalScale(10),
+    flex: 1,
+  },
+  secondContain: {
+    flex: 4,
+    justifyContent: "center",
+    marginHorizontal: verticalScale(8),
+  },
+  thirdContainer: {
+    alignItems: "center",
+    justifyContent: "center",
+    textAlign: "center",
+    flex: 1,
   },
   name: {
     color: "#000",
@@ -25,22 +36,19 @@ const styles = StyleSheet.create({
     marginBottom: verticalScale(10),
   },
   nameInformation: {
-    justifyContent: "space-around",
+    justifyContent: "space-between",
     flexDirection: "row",
-    paddingBottom: 10,
+    alignItems: "center",
+    width: '100%',
+    paddingHorizontal: verticalScale(20),
+    flex: 3,
   },
   footbal: {
     color: "#000",
     fontWeight: "bold",
     fontSize: verticalScale(22),
   },
-  secondContain: {
-    backgroundColor: "#fff",
-    flex: 1,
-    paddingHorizontal: verticalScale(15),
-    marginHorizontal: verticalScale(8),
-    paddingVertical: verticalScale(10),
-  },
+
   passing: {
     marginTop: verticalScale(20),
     flexDirection: "row",
@@ -50,19 +58,25 @@ const styles = StyleSheet.create({
     marginTop: verticalScale(20),
     flexDirection: "row",
   },
-  thirdContainer: {
-    alignItems: "center",
-    justifyContent: "center",
-    textAlign: "center",
-
-    flex: 0.7,
-  },
   share: {
     alignItems: "center",
     justifyContent: "center",
     textAlign: "center",
     width: DimensionsScale.width / 2,
   },
+  passingContainer: {
+    backgroundColor: colors.commonWhiteColor,
+    paddingHorizontal: verticalScale(20),
+    paddingVertical: verticalScale(10),
+    paddingBottom: verticalScale(40)
+  },
+  rushingContainer: {
+    backgroundColor: colors.commonWhiteColor,
+    marginTop: 10,
+    paddingHorizontal: verticalScale(20),
+    paddingVertical: verticalScale(10),
+    paddingBottom: verticalScale(40)
+  }
 });
 
 export default styles;

@@ -1,6 +1,7 @@
 import { Dimensions, StyleSheet } from "react-native";
 import { DimensionsScale } from "../../../../theme/Dimensions";
 import { verticalScale } from "../../../../utils/scale";
+import { colors } from "../../../../theme/colors";
 
 export const windowWidth = Dimensions.get("window").width;
 export const windowHeight = Dimensions.get("window").height;
@@ -12,15 +13,20 @@ const styles = StyleSheet.create({
   firstContain: {
     justifyContent: "center",
     alignItems: "center",
-    flex: 0.3,
-    paddingTop: verticalScale(20),
+    flex: 1,
   },
   secondContain: {
-    backgroundColor: "#fff",
-    flex: 1.5,
+    flex: 3.5,
     paddingHorizontal: verticalScale(20),
     justifyContent: "center",
+    backgroundColor:colors.commonWhiteColor,
     marginHorizontal: verticalScale(8),
+  },
+  thirdContainer: {
+    alignItems: "center",
+    justifyContent: "center",
+    textAlign: "center",
+    flex: 1.5,
   },
   name: {
     color: "#000",
@@ -41,12 +47,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     width: DimensionsScale.width / 1.13,
   },
-  thirdContainer: {
-    alignItems: "center",
-    justifyContent: "center",
-    textAlign: "center",
-    flex: 0.5,
-  },
+
   datePicker:{
     flexDirection:"row",
     justifyContent:"space-between"

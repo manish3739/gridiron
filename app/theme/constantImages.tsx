@@ -45,3 +45,6 @@ export const CLOCK_ICON = require('../assets/DateTimePicker/clock.png');
 
 // image picker component
 export const CAMERA_PICKER_ICON = require('../assets/ImagePicker/photo-camera-interface-symbol-for-button.png');
+
+// new game component
+export const SHARE_ICON = require('../assets/NewGame/share.png');

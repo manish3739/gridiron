@@ -12,6 +12,7 @@ const BaseStyle = StyleSheet.create({
         borderRadius: 5,
         paddingVertical: verticalScale(15),
         width: '90%',
+        flexDirection:'row'
     },
     buttonLabel: {
         fontSize: verticalScale(16),

@@ -1,16 +1,13 @@
 
-import React, { useState, useEffect } from "react";
-// import { connect } from "react-redux";
-import { Alert, Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import React from "react";
+import { Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import Header from "../../../../components/Header";
 import styles from "./styles";
-import { ABOUT_ICON, CLOSE_ICON, HELP_ICON, INVITE_FRIEND_ICON, NOTIFICATION_ICON, USER_ICON } from "../../../../theme/constantImages";
+import { ABOUT_ICON, CLOSE_ICON, HELP_ICON, INVITE_FRIEND_ICON, LOGOUT_ICON, NOTIFICATION_ICON, USER_ICON } from "../../../../theme/constantImages";
 import strings from "../../../../components/locales";
 import { colors } from "../../../../theme/colors";
-import { verticalScale } from "../../../../utils/scale";
 import Button from "../../../../components/Button";
 import { useNavigation } from "@react-navigation/native";
-
 
 const SettingsView = (props: any) => {
   const navigation: any = useNavigation();
@@ -57,11 +54,11 @@ const SettingsView = (props: any) => {
             style={{ borderColor: colors.commonThemeColor, flexDirection: 'row' }}
             buttonLabelStyle={{ color: colors.commonThemeColor }}
             buttonType={"tertiary"}
+            leftIconImage={LOGOUT_ICON}
             leftBtnImage={true}
             leftIconStyle={{ tintColor: colors.commonThemeColor, right: 5 }}
           />
         </View>
-
       </View>
     </ScrollView>
   );

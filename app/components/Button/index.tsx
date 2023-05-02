@@ -5,7 +5,7 @@ import { LOGOUT_ICON } from '../../theme/constantImages';
 
 const Button = (props: any) => {
     const {
-        buttonText, style, buttonLabelStyle, onPress, disabled, buttonType, leftBtnImage, leftIconStyle
+        buttonText, style, buttonLabelStyle, onPress, disabled, buttonType, leftBtnImage, leftIconStyle, leftIconImage
     } = props;
     const {
         button, buttonLabel
@@ -34,7 +34,7 @@ const Button = (props: any) => {
             onPress={onPress}
             style={[btnStyle, style]}>
             {leftBtnImage &&
-                <Image resizeMode='contain' style={[styles.leftImageButton,leftIconStyle]} source={LOGOUT_ICON} />
+                <Image resizeMode='contain' style={[styles.leftImageButton,leftIconStyle]} source={leftIconImage} />
                 }
             <Text
                 style={[btnLabelStyle, buttonLabelStyle]}>
@@ -63,7 +63,8 @@ const styles = StyleSheet.create({
     },
     leftImageButton: {
         width: 20,
-        height: 20
+        height: 20,
+        right: 8
     }
 })
 export default Button;
