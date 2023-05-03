@@ -1,15 +1,11 @@
 
-import React, { useState, useEffect } from "react";
-import { Alert, Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import React from "react";
+import { ScrollView, View } from 'react-native';
 import Header from "../../../../components/Header";
 import styles from "./styles";
-import { CLOSE_ICON, RIGHT_ARROW, USER_ICON } from "../../../../theme/constantImages";
 import strings from "../../../../components/locales";
-import { colors } from "../../../../theme/colors";
-import { verticalScale } from "../../../../utils/scale";
-import Button from "../../../../components/Button";
 import { useNavigation } from "@react-navigation/native";
-
+import RNTextInput from "../../../../components/Input/RNTextInput";
 
 const PasswordScreenView = (props: any) => {
   const navigation: any = useNavigation();
@@ -23,14 +19,43 @@ const PasswordScreenView = (props: any) => {
             HeaderText={strings.passwordLabel}
             leftImg={true}
             isGoBack={true}
+            isRightHeaderText={true}
             headerRightText={strings.saveLabel}
             headerRightTextStyle={styles.headerTextStyle}
             onPressRightImage={()=> navigation.navigate('Account')}
           />
         </View>
         <View style={styles.secondContain}>
-     
-      
+        <RNTextInput
+            textName={strings.currentPassword}
+            editable={true}
+            placeholder={strings.currentPassword}
+            keyboardType="default"
+            placeholderTextColor="#00000040"
+            showRightImage={true}
+            containerStyle={{ width: '100%' }}
+            secureTextEntry={true}
+          />
+        <RNTextInput
+            textName={strings.passwordLabel}
+            editable={true}
+            placeholder={strings.passwordLabel}
+            keyboardType="default"
+            placeholderTextColor="#00000040"
+            showRightImage={true}
+            containerStyle={{ width: '100%' }}
+            secureTextEntry={true}
+          />
+        <RNTextInput
+            textName={strings.passwordLabel}
+            editable={true}
+            placeholder={strings.passwordLabel}
+            keyboardType="default"
+            placeholderTextColor="#00000040"
+            showRightImage={true}
+            containerStyle={{ width: '100%' }}
+            secureTextEntry={true}
+          />
         </View>
       </View>
     </ScrollView>

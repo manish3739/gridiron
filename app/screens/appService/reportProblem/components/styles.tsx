@@ -16,8 +16,7 @@ const styles = StyleSheet.create({
     },
     secondContain: {
         flex: 5.5,
-        paddingHorizontal: verticalScale(20),
-        paddingTop: verticalScale(40)
+        alignItems:'center'
     },
     descprtnTextLabel: {
         color: colors.blackColorCode,

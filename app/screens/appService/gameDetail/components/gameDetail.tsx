@@ -34,223 +34,235 @@ const GameDetailView = (props: any) => {
         <View style={styles.passingContainer}>
           <Text style={styles.name}>{strings.passing}</Text>
           <View style={styles.passing}>
-            <Dropdown
-              dropDownMainStyle={{
-                width: DimensionsScale.width * 0.28,
-                marginTop: 0,
-              }}
-              dropDownLabelText={strings.Attempts}
-              placeholder={"0"}
-              renderSelectedItem={(value: any) => console.log("value000", value)}
-              labelField={"name"}
-              data_list={[
-                {
-                  name: "23-24",
-                  value: 1,
-                },
-                {
-                  name: "22-23",
-                  value: 2,
-                },
-              ]}
-            />
-            <Dropdown
-              dropDownMainStyle={{
-                width: DimensionsScale.width * 0.28,
-                marginTop: 0,
-              }}
-              dropDownLabelText={strings.yards}
-              placeholder={"0"}
-              renderSelectedItem={(value: any) => console.log("value000", value)}
-              labelField={"name"}
-              data_list={[
-                {
-                  name: "23-24",
-                  value: 1,
-                },
-                {
-                  name: "22-23",
-                  value: 2,
-                },
-              ]}
-            />
-            <Dropdown
-              dropDownMainStyle={{
-                width: DimensionsScale.width * 0.28,
-                marginTop: 0,
-              }}
-              dropDownLabelText={strings.Touchdowns}
-              placeholder={"0"}
-              renderSelectedItem={(value: any) => console.log("value000", value)}
-              labelField={"name"}
-              data_list={[
-                {
-                  name: "23-24",
-                  value: 1,
-                },
-                {
-                  name: "22-23",
-                  value: 2,
-                },
-              ]}
-            />
+            <View style={{ flex: 2 }}>
+              <Dropdown
+                dropDownMainStyle={{
+                  width: DimensionsScale.width * 0.28,
+                  marginTop: 0,
+                }}
+                dropDownLabelText={strings.Attempts}
+                placeholder={"0"}
+                renderSelectedItem={(value: any) => console.log("value000", value)}
+                labelField={"name"}
+                data_list={[
+                  {
+                    name: "23-24",
+                    value: 1,
+                  },
+                  {
+                    name: "22-23",
+                    value: 2,
+                  },
+                ]}
+              />
+            </View>
+            <View style={{ flex: 2 }}>
+              <Dropdown
+                dropDownMainStyle={{
+                  width: DimensionsScale.width * 0.28,
+                  marginTop: 0,
+                }}
+                dropDownLabelText={strings.yards}
+                placeholder={"0"}
+                renderSelectedItem={(value: any) => console.log("value000", value)}
+                labelField={"name"}
+                data_list={[
+                  {
+                    name: "23-24",
+                    value: 1,
+                  },
+                  {
+                    name: "22-23",
+                    value: 2,
+                  },
+                ]}
+              />
+            </View>
+            <View style={{ flex: 2 }}>
+              <Dropdown
+                dropDownMainStyle={{
+                  width: DimensionsScale.width * 0.28,
+                  marginTop: 0,
+                }}
+                dropDownLabelText={strings.Touchdowns}
+                placeholder={"0"}
+                renderSelectedItem={(value: any) => console.log("value000", value)}
+                labelField={"name"}
+                data_list={[
+                  {
+                    name: "23-24",
+                    value: 1,
+                  },
+                  {
+                    name: "22-23",
+                    value: 2,
+                  },
+                ]}
+              />
+            </View>
           </View>
           <View style={styles.passing2}>
-            <Dropdown
-              dropDownMainStyle={{
-                width: DimensionsScale.width * 0.28,
-                marginTop: 0,
-              }}
-              dropDownLabelText={strings.Fumbles}
-              placeholder={"0"}
-              renderSelectedItem={(value: any) => console.log("value000", value)}
-              labelField={"name"}
-              data_list={[
-                {
-                  name: "23-24",
-                  value: 1,
-                },
-                {
-                  name: "22-23",
-                  value: 2,
-                },
-              ]}
-            />
-            <Dropdown
-              dropDownMainStyle={{
-                width: DimensionsScale.width * 0.28,
-                marginTop: 0,
-                marginLeft: verticalScale(10),
-              }}
-              textLabelStyle={{
-                marginLeft: verticalScale(10),
-              }}
-              dropDownLabelText={strings.FumblesLost}
-              placeholder={"0"}
-              renderSelectedItem={(value: any) => console.log("value000", value)}
-              labelField={"name"}
-              data_list={[
-                {
-                  name: "23-24",
-                  value: 1,
-                },
-                {
-                  name: "22-23",
-                  value: 2,
-                },
-              ]}
-            />
+            <View style={{ flex: 2 }}>
+              <Dropdown
+                dropDownMainStyle={{
+                  width: DimensionsScale.width * 0.28,
+                  marginTop: 0,
+                }}
+                dropDownLabelText={strings.Fumbles}
+                placeholder={"0"}
+                renderSelectedItem={(value: any) => console.log("value000", value)}
+                labelField={"name"}
+                data_list={[
+                  {
+                    name: "23-24",
+                    value: 1,
+                  },
+                  {
+                    name: "22-23",
+                    value: 2,
+                  },
+                ]}
+              />
+            </View>
+            <View style={{ flex: 4 }}>
+              <Dropdown
+                dropDownMainStyle={{
+                  width: DimensionsScale.width * 0.28,
+                  marginTop: 0,
+                }}
+                dropDownLabelText={strings.FumblesLost}
+                placeholder={"0"}
+                renderSelectedItem={(value: any) => console.log("value000", value)}
+                labelField={"name"}
+                data_list={[
+                  {
+                    name: "23-24",
+                    value: 1,
+                  },
+                  {
+                    name: "22-23",
+                    value: 2,
+                  },
+                ]}
+              />
+            </View>
           </View>
         </View>
         <View style={styles.rushingContainer}>
           <Text style={styles.name}>{strings.rushing}</Text>
           <View style={styles.passing}>
-            <Dropdown
-              dropDownMainStyle={{
-                width: DimensionsScale.width * 0.28,
-                marginTop: 0,
-              }}
-              dropDownLabelText={strings.Attempts}
-              placeholder={"0"}
-              renderSelectedItem={(value: any) => console.log("value000", value)}
-              labelField={"name"}
-              data_list={[
-                {
-                  name: "23-24",
-                  value: 1,
-                },
-                {
-                  name: "22-23",
-                  value: 2,
-                },
-              ]}
-            />
-            <Dropdown
-              dropDownMainStyle={{
-                width: DimensionsScale.width * 0.28,
-                marginTop: 0,
-              }}
-              dropDownLabelText={strings.yards}
-              placeholder={"0"}
-              renderSelectedItem={(value: any) => console.log("value000", value)}
-              labelField={"name"}
-              data_list={[
-                {
-                  name: "23-24",
-                  value: 1,
-                },
-                {
-                  name: "22-23",
-                  value: 2,
-                },
-              ]}
-            />
-            <Dropdown
-              dropDownMainStyle={{
-                width: DimensionsScale.width * 0.28,
-                marginTop: 0,
-              }}
-              dropDownLabelText={strings.Touchdowns}
-              placeholder={"0"}
-              renderSelectedItem={(value: any) => console.log("value000", value)}
-              labelField={"name"}
-              data_list={[
-                {
-                  name: "23-24",
-                  value: 1,
-                },
-                {
-                  name: "22-23",
-                  value: 2,
-                },
-              ]}
-            />
+            <View style={{ flex: 2 }}>
+              <Dropdown
+                dropDownMainStyle={{
+                  width: DimensionsScale.width * 0.28,
+                  marginTop: 0,
+                }}
+                dropDownLabelText={strings.Attempts}
+                placeholder={"0"}
+                renderSelectedItem={(value: any) => console.log("value000", value)}
+                labelField={"name"}
+                data_list={[
+                  {
+                    name: "23-24",
+                    value: 1,
+                  },
+                  {
+                    name: "22-23",
+                    value: 2,
+                  },
+                ]}
+              />
+            </View>
+            <View style={{ flex: 2 }}>
+              <Dropdown
+                dropDownMainStyle={{
+                  width: DimensionsScale.width * 0.28,
+                  marginTop: 0,
+                }}
+                dropDownLabelText={strings.yards}
+                placeholder={"0"}
+                renderSelectedItem={(value: any) => console.log("value000", value)}
+                labelField={"name"}
+                data_list={[
+                  {
+                    name: "23-24",
+                    value: 1,
+                  },
+                  {
+                    name: "22-23",
+                    value: 2,
+                  },
+                ]}
+              />
+            </View>
+            <View style={{ flex: 2 }}>
+              <Dropdown
+                dropDownMainStyle={{
+                  width: DimensionsScale.width * 0.28,
+                  marginTop: 0,
+                }}
+                dropDownLabelText={strings.Touchdowns}
+                placeholder={"0"}
+                renderSelectedItem={(value: any) => console.log("value000", value)}
+                labelField={"name"}
+                data_list={[
+                  {
+                    name: "23-24",
+                    value: 1,
+                  },
+                  {
+                    name: "22-23",
+                    value: 2,
+                  },
+                ]}
+              />
+            </View>
           </View>
           <View style={styles.passing2}>
-            <Dropdown
-              dropDownMainStyle={{
-                width: DimensionsScale.width * 0.28,
-                marginTop: 0,
-              }}
-              dropDownLabelText={strings.Fumbles}
-              placeholder={"0"}
-              renderSelectedItem={(value: any) => console.log("value000", value)}
-              labelField={"name"}
-              data_list={[
-                {
-                  name: "23-24",
-                  value: 1,
-                },
-                {
-                  name: "22-23",
-                  value: 2,
-                },
-              ]}
-            />
-            <Dropdown
-              dropDownMainStyle={{
-                width: DimensionsScale.width * 0.28,
-                marginTop: 0,
-                marginLeft: verticalScale(10),
-              }}
-              textLabelStyle={{
-                marginLeft: verticalScale(10),
-              }}
-              dropDownLabelText={strings.FumblesLost}
-              placeholder={"0"}
-              renderSelectedItem={(value: any) => console.log("value000", value)}
-              labelField={"name"}
-              data_list={[
-                {
-                  name: "23-24",
-                  value: 1,
-                },
-                {
-                  name: "22-23",
-                  value: 2,
-                },
-              ]}
-            />
+            <View style={{ flex: 2 }}>
+              <Dropdown
+                dropDownMainStyle={{
+                  width: DimensionsScale.width * 0.28,
+                  marginTop: 0,
+                }}
+                dropDownLabelText={strings.Fumbles}
+                placeholder={"0"}
+                renderSelectedItem={(value: any) => console.log("value000", value)}
+                labelField={"name"}
+                data_list={[
+                  {
+                    name: "23-24",
+                    value: 1,
+                  },
+                  {
+                    name: "22-23",
+                    value: 2,
+                  },
+                ]}
+              />
+            </View>
+            <View style={{ flex: 4 }}>
+              <Dropdown
+                dropDownMainStyle={{
+                  width: DimensionsScale.width * 0.28,
+                  marginTop: 0,
+                }}
+                dropDownLabelText={strings.FumblesLost}
+                placeholder={"0"}
+                renderSelectedItem={(value: any) => console.log("value000", value)}
+                labelField={"name"}
+                data_list={[
+                  {
+                    name: "23-24",
+                    value: 1,
+                  },
+                  {
+                    name: "22-23",
+                    value: 2,
+                  },
+                ]}
+              />
+            </View>
           </View>
         </View>
       </View>

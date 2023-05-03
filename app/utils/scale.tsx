@@ -1,4 +1,4 @@
-import { Dimensions, Platform, PixelRatio } from 'react-native';
+import { Dimensions, Platform, PixelRatio, PlatformIOSStatic } from 'react-native';
 
 //Screen Constatnts
 const SCREEN_HEIGHT = Platform.OS === 'ios' ?  Dimensions.get('window').height : Dimensions.get('window').height <= 550 ? 667 : Dimensions.get('window').height;
@@ -40,3 +40,10 @@ const verticalScale = (size: number) => {
 }
 
 export { verticalScale };
+
+
+let platformIOS: any;
+if (Platform.OS === 'ios') {
+  platformIOS = Platform as PlatformIOSStatic
+}
+export { platformIOS };

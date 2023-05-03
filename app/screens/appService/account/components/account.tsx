@@ -32,8 +32,7 @@ const AccountView = (props: any) => {
               <Image resizeMode="contain" style={styles.optionImage} source={RIGHT_ARROW} />
             </View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('Email')} style={styles.optionContainer}>
-
+          <TouchableOpacity onPress={() => navigation.navigate('Username')} style={styles.optionContainer}>
             <View style={styles.optionFirstContainer}>
               <Text style={styles.optionLabelStyle}>{strings.userNameLabel}</Text>
             </View>

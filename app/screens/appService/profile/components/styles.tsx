@@ -1,15 +1,10 @@
 import { Dimensions, Platform, PlatformIOSStatic, StyleSheet } from "react-native";
 import { DimensionsScale } from "../../../../theme/Dimensions";
-import { verticalScale } from "../../../../utils/scale";
+import { platformIOS, verticalScale } from "../../../../utils/scale";
 import { colors } from "../../../../theme/colors";
 
 export const windowWidth = Dimensions.get("window").width;
 export const windowHeight = Dimensions.get("window").height;
-
-let platformIOS: any;
-if (Platform.OS === 'ios') {
-  platformIOS = Platform as PlatformIOSStatic
-}
 
 const styles = StyleSheet.create({
   container: {

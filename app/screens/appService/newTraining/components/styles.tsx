@@ -12,10 +12,12 @@ const styles = StyleSheet.create({
   firstContain: {
     justifyContent: "center",
     alignItems: "center",
-    flex: 1.2,
+    flex: 1,
+
   },
   secondContain: {
-    flex: 2.3,
+    flex: 2.5,
+    alignItems:'center'
   },
   thirdContainer: {
     flex: 2.5,
@@ -36,8 +38,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   view: {
-    justifyContent: "space-around",
-    flex: 1,
     marginLeft: verticalScale(8),
   },
   trainerName: {

@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
         fontSize: verticalScale(15)
     },
     pleaseAllowTextStyle: {
-        color: colors.commonLightGreyColor,
+        color: colors.secondaryGreyColor,
         lineHeight: verticalScale(22),
         fontSize: verticalScale(12)
     }

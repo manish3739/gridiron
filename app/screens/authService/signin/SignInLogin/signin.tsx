@@ -12,8 +12,6 @@ import { colors } from "../../../../theme/colors";
 import { verticalScale } from "../../../../utils/scale";
 
 const SignInView = (props: any) => {
-
-
   return (
     <TouchableWithoutFeedback
       onPress={() => Keyboard.dismiss()}

@@ -151,7 +151,10 @@ const strings = new LocalizedStrings({
         cancelLabel: "Cancel",
         newTraining:"New Training Session",
         trainingNotes:"Write any training notes",
-        saveTraining:"Save Training Stats"
+        saveTraining:"Save Training Stats",
+        currentPassword:"Current Password",
+        newPassword:"New Password",
+        reportProblemLabel: "Briefly explain what happened or what's not working",
     },
     fr: {
         continue: "test"

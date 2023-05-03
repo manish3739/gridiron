@@ -9,32 +9,46 @@ import { colors } from "../../../../theme/colors";
 import { verticalScale } from "../../../../utils/scale";
 import Button from "../../../../components/Button";
 import { useNavigation } from "@react-navigation/native";
+import RNTextInput from "../../../../components/Input/RNTextInput";
+import { DimensionsScale } from "../../../../theme/Dimensions";
 
 
 const ReportProblemView = (props: any) => {
   const navigation: any = useNavigation();
   return (
-    <ScrollView
-      contentContainerStyle={{ flexGrow: 1 }}
-    >
-      <View style={styles.container}>
-        <View style={styles.firstContain}>
-          <Header
-            HeaderText={strings.reportaProblemLabel}
-            leftImg={true}
-            isGoBack={true}
-            isRightHeaderText={true}
-            headerRightText={strings.sendLabel}
-            headerRightTextStyle={styles.headerTextStyle}
-            onPressRightImage={()=> navigation.navigate('HelpScreen')}
-          />
-        </View>
-        <View style={styles.secondContain}>
-     
-      
-        </View>
+    <View style={styles.container}>
+      <View style={styles.firstContain}>
+        <Header
+          HeaderText={strings.reportaProblemLabel}
+          leftImg={true}
+          isGoBack={true}
+          isRightHeaderText={true}
+          headerRightText={strings.sendLabel}
+          headerRightTextStyle={styles.headerTextStyle}
+          onPressRightImage={() => navigation.navigate('HelpScreen')}
+        />
       </View>
-    </ScrollView>
+      <View style={styles.secondContain}>
+        <RNTextInput
+          placeholder={strings.reportProblemLabel}
+          editable={true}
+          multiline
+          numberOfLines={5}
+          keyboardType="default"
+          placeholderTextColor={colors.commonGreyColor}
+          textInputContainer={{
+            height: DimensionsScale.height / 2,
+            fontSize: verticalScale(16),
+            borderRadius: 5,
+            textAlignVertical: "top",
+            width: "100%",
+            backgroundColor: colors.commonWhiteColor,
+            color: colors.blackColorCode,
+            paddingTop: verticalScale(20)
+          }}
+        />
+      </View>
+    </View>
   );
 };
 

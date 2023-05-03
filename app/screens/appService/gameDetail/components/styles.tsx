@@ -1,10 +1,11 @@
-import { Dimensions, StyleSheet } from "react-native";
+import { Dimensions, PlatformIOSStatic, StyleSheet, Platform } from "react-native";
 import { DimensionsScale } from "../../../../theme/Dimensions";
-import { verticalScale } from "../../../../utils/scale";
+import { platformIOS, verticalScale } from "../../../../utils/scale";
 import { colors } from "../../../../theme/colors";
 
 export const windowWidth = Dimensions.get("window").width;
 export const windowHeight = Dimensions.get("window").height;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -12,10 +13,10 @@ const styles = StyleSheet.create({
   firstContain: {
     justifyContent: "center",
     alignItems: "center",
-    flex: 1,
+    flex: platformIOS?.isPad ? 0.5 : 1,
   },
   secondContain: {
-    flex: 4,
+    flex: platformIOS?.isPad ? 2 : 4,
     justifyContent: "center",
     marginHorizontal: verticalScale(8),
   },
@@ -23,7 +24,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     textAlign: "center",
-    flex: 1,
+    flex: platformIOS?.isPad ? 1.5 : 1,
   },
   name: {
     color: "#000",

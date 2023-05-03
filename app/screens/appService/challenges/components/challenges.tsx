@@ -8,12 +8,7 @@ import { useNavigation } from "@react-navigation/native";
 import { colors } from "../../../../theme/colors";
 import { USER_ICON } from "../../../../theme/constantImages";
 import strings from "../../../../components/locales";
-import { verticalScale } from "../../../../utils/scale";
-
-let platformIOS: any;
-if (Platform.OS === 'ios') {
-  platformIOS = Platform as PlatformIOSStatic
-}
+import { platformIOS, verticalScale } from "../../../../utils/scale";
 
 const ChallengesView = (props: any) => {
     const navigation: any = useNavigation();
