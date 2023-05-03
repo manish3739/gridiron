@@ -15,8 +15,8 @@ const Stats = (props: any) => {
 
   return (
     <FlatList
-      data={[]}
-      keyExtractor={(item, index) => `key-${index}`}
+      data={[1, 2, 3]}
+      keyExtractor={(_item, index) => `_keys${index.toString()}`}
       ListHeaderComponent={() => (
         <View>
           <View style={styles.StatsContainer}>
@@ -82,8 +82,8 @@ const Stats = (props: any) => {
 
             <FlatList
               data={props.data1}
-              keyExtractor={(item) => `${item.id}`}
               horizontal
+              keyExtractor={(_item, index) => `_key${index.toString()}`}
               renderItem={({ item }) => {
                 return (
                   <TouchableOpacity
@@ -116,6 +116,9 @@ const Stats = (props: any) => {
               <FlatList
                 data={props.passingData}
                 numColumns={4}
+                // @ts-ignore
+                listKey={(_item: any, index: any) => `_key${index.toString()}`}
+                keyExtractor={(_item, index) => `_keys${index.toString()}`}
                 renderItem={({ item }) => {
                   return (
                     <View style={styles.passingContainer}>
@@ -131,6 +134,9 @@ const Stats = (props: any) => {
               <FlatList
                 data={props.rushingData}
                 numColumns={4}
+                // @ts-ignore
+                listKey={(_item: any, index: any) => `_key${index.toString()}`}
+                keyExtractor={(_item, index) => `_keys${index.toString()}`}
                 renderItem={({ item }) => {
                   return (
                     <View style={styles.passingContainer}>
@@ -153,9 +159,9 @@ const Stats = (props: any) => {
               },
             ]}
           >
-            <Button buttonText={strings.addNew} style={styles.addNew} 
-            onPress={() => navigation.navigate('newGame')}
-            
+            <Button buttonText={strings.addNew} style={styles.addNew}
+              onPress={() => navigation.navigate('newGame')}
+
             />
           </View>
         </View>

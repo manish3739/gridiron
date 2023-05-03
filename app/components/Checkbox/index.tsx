@@ -43,7 +43,7 @@ const CheckBox = (props: CheckBoxProps) => {
     };
     return (
         <>
-          <FlatList
+        <FlatList
             data={props?.data}
             contentContainerStyle={[horizontal ? styles.contentHorizontalStyle : styles.contentStyle]}
             horizontal={horizontal}
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     },
     contentStyle: {
         paddingHorizontal: verticalScale(0),
-        paddingVertical: verticalScale(10)
+        paddingVertical: verticalScale(10),
     },
     itemContainer: {
         flexDirection: 'row',
