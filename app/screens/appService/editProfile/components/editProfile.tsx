@@ -224,7 +224,8 @@ const EditProfileView = (props: any) => {
               textInputContainer={{
                 fontSize: verticalScale(12),
                 borderRadius: 5,
-                paddingVertical: 11
+                paddingVertical: 11,
+                height:DimensionsScale.height / 18
               }}
             />
           </View>
@@ -232,8 +233,9 @@ const EditProfileView = (props: any) => {
             <Dropdown
               dropDownMainStyle={{
                 width: DimensionsScale.width * 0.3,
-                marginTop: 0,
+                 marginTop: 2,
               }}
+              textLabelStyle={{marginTop:8}}
               dropDownLabelText={strings.state}
               placeholder={""}
               renderSelectedItem={(value: any) => console.log("value", value)}

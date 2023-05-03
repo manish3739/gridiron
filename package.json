@@ -7,9 +7,8 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "postinstall": "react-native setup-ios-permissions && pod-install"
-  },
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    },
   "dependencies": {
     "@bam.tech/react-native-image-resizer": "^3.0.5",
     "@react-native-async-storage/async-storage": "^1.18.1",

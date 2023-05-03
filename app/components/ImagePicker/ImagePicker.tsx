@@ -184,7 +184,7 @@ const FormImagePicker = ({
                     console.log('The permission is limited: some actions are possible');
                     break;
                   case RESULTS.GRANTED:
-                    handleCamera();
+                    handleImageLibrary();
                     break;
                   case RESULTS.BLOCKED:
                     request(Platform.OS == 'ios' ? PERMISSIONS.IOS.CAMERA : PERMISSIONS.ANDROID.CAMERA).then((result) => {

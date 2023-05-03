@@ -68,7 +68,8 @@ const styles = StyleSheet.create({
     },
     textStyle: {
         color: "#000",
-        paddingVertical: verticalScale(6)
+        paddingVertical: verticalScale(6),
+        fontWeight:"bold"
     },
     textInput: {
         paddingLeft: verticalScale(20),
