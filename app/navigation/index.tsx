@@ -35,6 +35,7 @@ import contentTitle from '../screens/appService/contentTitle';
 import privacypolicy from '../screens/appService/privacypolicy';
 import newGame from '../screens/appService/newGame';
 import gameDetail from '../screens/appService/gameDetail';
+import newTraining from '../screens/appService/newTraining';
 
 const Stack: any = createStackNavigator();
 const AppStack: any = createStackNavigator();
@@ -90,6 +91,7 @@ const TabStack = () => {
       <Tab.Screen name="Profile" component={ProfileStack} />
       <Tab.Screen name="Challenges" component={ChallengesStack} />
       <Tab.Screen name="Content" component={ContentStack} />
+
     </Tab.Navigator>
   );
 };
@@ -121,6 +123,8 @@ const AppStackScreen = () => {
       <AppStack.Screen component={editProfile} name="editProfile" />
       <AppStack.Screen component={newGame} name="newGame" />
       <AppStack.Screen component={gameDetail} name="gameDetail" />
+      <AppStack.Screen component={newTraining} name="newTraining" />
+
 
 
     </AppStack.Navigator>

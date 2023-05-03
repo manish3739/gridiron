@@ -149,6 +149,9 @@ const strings = new LocalizedStrings({
         cameraLibraryDescriptionLabel: "App needs access to your camera for profile. Please go to app settings and grant permission.",
         openSettings: "Open Settings",
         cancelLabel: "Cancel",
+        newTraining:"New Training Session",
+        trainingNotes:"Write any training notes",
+        saveTraining:"Save Training Stats"
     },
     fr: {
         continue: "test"

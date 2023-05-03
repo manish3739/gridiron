@@ -7,9 +7,12 @@ import Button from "../../../../components/Button";
 import { verticalScale } from "../../../../utils/scale";
 import Dropdown from "../../../../components/dropdown";
 import { DimensionsScale } from "../../../../theme/Dimensions";
+import { useNavigation } from "@react-navigation/native";
 
 const Training = (props: any) => {
   const [state, setState]: any = useState(null);
+  const navigation: any = useNavigation();
+
 
   return (
     <>
@@ -74,7 +77,9 @@ const Training = (props: any) => {
                   },
                 ]}
               >
-                <Button buttonText={strings.addNew} style={styles.addNew} />
+                <Button buttonText={strings.addNew} style={styles.addNew}
+                onPress={() => navigation.navigate('newTraining')}
+                />
               </View>
             </View>
           </View>
