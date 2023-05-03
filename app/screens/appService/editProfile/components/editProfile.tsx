@@ -69,7 +69,7 @@ const EditProfileView = (props: any) => {
               </>
             )}
           />
-          <Text style={styles.name}>{strings.ChangePassword}</Text>
+          <Text style={styles.name}>{strings.changePicturelabel}</Text>
         </View>
       </View>
       <View style={styles.thirdContainer}>
@@ -86,11 +86,7 @@ const EditProfileView = (props: any) => {
           showLeftImage={true}
           showRightImage={true}
           placeholderTextColor={colors.commonGreyColor}
-          textInputContainer={{
-            fontSize: verticalScale(12),
-            borderRadius: 5,
-            width: '100%'
-          }}
+          textInputContainer={{ paddingVertical: 6.5 }}
         />
         <RNTextInput
           textStyleProps={{
@@ -221,12 +217,7 @@ const EditProfileView = (props: any) => {
               showLeftImage={true}
               showRightImage={true}
               placeholderTextColor={colors.commonGreyColor}
-              textInputContainer={{
-                fontSize: verticalScale(12),
-                borderRadius: 5,
-                paddingVertical: 11,
-                height:DimensionsScale.height / 18
-              }}
+              textInputContainer={{ paddingVertical: 6.5 }}
             />
           </View>
           <View style={{ flex: 2, alignItems: 'flex-end' }}>
@@ -268,11 +259,7 @@ const EditProfileView = (props: any) => {
             showLeftImage={true}
             showRightImage={true}
             placeholderTextColor={colors.commonGreyColor}
-            textInputContainer={{
-              height: DimensionsScale.height / 19,
-              fontSize: verticalScale(12),
-              borderRadius: 5,
-            }}
+            textInputContainer={{ paddingVertical: 6.5 }}
           />
         </View>
         <View style={styles.graduation}>

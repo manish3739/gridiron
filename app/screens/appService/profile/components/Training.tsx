@@ -17,9 +17,9 @@ const Training = (props: any) => {
   return (
     <>
       <FlatList
-        data={[]}
-        keyExtractor={(item, index) => `key-${index}`}
-        ListHeaderComponent={() => (
+         data={[1,2,3]}
+         keyExtractor={(_item, index) => `_key${index.toString()}`}
+          ListHeaderComponent={() => (
           <View>
             <View style={styles.TrainerContainer}>
               <Dropdown
@@ -45,6 +45,7 @@ const Training = (props: any) => {
               <FlatList
                 data={props.data}
                 numColumns={2}
+                keyExtractor={(_item, index) => `_key${index.toString()}`}
                 renderItem={({ item }) => {
                   return (
                     <View style={styles.view}>

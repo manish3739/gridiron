@@ -86,9 +86,9 @@ const ContentView = (props: any) => {
           <View
             style={styles.list}
           >
-            {props.listTab.map((e: any) => {
+            {props.listTab.map((e: any, index: any) => {
               return (
-                <TouchableOpacity onPress={() => props.setStatusFilter(e.status)}
+                <TouchableOpacity key={index} onPress={() => props.setStatusFilter(e.status)}
                   style={[styles.btnTab, props.status === e.status && styles.btnTabActive]}>
 
                   <Text style={{ fontSize: verticalScale(14), color: props.status === e.status ? colors.commonThemeColor : colors.blackColorCode }}>{e.status}</Text>
@@ -101,6 +101,7 @@ const ContentView = (props: any) => {
             <View style={styles.gridMainContainer}>
               <FlatList
                 data={data}
+                keyExtractor={(_item, index) => `_keys${index.toString()}`}
                 contentContainerStyle={{flexGrow:1}}
                 renderItem={({ item }) => (
                   <View
@@ -108,7 +109,6 @@ const ContentView = (props: any) => {
                       <Image resizeMode="contain" style={styles.videoIconStyle} source={GALLERY_ICON} />
                   </View>
                 )}
-                keyExtractor={item => item.id}
                 numColumns={numColumns}
               />
             </View>
@@ -118,13 +118,13 @@ const ContentView = (props: any) => {
               <FlatList
                 contentContainerStyle={{flexGrow:1}}
                 data={data}
+                keyExtractor={(_item, index) => `_keys${index.toString()}`}
                 renderItem={({ item }) => (
                   <View
                     style={[styles.mainContain,{ width: size, height: size + verticalScale(10)}]}>
                       <Image resizeMode="contain" style={styles.videoIconStyle} source={VIDEO_ICON} />
                   </View>
                 )}
-                keyExtractor={item => item.id}
                 numColumns={numColumns}
               />
             </View>

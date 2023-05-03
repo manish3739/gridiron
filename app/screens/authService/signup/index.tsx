@@ -28,7 +28,6 @@ const SignUp = ({ props, navigation }: any) => {
         playerPosition: [],
         username: "",
     });
-    console.log("registerData:", registerData);
     const [isChildrenData, setIsChildrenData] = useState([
         {
             label: 'I am 13 years of age or older',
@@ -92,6 +91,16 @@ const SignUp = ({ props, navigation }: any) => {
         },
         {
             label: 'Linebacker',
+            isSelected: false
+        },
+    ]);
+    const [chooseLeague, setChooseLeague] = useState([
+        {
+            label: 'Middleschool',
+            isSelected: false
+        },
+        {
+            label: 'Pop warner',
             isSelected: false
         },
     ]);
@@ -182,7 +191,8 @@ const SignUp = ({ props, navigation }: any) => {
                     handleLeagueContinue={handleLeagueContinue}
                     setSignUpOnBoarding={setSignUpOnBoarding}
                     handleAlreadySignIn={handleAlreadySignIn}
-
+                    setChooseLeague={setChooseLeague}
+                    chooseLeague={chooseLeague}
                 />
             }
         </View>

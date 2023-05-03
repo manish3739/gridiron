@@ -111,7 +111,7 @@ const strings = new LocalizedStrings({
         sports:"Sport",
         position:"Position",
         EditProfile:"Edit Profile",
-        ChangePassword:"Change Picture",
+        changePicturelabel:"Change Picture",
         Name:"Name",
         bio:'Bio',
         birthday:"Birthday",

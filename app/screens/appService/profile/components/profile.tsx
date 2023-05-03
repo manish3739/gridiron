@@ -66,9 +66,10 @@ const ProfileView = (props: any) => {
       </View>
       <View style={styles.listTab}>
         <View style={styles.list}>
-          {props?.listTab.map((e: any) => {
+          {props?.listTab.map((e: any, index: any) => {
             return (
               <TouchableOpacity
+                key={index}
                 onPress={() => props.setStatusFilter(e.status)}
                 style={[
                   styles.btnTab,

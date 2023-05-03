@@ -78,8 +78,8 @@ const styles = StyleSheet.create({
     },
     locatedMainStyle: {
         flexDirection: 'row', 
-        alignItems: 'center', 
-        marginTop: verticalScale(20)
+        alignItems: 'flex-end', 
+        marginTop: verticalScale(20),
     },
     mainBoldStyle: {
         alignItems: 'center', 
