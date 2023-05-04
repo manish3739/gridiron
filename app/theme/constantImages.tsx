@@ -5,6 +5,10 @@ export const NO_IMAGE_PROFILE = require('../assets/Header/noImage.png');
 export const DRAWER_ICON = require('../assets/Header/menu.png');
 export const CLOSE_ICON = require('../assets/Header/close.png');
 export const INFORMATION_ICON = require('../assets/Home/question.png');
+export const SEARCH_ICON = require('../assets/Home/searchIcon.png');
+export const VOLUME_ICON = require('../assets/Home/volume.png');
+
+
 
 // settings
 export const USER_ICON = require('../assets/Settings/user.png');

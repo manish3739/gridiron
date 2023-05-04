@@ -156,6 +156,19 @@ const strings = new LocalizedStrings({
         currentPassword:"Current Password",
         newPassword:"New Password",
         reportProblemLabel: "Briefly explain what happened or what's not working",
+        search:"Search for game, training session, content",
+        recentGames:"Recent Games",
+        Stats:"Stats",
+        viewStats:"View All Stats",
+        addNew1:"Add New",
+        personalRecords:"Personal Records",
+        training:"Training",
+        viewAll:"View All",
+        IQchallenges:"IQ Challenges",
+        challenges:"Challenges",
+        recentContent:"Recent Content",
+        content:"Content"
+        
     },
     fr: {
         continue: "test"

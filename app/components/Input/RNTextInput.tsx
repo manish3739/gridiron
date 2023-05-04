@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     },
     textInput: {
         paddingLeft: verticalScale(20),
-        paddingVertical: verticalScale(15),
+         paddingVertical: verticalScale(15),
         fontSize: verticalScale(18),
         fontWeight: 'bold',
         color: colors.blackColorCode,
