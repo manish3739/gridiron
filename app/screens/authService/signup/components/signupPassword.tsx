@@ -10,6 +10,7 @@ import strings from "../../../../components/locales";
 import RNTextInput from "../../../../components/Input/RNTextInput";
 import { Formik } from "formik";
 import * as yup from 'yup';
+import { colors } from "../../../../theme/colors";
 
 const SignupPasswordView = (props: any) => {
     const passwordValidation = yup.object().shape({
@@ -76,7 +77,7 @@ const SignupPasswordView = (props: any) => {
                                             placeholder={strings.passwordLabel}
                                             keyboardType="default"
                                             value={values.password}
-                                            placeholderTextColor="#00000040"
+                                            placeholderTextColor={colors.bluePrimary}
                                             onChangeText={handleChange('password')}
                                             onBlur={handleBlur('password')}
                                             error={String(errors.password || '')}

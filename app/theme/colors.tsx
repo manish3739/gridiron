@@ -10,5 +10,6 @@ export const colors = {
   blackColorCode:"#293845",
   commonLightGreyColor:"#E3E8ED",
   darkGreyColor:"#bbb",
-  secondaryGreyColor:'#9EADBA'
+  secondaryGreyColor:'#9EADBA',
+  bluePrimary:'#00000040'
 };

@@ -6,6 +6,7 @@ import styles from "./styles";
 import strings from "../../../../components/locales";
 import { useNavigation } from "@react-navigation/native";
 import RNTextInput from "../../../../components/Input/RNTextInput";
+import { colors } from "../../../../theme/colors";
 
 const PasswordScreenView = (props: any) => {
   const navigation: any = useNavigation();
@@ -31,7 +32,7 @@ const PasswordScreenView = (props: any) => {
             editable={true}
             placeholder={strings.currentPassword}
             keyboardType="default"
-            placeholderTextColor="#00000040"
+            placeholderTextColor={colors.bluePrimary}
             showRightImage={true}
             containerStyle={{ width: '100%' }}
             secureTextEntry={true}
@@ -41,7 +42,7 @@ const PasswordScreenView = (props: any) => {
             editable={true}
             placeholder={strings.passwordLabel}
             keyboardType="default"
-            placeholderTextColor="#00000040"
+            placeholderTextColor={colors.bluePrimary}
             showRightImage={true}
             containerStyle={{ width: '100%' }}
             secureTextEntry={true}
@@ -51,7 +52,7 @@ const PasswordScreenView = (props: any) => {
             editable={true}
             placeholder={strings.passwordLabel}
             keyboardType="default"
-            placeholderTextColor="#00000040"
+            placeholderTextColor={colors.bluePrimary}
             showRightImage={true}
             containerStyle={{ width: '100%' }}
             secureTextEntry={true}

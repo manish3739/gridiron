@@ -35,7 +35,7 @@ const RNTextInput = (Props: RNTextInputProps) => {
             }
             <TextInput
                 style={[styles.textInput, Props.textInputContainer]}
-                placeholderTextColor="#00000040"
+                placeholderTextColor={colors.bluePrimary}
                 editable
                 secureTextEntry={Props.secureTextEntry}
                 selectionColor={colors.commonGreyColor}

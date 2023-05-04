@@ -11,6 +11,7 @@ import { TouchableWithoutFeedback } from "react-native";
 import { Formik } from "formik";
 import * as yup from 'yup';
 import RNTextInput from "../../../../components/Input/RNTextInput";
+import { colors } from "../../../../theme/colors";
 
 const SignupUserNameView = (props: any) => {
     const usernameValidation = yup.object().shape({
@@ -76,7 +77,7 @@ const SignupUserNameView = (props: any) => {
                                             placeholder={strings.userNameLabel}
                                             keyboardType="default"
                                             value={values.username}
-                                            placeholderTextColor="#00000040"
+                                            placeholderTextColor={colors.bluePrimary}
                                             onChangeText={handleChange('username')}
                                             onBlur={handleBlur('username')}
                                             error={String(errors.username || '')}

@@ -14,6 +14,7 @@ import { Keyboard } from "react-native";
 import * as yup from 'yup';
 import Checkbox from "../../../../components/Checkbox";
 import { verticalScale } from "../../../../utils/scale";
+import { colors } from "../../../../theme/colors";
 
 const SignupInformationView = (props: any) => {
     const validationSchema = yup.object().shape({
@@ -91,7 +92,7 @@ const SignupInformationView = (props: any) => {
                                             placeholder={strings.firstNameLabel}
                                             keyboardType="default"
                                             value={values.firstName}
-                                            placeholderTextColor="#00000040"
+                                            placeholderTextColor={colors.bluePrimary}
                                             onChangeText={handleChange('firstName')}
                                             onBlur={handleBlur('firstName')}
                                             error={String(errors.firstName || undefined)}
@@ -102,7 +103,7 @@ const SignupInformationView = (props: any) => {
                                             placeholder={strings.lastNameLabel}
                                             keyboardType="default"
                                             value={values.lastName}
-                                            placeholderTextColor="#00000040"
+                                            placeholderTextColor={colors.bluePrimary}
                                             onChangeText={handleChange('lastName')}
                                             onBlur={handleBlur('lastName')}
                                             error={String(errors.lastName || undefined)}

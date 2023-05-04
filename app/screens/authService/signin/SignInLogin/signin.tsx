@@ -64,7 +64,7 @@ const SignInView = (props: any) => {
                     value={values.email}
                     onChangeText={handleChange('email')}
                     onBlur={handleBlur('email')}
-                    placeholderTextColor="#00000040"
+                    placeholderTextColor={colors.bluePrimary}
                     error={String(errors.email || undefined)}
                     isError={touched.email && errors.email}
                   />
@@ -76,7 +76,7 @@ const SignInView = (props: any) => {
                     onChangeText={handleChange('password')}
                     onBlur={handleBlur('password')}
                     value={values.password}
-                    placeholderTextColor="#00000040"
+                    placeholderTextColor={colors.bluePrimary}
                     error={String(errors.password || undefined)}
                     isError={touched.password && errors.password}
                     showRightImage={true}

@@ -105,6 +105,7 @@ const strings = new LocalizedStrings({
         chooseLeagueLabel: "Choose your league",
         chooseUserNameLabel: "Choose your unique username",
         emailIsRequired: "Email address is required",
+        userNameRequired:"Username is required",
         passwordIsRequired: "Password is required",
         chooseUniqueUsername: "Choose a unique username",
         season:'Season',

@@ -10,6 +10,7 @@ import strings from "../../../../components/locales";
 import Checkbox from "../../../../components/Checkbox";
 import { verticalScale } from "../../../../utils/scale";
 import RNTextInput from "../../../../components/Input/RNTextInput";
+import { colors } from "../../../../theme/colors";
 
 let filtered: any;
 const SignupLeagueView = (props: any) => {
@@ -54,8 +55,8 @@ const SignupLeagueView = (props: any) => {
                         placeholder={filtered[0].label === 'Middleschool' ? strings.school : 'Pop warner'}
                         keyboardType="default"
                         textInputContainer={{ width: DimensionsScale.width * 0.7, marginLeft: verticalScale(20) }}
-                        placeholderTextColor="#00000040"
-                    />
+                        placeholderTextColor={colors.bluePrimary}
+                        />
                 }
             </View>
             <View style={styles.thirdContain}>

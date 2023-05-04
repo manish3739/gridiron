@@ -10,6 +10,7 @@ import strings from "../../../../components/locales";
 import Dropdown from "../../../../components/dropdown";
 import RNTextInput from "../../../../components/Input/RNTextInput";
 import { verticalScale } from "../../../../utils/scale";
+import { colors } from "../../../../theme/colors";
 // import { connect } from "react-redux";
 
 const SignupLocatedPlayerView = (props: any) => {
@@ -44,7 +45,7 @@ const SignupLocatedPlayerView = (props: any) => {
                             showLeftImage={true}
                             autoCapitalize="none"
                             isTextLabel={true}
-                            placeholderTextColor="#00000040"
+                            placeholderTextColor={colors.bluePrimary}
                             textInputContainer={{ width: DimensionsScale.width * 0.5, paddingVertical: 6.5 }}
                         />
                     </View>
