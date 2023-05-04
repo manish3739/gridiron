@@ -122,8 +122,12 @@ const HomeView = (props: any) => {
           />
         </View>
         <View style={styles.button}>
-          <Button buttonText={strings.viewStats} style={styles.allStats} />
-          <Button buttonText={strings.addNew} style={styles.addNew} />
+          <Button buttonText={strings.viewStats} style={styles.allStats} 
+          onPress={() => navigation.navigate('Profile')}
+          />
+          <Button buttonText={strings.addNew} style={styles.addNew}
+          onPress={() => navigation.navigate('newGame')}
+          />
         </View>
         <View
           style={[styles.lineStyle, { marginVertical: verticalScale(20) }]}
@@ -158,8 +162,14 @@ const HomeView = (props: any) => {
           />
         </View>
         <View style={styles.button}>
-          <Button buttonText={strings.viewAll} style={styles.addNew} />
-          <Button buttonText={strings.addNew} style={styles.addNew} />
+          <Button buttonText={strings.viewAll} style={styles.addNew}
+          onPress={() => navigation.navigate('Profile')}
+          
+          />
+          <Button buttonText={strings.addNew} style={styles.addNew}
+          onPress={() => navigation.navigate('newTraining')}
+          
+          />
         </View>
         <View
           style={[styles.lineStyle, { marginVertical: verticalScale(15) }]}
@@ -196,7 +206,10 @@ const HomeView = (props: any) => {
           />
         </View>
         <View style={[styles.button, { marginTop: verticalScale(20) }]}>
-          <Button buttonText={strings.viewAll} style={styles.addNew} />
+          <Button buttonText={strings.viewAll} style={styles.addNew}
+          onPress={() => navigation.navigate('MyChallenges')}
+          
+          />
         </View>
         <View style={[styles.lineStyle, { marginBottom: verticalScale(15) }]} />
         <View style={styles.thirdContainerStyle}>
@@ -227,8 +240,14 @@ const HomeView = (props: any) => {
           }}
         />
         <View style={styles.button}>
-          <Button buttonText={strings.viewAll} style={styles.addNew} />
-          <Button buttonText={strings.addNew} style={styles.addNew} />
+          <Button buttonText={strings.viewAll} style={styles.addNew}
+          onPress={() => navigation.navigate('Content')}
+          
+          />
+          <Button buttonText={strings.addNew} style={styles.addNew}
+          onPress={() => navigation.navigate('newContent')}
+          
+          />
         </View>
       </View>
     </ScrollView>
