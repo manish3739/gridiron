@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from 'prop-types';
 import {
   Platform,
@@ -11,6 +11,7 @@ import strings from "../locales";
 import { PermissionsAndroid } from "react-native";
 import { Linking } from "react-native";
 import { check, PERMISSIONS, RESULTS, request, checkMultiple } from 'react-native-permissions';
+import PickerModal from "../ImagePickerModal/PickerModal";
 
 const options: any = {
   title: "Select Avatar",
@@ -32,186 +33,33 @@ const FormImagePicker = ({
   renderTrigger,
   ...rest
 }: any) => {
+  const [isVisible, setVisible] = useState(false);
+
 
   const selectImage = () => {
-    Alert.alert(
-      //This is title
-      '',
-      //This is body text
-      strings.selectImageLabel,
-      [
-        {
-          text: strings.takePhotoLabel, onPress: async () => {
-            check(Platform.OS == 'ios' ? PERMISSIONS.IOS.CAMERA : PERMISSIONS.ANDROID.CAMERA)
-              .then((result) => {
-                switch (result) {
-                  case RESULTS.UNAVAILABLE:
-                    console.log('This feature is not available (on this device / in this context)');
-                    break;
-                  case RESULTS.DENIED:
-                    request(Platform.OS == 'ios' ? PERMISSIONS.IOS.CAMERA : PERMISSIONS.ANDROID.CAMERA).then((result) => {
-                      if (result == 'blocked') {
-                        Alert.alert(
-                          strings.cameraLibraryLabel || "",
-                          strings.cameraLibraryDescriptionLabel || "",
-                          [
-                            { text: strings.cancelLabel, style: 'cancel' },
-                            { text: strings.openSettings, onPress: openSettings },
-                          ],
-                        );
-                      }
-                    });
-                    console.log('The permission has not been requested / is denied but requestable');
-                    break;
-                  case RESULTS.LIMITED:
-                    console.log('The permission is limited: some actions are possible');
-                    break;
-                  case RESULTS.GRANTED:
-                    handleCamera();
-                    break;
-                  case RESULTS.BLOCKED:
-                    request(Platform.OS == 'ios' ? PERMISSIONS.IOS.CAMERA : PERMISSIONS.ANDROID.CAMERA).then((result) => {
-                      if (result == 'blocked') {
-                        Alert.alert(
-                          strings.cameraLibraryLabel || "",
-                          strings.cameraLibraryDescriptionLabel || "",
-                          [
-                            { text: strings.cancelLabel, style: 'cancel' },
-                            { text: strings.openSettings, onPress: openSettings },
-                          ],
-                        );
-                      }
-                    });
-                    break;
-                }
-              })
-              .catch((error) => {
-                console.log("error", error)
-              });
-          }
-        },
-        {
-          text: strings.chooseFromLibrary, onPress: async () => {
-            if (Platform.OS == 'ios') {
-              check(PERMISSIONS.IOS.PHOTO_LIBRARY)
-              .then((result) => {
-                switch (result) {
-                  case RESULTS.UNAVAILABLE:
-                    if (result == 'unavailable') {
-                      Alert.alert(
-                        strings.photoLibraryLabel || "",
-                        strings.photoLibraryDescriptionLabel || "",
-                        [
-                          { text: strings.cancelLabel, style: 'cancel' },
-                          { text: strings.openSettings, onPress: openSettings },
-                        ],
-                      );
-                    }
-                    break;
-                  case RESULTS.DENIED:
-                    request(PERMISSIONS.IOS.PHOTO_LIBRARY).then((result) => {
-                      if (result == 'blocked') {
-                        Alert.alert(
-                          strings.photoLibraryLabel || "",
-                          strings.photoLibraryDescriptionLabel || "",
-                          [
-                            { text: strings.cancelLabel, style: 'cancel' },
-                            { text: strings.openSettings, onPress: openSettings },
-                          ],
-                        );
-                      }
-                    });
-                    break;
-                  case RESULTS.LIMITED:
-                    request(PERMISSIONS.IOS.PHOTO_LIBRARY).then((result) => {
-                      if (result == 'limited') {
-                        Alert.alert(
-                          strings.photoLibraryLabel || "",
-                          strings.photoLibraryDescriptionLabel || "",
-                          [
-                            { text: strings.cancelLabel, style: 'cancel' },
-                            { text: strings.openSettings, onPress: openSettings },
-                          ],
-                        );
-                      }
-                    });
-                    break;
-                  case RESULTS.GRANTED:
-                    handleImageLibrary();
-                    console.log('The permission is granted');
-                    break;
-                  case RESULTS.BLOCKED:
-                    request(PERMISSIONS.IOS.PHOTO_LIBRARY).then((result) => {
-                      if (result == 'blocked') {
-                        Alert.alert(
-                          strings.photoLibraryLabel || "",
-                          strings.photoLibraryDescriptionLabel || "",
-                          [
-                            { text: strings.cancelLabel, style: 'cancel' },
-                            { text: strings.openSettings, onPress: openSettings },
-                          ],
-                        );
-                      }
-                    });
-                    break;
-                }
-              })
-              .catch((error) => {
-                console.log("error", error)
-              });
-            } else {
-              check(PERMISSIONS.ANDROID.READ_EXTERNAL_STORAGE)
-              .then((result) => {
-                switch (result) {
-                  case RESULTS.UNAVAILABLE:
-                    console.log('This feature is not available (on this device / in this context)');
-                    break;
-                  case RESULTS.DENIED:
-                    request(PERMISSIONS.ANDROID.READ_EXTERNAL_STORAGE).then((result) => {
-                      if (result == 'blocked') {
-                        Alert.alert(
-                          strings.photoLibraryLabel || "",
-                          strings.photoLibraryDescriptionLabel || "",
-                          [
-                            { text: strings.cancelLabel, style: 'cancel' },
-                            { text: strings.openSettings, onPress: openSettings },
-                          ],
-                        );
-                      }
-                    });
-                    break;
-                  case RESULTS.LIMITED:
-                    console.log('The permission is limited: some actions are possible');
-                    break;
-                  case RESULTS.GRANTED:
-                    handleImageLibrary();
-                    break;
-                  case RESULTS.BLOCKED:
-                    request(Platform.OS == 'ios' ? PERMISSIONS.IOS.CAMERA : PERMISSIONS.ANDROID.CAMERA).then((result) => {
-                      if (result == 'blocked') {
-                        Alert.alert(
-                          strings.cameraLibraryLabel || "",
-                          strings.cameraLibraryDescriptionLabel || "",
-                          [
-                            { text: strings.cancelLabel, style: 'cancel' },
-                            { text: strings.openSettings, onPress: openSettings },
-                          ],
-                        );
-                      }
-                    });
-                    break;
-                }
-              })
-              .catch((error) => {
-                console.log("error", error)
-              });
-            }
-           
-          }
-        },
-      ],
-      { cancelable: true }
-    );
+    return (
+      setVisible(true)
+    )
+    // Alert.alert(
+    //   //This is title
+    //   '',
+    //   //This is body text
+    //   strings.selectImageLabel,
+    //   [
+    //     {
+    //       text: strings.takePhotoLabel, onPress: async () => {
+
+    //       }
+    //     },
+    //     {
+    //       text: strings.chooseFromLibrary, onPress: async () => {
+
+
+    //       }
+    //     },
+    //   ],
+    //   { cancelable: true }
+    // );
   };
 
   const openSettings = () => {
@@ -357,6 +205,183 @@ const FormImagePicker = ({
   return (
     <>
       {renderTrigger(selectImage)}
+      <PickerModal
+        title="You can either take a picture or select one from your album."
+        isVisible={isVisible}
+        data={["Take a photo", "Select from album"]}
+        onPress={(selectedItem: string, index: number) => {
+          setVisible(false);
+          if (selectedItem === 'Take a photo') {
+            check(Platform.OS == 'ios' ? PERMISSIONS.IOS.CAMERA : PERMISSIONS.ANDROID.CAMERA)
+              .then((result) => {
+                switch (result) {
+                  case RESULTS.UNAVAILABLE:
+                    console.log('This feature is not available (on this device / in this context)');
+                    break;
+                  case RESULTS.DENIED:
+                    request(Platform.OS == 'ios' ? PERMISSIONS.IOS.CAMERA : PERMISSIONS.ANDROID.CAMERA).then((result) => {
+                      if (result == 'blocked') {
+                        Alert.alert(
+                          strings.cameraLibraryLabel || "",
+                          strings.cameraLibraryDescriptionLabel || "",
+                          [
+                            { text: strings.cancelLabel, style: 'cancel' },
+                            { text: strings.openSettings, onPress: openSettings },
+                          ],
+                        );
+                      }
+                    });
+                    console.log('The permission has not been requested / is denied but requestable');
+                    break;
+                  case RESULTS.LIMITED:
+                    console.log('The permission is limited: some actions are possible');
+                    break;
+                  case RESULTS.GRANTED:
+                    handleCamera();
+                    break;
+                  case RESULTS.BLOCKED:
+                    request(Platform.OS == 'ios' ? PERMISSIONS.IOS.CAMERA : PERMISSIONS.ANDROID.CAMERA).then((result) => {
+                      if (result == 'blocked') {
+                        Alert.alert(
+                          strings.cameraLibraryLabel || "",
+                          strings.cameraLibraryDescriptionLabel || "",
+                          [
+                            { text: strings.cancelLabel, style: 'cancel' },
+                            { text: strings.openSettings, onPress: openSettings },
+                          ],
+                        );
+                      }
+                    });
+                    break;
+                }
+              })
+              .catch((error) => {
+                console.log("error", error)
+              });
+          } else {
+            if (Platform.OS == 'ios') {
+              check(PERMISSIONS.IOS.PHOTO_LIBRARY)
+                .then((result) => {
+                  switch (result) {
+                    case RESULTS.UNAVAILABLE:
+                      if (result == 'unavailable') {
+                        Alert.alert(
+                          strings.photoLibraryLabel || "",
+                          strings.photoLibraryDescriptionLabel || "",
+                          [
+                            { text: strings.cancelLabel, style: 'cancel' },
+                            { text: strings.openSettings, onPress: openSettings },
+                          ],
+                        );
+                      }
+                      break;
+                    case RESULTS.DENIED:
+                      request(PERMISSIONS.IOS.PHOTO_LIBRARY).then((result) => {
+                        if (result == 'blocked') {
+                          Alert.alert(
+                            strings.photoLibraryLabel || "",
+                            strings.photoLibraryDescriptionLabel || "",
+                            [
+                              { text: strings.cancelLabel, style: 'cancel' },
+                              { text: strings.openSettings, onPress: openSettings },
+                            ],
+                          );
+                        }
+                      });
+                      break;
+                    case RESULTS.LIMITED:
+                      request(PERMISSIONS.IOS.PHOTO_LIBRARY).then((result) => {
+                        if (result == 'limited') {
+                          Alert.alert(
+                            strings.photoLibraryLabel || "",
+                            strings.photoLibraryDescriptionLabel || "",
+                            [
+                              { text: strings.cancelLabel, style: 'cancel' },
+                              { text: strings.openSettings, onPress: openSettings },
+                            ],
+                          );
+                        }
+                      });
+                      break;
+                    case RESULTS.GRANTED:
+                      handleImageLibrary();
+                      console.log('The permission is granted');
+                      break;
+                    case RESULTS.BLOCKED:
+                      request(PERMISSIONS.IOS.PHOTO_LIBRARY).then((result) => {
+                        if (result == 'blocked') {
+                          Alert.alert(
+                            strings.photoLibraryLabel || "",
+                            strings.photoLibraryDescriptionLabel || "",
+                            [
+                              { text: strings.cancelLabel, style: 'cancel' },
+                              { text: strings.openSettings, onPress: openSettings },
+                            ],
+                          );
+                        }
+                      });
+                      break;
+                  }
+                })
+                .catch((error) => {
+                  console.log("error", error)
+                });
+            } else {
+              check(PERMISSIONS.ANDROID.READ_EXTERNAL_STORAGE)
+                .then((result) => {
+                  switch (result) {
+                    case RESULTS.UNAVAILABLE:
+                      console.log('This feature is not available (on this device / in this context)');
+                      break;
+                    case RESULTS.DENIED:
+                      request(PERMISSIONS.ANDROID.READ_EXTERNAL_STORAGE).then((result) => {
+                        if (result == 'blocked') {
+                          Alert.alert(
+                            strings.photoLibraryLabel || "",
+                            strings.photoLibraryDescriptionLabel || "",
+                            [
+                              { text: strings.cancelLabel, style: 'cancel' },
+                              { text: strings.openSettings, onPress: openSettings },
+                            ],
+                          );
+                        }
+                      });
+                      break;
+                    case RESULTS.LIMITED:
+                      console.log('The permission is limited: some actions are possible');
+                      break;
+                    case RESULTS.GRANTED:
+                      handleImageLibrary();
+                      break;
+                    case RESULTS.BLOCKED:
+                      request(Platform.OS == 'ios' ? PERMISSIONS.IOS.CAMERA : PERMISSIONS.ANDROID.CAMERA).then((result) => {
+                        if (result == 'blocked') {
+                          Alert.alert(
+                            strings.cameraLibraryLabel || "",
+                            strings.cameraLibraryDescriptionLabel || "",
+                            [
+                              { text: strings.cancelLabel, style: 'cancel' },
+                              { text: strings.openSettings, onPress: openSettings },
+                            ],
+                          );
+                        }
+                      });
+                      break;
+                  }
+                })
+                .catch((error) => {
+                  console.log("error", error)
+                });
+            }
+          }
+        }}
+        onCancelPress={() => {
+          setVisible(false);
+        }}
+        onBackdropPress={() => {
+          setVisible(false);
+        }}
+      />
     </>
   );
 };
