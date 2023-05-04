@@ -48,6 +48,7 @@ const ContentView = (props: any) => {
           RightImage={DRAWER_ICON}
           isLeftHeaderText={true}
           leftHeaderContainer={{ flex: 2 }}
+          handleBackButton={() => {}}
           HeaderMiddleTxt={{ flex: 3 }}
           leftHeaderText={"Test" + " " + "verified"}
           rightImageStyle={{ tintColor: "#8B99A5" }}

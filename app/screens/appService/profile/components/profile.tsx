@@ -31,6 +31,7 @@ const ProfileView = (props: any) => {
           leftImg={false}
           RightImage={DRAWER_ICON}
           isLeftHeaderText={true}
+          handleBackButton={() => {}}
           leftHeaderContainer={{ flex: 2 }}
           HeaderMiddleTxt={{ flex: 3 }}
           leftHeaderText={"Test" + " " + "verified"}
