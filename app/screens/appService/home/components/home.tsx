@@ -34,7 +34,7 @@ const HomeView = (props: any) => {
           leftHeaderContainer={{ flex: 2 }}
           HeaderMiddleTxt={{ flex: 3 }}
           rightImageStyle={{ tintColor: "#8B99A5" }}
-          onPressRightImage={() => navigation.navigate("InformationScreen")}
+          onPressRightImage={() => navigation.navigate("Account")}
         />
         <RNTextInput
           leftIconStyle={{
@@ -48,10 +48,9 @@ const HomeView = (props: any) => {
           showLeftImage={true}
           placeholderTextColor={colors.commonGreyColor}
           textInputContainer={{
-            height: DimensionsScale.height / 19,
+            paddingVertical:verticalScale(15),
             fontSize: verticalScale(16),
             paddingLeft: verticalScale(45),
-            paddingVertical: 0,
           }}
           leftImage={SEARCH_ICON}
           placeholder={strings.search}
@@ -75,6 +74,7 @@ const HomeView = (props: any) => {
           HeaderMiddleTxt={{ flex: 3 }}
           leftHeaderText={"Test" + " " + "verified"}
           rightImageStyle={{ tintColor: "#8B99A5" }}
+          onPressRightImage={() => navigation.navigate("Settings")}
         />
         <View style={{ alignItems: "center" }}>
           <Image

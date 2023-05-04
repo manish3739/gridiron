@@ -113,14 +113,12 @@ const styles = StyleSheet.create({
   },
   allStats: {
     width: DimensionsScale.width / 2.8,
-    height: DimensionsScale.width / 9,
-    paddingVertical: 1,
+    paddingVertical: verticalScale(15),
     marginRight: 5,
   },
   addNew: {
     width: DimensionsScale.width / 3,
-    height: DimensionsScale.width / 9,
-    paddingVertical: 1,
+    paddingVertical: verticalScale(15),
     marginRight: 5,
   },
   button: {
