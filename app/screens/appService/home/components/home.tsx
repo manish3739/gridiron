@@ -13,7 +13,7 @@ import styles from "./styles";
 import { ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import RNTextInput from "../../../../components/Input/RNTextInput";
-import { verticalScale } from "../../../../utils/scale";
+import { platformIOS, verticalScale } from "../../../../utils/scale";
 import { colors } from "../../../../theme/colors";
 import strings from "../../../../components/locales";
 import { FlatList } from "react-native";
@@ -57,7 +57,7 @@ const HomeView = (props: any) => {
                   showLeftImage={true}
                   placeholderTextColor={colors.commonGreyColor}
                   textInputContainer={{
-                    paddingVertical: verticalScale(15),
+                    paddingVertical:platformIOS?.isPad ? verticalScale(15) : verticalScale(6),
                     fontSize: verticalScale(16),
                     paddingLeft: verticalScale(45),
                   }}
