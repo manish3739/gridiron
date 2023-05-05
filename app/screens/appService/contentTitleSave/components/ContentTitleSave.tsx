@@ -13,7 +13,6 @@ import { verticalScale } from "../../../../utils/scale";
 
 const ContentTitleSaveView = (props: any) => {
   const navigation: any = useNavigation();
-
   return (
     <View style={styles.container}>
       <View style={styles.firstContain}>
@@ -51,11 +50,11 @@ const ContentTitleSaveView = (props: any) => {
           placeholderTextColor="#00000040"
           multiline={true}
           numberOfLines={5}
-          textInputContainer={{ fontSize: 14, height: DimensionsScale.height / 5, paddingTop: 15 }}
+          textInputContainer={{ fontSize: verticalScale(14), height: DimensionsScale.height / 5, paddingTop: 15 }}
         />
         <Button
           buttonText={strings.deleteContent}
-          onPress={() => { }}
+          onPress={() => { props.handleDeleteConfirmation() }}
           style={{
             borderColor: colors.secondaryButtonColor,
             marginTop: 20,
@@ -65,7 +64,6 @@ const ContentTitleSaveView = (props: any) => {
           buttonType={"secondary"}
         />
       </View>
-
     </View>
   );
 };

@@ -19,6 +19,7 @@ interface RNDropDownProps {
   textLabelStyle?: any,
   mainContainerStyle?: any,
   dropDownLabelText?: any,
+  isDropDownText?: any,
 }
 const DropDownView = (props: RNDropDownProps) => {
   const [selected, setSelected] = useState([]);
@@ -28,7 +29,9 @@ const DropDownView = (props: RNDropDownProps) => {
     <View testID={props.testID} style={[styles.mainView, mainContainerStyle]} >
       {props.isMultiple &&
       <>
+      {!props.isDropDownText &&
         <Text style={[styles.text, textLabelStyle]}>{dropDownLabelText}</Text>
+      }
         <MultiSelect
           style={[styles.dropdown, dropDownMainStyle]}
           iconStyle={styles.iconStyle}
@@ -51,8 +54,9 @@ const DropDownView = (props: RNDropDownProps) => {
          }
         {!props.isMultiple &&
         <>
+         {!props.isDropDownText &&
         <Text style={[styles.text, textLabelStyle]}>{dropDownLabelText}</Text>
-
+      }
         <Dropdown
           style={[styles.dropdown, dropDownMainStyle]}
           selectedTextStyle={styles.selectedTextStyle}

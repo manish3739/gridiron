@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     flex: 3.5,
     paddingHorizontal: verticalScale(20),
     justifyContent: "center",
-    backgroundColor:colors.commonWhiteColor,
+    backgroundColor: colors.commonWhiteColor,
     marginHorizontal: verticalScale(8),
   },
   thirdContainer: {
@@ -52,10 +52,40 @@ const styles = StyleSheet.create({
     textAlign: "center",
     width: DimensionsScale.width / 1.13,
   },
-
-  datePicker:{
-    flexDirection:"row",
-    justifyContent:"space-between"
+  datePicker: {
+    flexDirection: "row",
+    justifyContent: "space-between"
+  },
+  mainModalContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    backgroundColor: colors.commonWhiteColor,
+    alignItems: 'center',
+    height: DimensionsScale.height / 2.7
+  },
+  mainView: {
+    alignItems: 'center'
+  },
+  emailContainer: {
+    padding: 25,
+    backgroundColor: colors.commonLightGreyColor,
+    borderWidth: 1,
+    borderColor: colors.darkGreyColor
+  },
+  emailIconStyle: {
+    width: 50,
+    height: 50,
+    tintColor: colors.secondaryGreyColor
+  },
+  emailTextStyle: {
+    fontFamily: fonts.medium,
+    paddingTop: 10,
+    fontSize: verticalScale(17)
+  },
+  modalContainer: {
+    justifyContent: 'flex-end',
+    width: '100%',
+    margin: 0
   }
 });
 

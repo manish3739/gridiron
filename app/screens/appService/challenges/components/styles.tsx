@@ -15,13 +15,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   secondContain: {
-    flex: 4,
-    paddingHorizontal: verticalScale(5),
-  },
-  thirdContain: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    flex: 5,
   },
   rightIconStyle: {
     tintColor: colors.commonThemeColor,
@@ -47,6 +41,11 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     fontFamily: fonts.medium,
   },
+  dropDownContainer: {
+    flexDirection: 'row', 
+    justifyContent: 'space-around', 
+    paddingHorizontal: verticalScale(40)
+  }
 });
 
 export default styles;

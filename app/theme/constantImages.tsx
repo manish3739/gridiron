@@ -52,3 +52,5 @@ export const CAMERA_PICKER_ICON = require('../assets/ImagePicker/photo-camera-in
 
 // new game component
 export const SHARE_ICON = require('../assets/NewGame/share.png');
+export const EMAIL_ICON = require('../assets/NewGame/email.png');
+export const CHAT_ICON = require('../assets/NewGame/chat.png');

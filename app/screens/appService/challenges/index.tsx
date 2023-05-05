@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import ChallengesView from "./components/challenges";
 
 const Challenges = (props: any) => {
+    const [sportsData, setSportsData] = useState([])
     const [challengesList, setChallengesList] = useState(
         [{ label: 'Quaterback Test', description: 'Test your wists, you got to be quick and accurate!',score:'1200' },
         { label: 'Football Test', description: 'Test your wists, you got to be quick and accurate!',score:'1200' },
@@ -13,6 +14,8 @@ const Challenges = (props: any) => {
     return (
         <View style={{ flex: 1 }}>
             <ChallengesView
+                sportsData={sportsData}
+                setSportsData={setSportsData}
                 challengesList={challengesList}
             />
         </View>

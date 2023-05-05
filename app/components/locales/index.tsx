@@ -169,6 +169,7 @@ const strings = new LocalizedStrings({
         recentContent:"Recent Content",
         content:"Content",
         confirmDelete:"Yes, delete account",
+        smsLabel:"SMS",
         
     },
     fr: {

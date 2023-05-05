@@ -108,6 +108,7 @@ const NewGameView = (props: any) => {
           style={styles.share}
           leftIconImage={SHARE_ICON}
           leftBtnImage={true}
+          onPress={() => { props.handleShare() }}
           leftIconStyle={{ tintColor: colors.commonWhiteColor }}
         />
       </View>
