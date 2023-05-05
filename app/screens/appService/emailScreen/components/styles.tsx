@@ -1,6 +1,7 @@
 import { Dimensions, StyleSheet } from 'react-native';
 import { verticalScale } from '../../../../utils/scale';
 import { colors } from '../../../../theme/colors';
+import { fonts } from '../../../../theme/Fonts';
 
 export const windowWidth = Dimensions.get('window').width;
 export const windowHeight = Dimensions.get('window').height;
@@ -30,8 +31,8 @@ const styles = StyleSheet.create({
     },
     headerTextStyle: {
         color: colors.commonThemeColor,
-        fontWeight: 'bold',
-        fontSize: verticalScale(17)
+        fontSize: verticalScale(17),
+        fontFamily: fonts.medium
     }
 });
 

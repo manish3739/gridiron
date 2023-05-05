@@ -2,6 +2,7 @@ import { Dimensions, StyleSheet } from "react-native";
 import { verticalScale } from "../../../../utils/scale";
 import { DimensionsScale } from "../../../../theme/Dimensions";
 import { colors } from "../../../../theme/colors";
+import { fonts } from "../../../../theme/Fonts";
 
 export const windowWidth = Dimensions.get("window").width;
 export const windowHeight = Dimensions.get("window").height;
@@ -44,6 +45,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
     marginLeft: 20,
+    fontFamily: fonts.medium
   },
   verify: {
     color: "red",
@@ -67,6 +69,7 @@ const styles = StyleSheet.create({
   },
   Stats: {
     color: colors.commonWhiteColor,
+    fontFamily: fonts.medium
   },
   games: {
     color: colors.blackColorCode,

@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 import { colors } from '../../theme/colors';
 import { verticalScale } from '../../utils/scale';
+import { fonts } from '../../theme/Fonts';
 
 const BaseStyle = StyleSheet.create({
     button: {
@@ -8,16 +9,15 @@ const BaseStyle = StyleSheet.create({
         justifyContent: 'center',
         paddingLeft: 20,
         paddingRight: 20,
-        padding: 10,
         borderRadius: 5,
-        paddingVertical: verticalScale(15),
+        paddingVertical: verticalScale(12),
         width: '90%',
         flexDirection:'row'
     },
     buttonLabel: {
         fontSize: verticalScale(16),
         color: colors.commonWhiteColor,
-        fontWeight: 'bold'
+        fontFamily: fonts.medium
     },
 
 });

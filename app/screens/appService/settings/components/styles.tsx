@@ -1,6 +1,7 @@
 import { Dimensions, StyleSheet } from 'react-native';
 import { verticalScale } from '../../../../utils/scale';
 import { colors } from '../../../../theme/colors';
+import { fonts } from '../../../../theme/Fonts';
 
 export const windowWidth = Dimensions.get('window').width;
 export const windowHeight = Dimensions.get('window').height;
@@ -24,8 +25,9 @@ const styles = StyleSheet.create({
     },
     optionContainer: {
         flexDirection: 'row',
+        alignItems: 'center',
         paddingVertical: verticalScale(20),
-        paddingBottom:10
+        paddingBottom: 10
     },
     optionImage: {
         width: 20,
@@ -33,9 +35,10 @@ const styles = StyleSheet.create({
         tintColor: colors.commonGreyColor
     },
     optionTextStyle: {
-        fontWeight: 'bold',
-        fontSize: 16,
+        fontFamily: fonts.medium,
+        fontSize: verticalScale(16),
         paddingLeft: 10,
+        bottom: verticalScale(3),
         color: colors.blackColorCode
     }
 });

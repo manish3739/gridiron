@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import { verticalScale } from '../../utils/scale';
 import { HEADER_BACK_ICON } from '../../theme/constantImages';
 import { colors } from '../../theme/colors';
+import { fonts } from '../../theme/Fonts';
 
 const Header = (props: any) => {
     const navigation = useNavigation();
@@ -99,7 +100,7 @@ const styles = StyleSheet.create({
     MainHeadTxt: {
         fontSize: verticalScale(19),
         color: 'black',
-        fontWeight: 'bold'
+        fontFamily: fonts.medium
     },
     leftRightImage: {
         height: verticalScale(20),
@@ -108,7 +109,8 @@ const styles = StyleSheet.create({
     leftHeaderLabelText: {
         fontSize: verticalScale(17),
         fontWeight: 'bold',
-        color: colors.blackColorCode
+        color: colors.blackColorCode,
+        fontFamily:fonts.medium
     }
 })
 export default Header;

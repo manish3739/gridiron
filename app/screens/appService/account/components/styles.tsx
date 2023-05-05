@@ -1,6 +1,7 @@
 import { Dimensions, StyleSheet } from 'react-native';
 import { verticalScale } from '../../../../utils/scale';
 import { colors } from '../../../../theme/colors';
+import { fonts } from '../../../../theme/Fonts';
 
 export const windowWidth = Dimensions.get('window').width;
 export const windowHeight = Dimensions.get('window').height;
@@ -39,8 +40,9 @@ const styles = StyleSheet.create({
         flex: 0.5
     },
     optionLabelStyle: {
-        fontSize: verticalScale(18), 
-        color: colors.blackColorCode 
+        fontSize: verticalScale(16), 
+        color: colors.blackColorCode,
+        fontFamily: fonts.medium
     },
     optionImage: {
         width: 17, 

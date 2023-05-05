@@ -167,7 +167,8 @@ const strings = new LocalizedStrings({
         IQchallenges:"IQ Challenges",
         challenges:"Challenges",
         recentContent:"Recent Content",
-        content:"Content"
+        content:"Content",
+        confirmDelete:"Yes, delete account",
         
     },
     fr: {
