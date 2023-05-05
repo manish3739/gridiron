@@ -99,9 +99,9 @@ const Stats = (props: any) => {
                     ]}
                     onPress={() => setState(item)}
                   >
-                    <Text>{item.Gamename}</Text>
-                    <Text>{strings.vs}</Text>
-                    <Text>{item.name}</Text>
+                    <Text style={styles.Gamename}>{item.Gamename}</Text>
+                    <Text style={styles.vs}>{strings.vs}</Text>
+                    <Text style={styles.name1}>{item.name}</Text>
                     {state !== item ? (
                       <Text style={styles.viewState}>{strings.viewState}</Text>
                     ) : null}

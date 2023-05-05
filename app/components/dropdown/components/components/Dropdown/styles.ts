@@ -1,5 +1,6 @@
 import { I18nManager, StyleSheet } from 'react-native';
 import { verticalScale } from '../../../../../utils/scale';
+import { fonts } from '../../../../../theme/Fonts';
 
 export const styles = StyleSheet.create({
   mainWrap: {
@@ -49,6 +50,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     fontSize: verticalScale(12),
     writingDirection: I18nManager.isRTL ? 'rtl' : 'ltr',
+    fontFamily: fonts.medium,
   },
   icon: {
     width: 20,

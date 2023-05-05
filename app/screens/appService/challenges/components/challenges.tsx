@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 // import { connect } from "react-redux";
-import { FlatList, Platform, PlatformIOSStatic, ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import { FlatList, Text, TouchableOpacity, View } from 'react-native';
 import styles from "./styles";
 import Header from "../../../../components/Header";
 import { useNavigation } from "@react-navigation/native";

@@ -1,6 +1,7 @@
 import { Dimensions, StyleSheet } from "react-native";
 import { verticalScale } from "../../../../utils/scale";
 import { colors } from "../../../../theme/colors";
+import { fonts } from "../../../../theme/Fonts";
 
 export const windowWidth = Dimensions.get("window").width;
 export const windowHeight = Dimensions.get("window").height;
@@ -42,6 +43,8 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: verticalScale(18),
     color: "#000",
+    fontFamily: fonts.medium,
+
   },
 
   birthdayView: {
@@ -64,6 +67,8 @@ const styles = StyleSheet.create({
     fontSize: verticalScale(18),
     color: "#000",
     marginTop: verticalScale(15),
+    fontFamily: fonts.medium,
+
   },
   footbalContainer: {
     flexDirection: "row",

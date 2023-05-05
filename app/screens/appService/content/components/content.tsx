@@ -22,6 +22,7 @@ import Button from "../../../../components/Button";
 import { verticalScale } from "../../../../utils/scale";
 import { FlatList } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
+import { fonts } from "../../../../theme/Fonts";
 
 const ContentView = (props: any) => {
   const data = [
@@ -63,7 +64,7 @@ const ContentView = (props: any) => {
             source={NO_IMAGE_PROFILE}
           />
           <Text style={styles.name}>{strings.name}</Text>
-          <Text>{strings.information}</Text>
+          <Text style={styles.information}>{strings.information}</Text>
         </View>
 
         <View style={styles.button}>
@@ -92,7 +93,9 @@ const ContentView = (props: any) => {
                 <TouchableOpacity key={index} onPress={() => props.setStatusFilter(e.status)}
                   style={[styles.btnTab, props.status === e.status && styles.btnTabActive]}>
 
-                  <Text style={{ fontSize: verticalScale(14), color: props.status === e.status ? colors.commonThemeColor : colors.blackColorCode }}>{e.status}</Text>
+                  <Text style={{ fontSize: verticalScale(14), color: props.status === e.status ? colors.commonThemeColor : colors.blackColorCode, 
+                      fontFamily: fonts.medium
+                  }}>{e.status}</Text>
                 </TouchableOpacity>
               )
             }

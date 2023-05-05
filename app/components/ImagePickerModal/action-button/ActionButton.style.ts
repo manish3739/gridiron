@@ -1,4 +1,5 @@
 import { ViewStyle, TextStyle, StyleSheet } from "react-native";
+import { fonts } from "../../../theme/Fonts";
 
 export const _dynamicBorderStyle = (isLastItem: boolean): ViewStyle => ({
   borderBottomLeftRadius: isLastItem ? 12 : 0,
@@ -15,6 +16,7 @@ export default StyleSheet.create<Style>({
     height: 50,
     alignItems: "center",
     justifyContent: "center",
+    fontFamily: fonts.medium,
   },
   actionButtonTextStyle: {
     color: "#fff",

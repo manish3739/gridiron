@@ -2,6 +2,7 @@ import { Dimensions, StyleSheet } from "react-native";
 import { DimensionsScale } from "../../../../theme/Dimensions";
 import { verticalScale } from "../../../../utils/scale";
 import { colors } from "../../../../theme/colors";
+import { fonts } from "../../../../theme/Fonts";
 
 export const windowWidth = Dimensions.get("window").width;
 export const windowHeight = Dimensions.get("window").height;
@@ -13,11 +14,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     flex: 1,
-
   },
   secondContain: {
     flex: 2.5,
-    alignItems:'center'
+    alignItems: "center",
   },
   thirdContainer: {
     flex: 2.5,
@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: colors.blackColorCode,
     paddingTop: verticalScale(15),
+    fontFamily: fonts.medium,
   },
   trainerFlatlist: {
     height: DimensionsScale.height / 5.5,
@@ -44,6 +45,7 @@ const styles = StyleSheet.create({
     color: colors.commonGreyColor,
     fontSize: verticalScale(17),
     marginTop: verticalScale(10),
+    fontFamily: fonts.medium,
   },
   trainerNumber: {
     color: "#000",
@@ -54,6 +56,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: verticalScale(20),
     color: colors.commonGreyColor,
+    fontFamily: fonts.medium,
   },
   saveTraining: {
     alignItems: "center",

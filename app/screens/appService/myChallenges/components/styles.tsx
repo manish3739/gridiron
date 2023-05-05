@@ -1,6 +1,7 @@
 import { Dimensions, Platform, PlatformIOSStatic, StyleSheet } from 'react-native';
 import { platformIOS, verticalScale } from '../../../../utils/scale';
 import { colors } from '../../../../theme/colors';
+import { fonts } from '../../../../theme/Fonts';
 
 export const windowWidth = Dimensions.get('window').width;
 export const windowHeight = Dimensions.get('window').height;
@@ -21,11 +22,15 @@ const styles = StyleSheet.create({
     boxTextStyle: {
         color: colors.blackColorCode,
         fontSize: verticalScale(16),
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        fontFamily: fonts.medium,
+
     },
     greyTextStyle: {
         color: colors.secondaryGreyColor,
-        fontSize: 13
+        fontSize: 13,
+        fontFamily: fonts.medium,
+
     },
     mainInformationContain: {
         flexDirection: 'row',
@@ -52,7 +57,9 @@ const styles = StyleSheet.create({
     scoreMainView: {
         fontSize: verticalScale(16), 
         color: colors.blackColorCode, 
-        paddingVertical: 20
+        paddingVertical: 20,
+        fontFamily: fonts.medium,
+
     }
 });
 

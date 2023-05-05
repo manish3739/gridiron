@@ -3,6 +3,7 @@ import { Text, View, TouchableOpacity, Image, StyleSheet, FlatList, TextStyle } 
 import { CHECKED_BOX, UN_CHECKED_BOX } from '../../theme/constantImages';
 import { verticalScale } from '../../utils/scale';
 import { colors } from '../../theme/colors';
+import { fonts } from '../../theme/Fonts';
 
 type DataType = {
     label: string,
@@ -81,7 +82,9 @@ const styles = StyleSheet.create({
         marginTop: 4,
     },
     itemLabelStyle: {
-        fontSize: verticalScale(16)
+        fontSize: verticalScale(16),
+        fontFamily: fonts.medium,
+
     },
     contentHorizontalStyle: {
         justifyContent: 'space-between',

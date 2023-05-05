@@ -2,6 +2,7 @@ import { Dimensions, Platform, StyleSheet } from "react-native";
 import { colors } from "../../../../theme/colors";
 import { DimensionsScale } from "../../../../theme/Dimensions";
 import { verticalScale } from "../../../../utils/scale";
+import { fonts } from "../../../../theme/Fonts";
 
 
 export const windowWidth = Dimensions.get("window").width;
@@ -32,10 +33,14 @@ const styles = StyleSheet.create({
     width: verticalScale(100),
     borderRadius: 50,
   },
+  information:{
+    fontFamily: fonts.medium,
+  },
   name: {
     fontSize: 16,
     fontWeight: "bold",
     marginLeft: 20,
+    fontFamily: fonts.medium,
   },
   button: {
     flexDirection: "row",

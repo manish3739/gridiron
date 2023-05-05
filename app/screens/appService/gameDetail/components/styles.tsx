@@ -2,6 +2,7 @@ import { Dimensions, PlatformIOSStatic, StyleSheet, Platform } from "react-nativ
 import { DimensionsScale } from "../../../../theme/Dimensions";
 import { platformIOS, verticalScale } from "../../../../utils/scale";
 import { colors } from "../../../../theme/colors";
+import { fonts } from "../../../../theme/Fonts";
 
 export const windowWidth = Dimensions.get("window").width;
 export const windowHeight = Dimensions.get("window").height;
@@ -30,11 +31,15 @@ const styles = StyleSheet.create({
     color: "#000",
     fontWeight: "bold",
     fontSize: verticalScale(20),
+    fontFamily: fonts.medium,
+
   },
   information: {
     fontSize: verticalScale(16),
     marginTop: verticalScale(2),
     marginBottom: verticalScale(10),
+    fontFamily: fonts.medium,
+
   },
   nameInformation: {
     justifyContent: "space-between",
@@ -48,6 +53,8 @@ const styles = StyleSheet.create({
     color: "#000",
     fontWeight: "bold",
     fontSize: verticalScale(22),
+    fontFamily: fonts.medium,
+
   },
 
   passing: {

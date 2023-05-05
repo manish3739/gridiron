@@ -88,7 +88,7 @@ const HomeView = (props: any) => {
                     style={styles.noProfile}
                     source={NO_IMAGE_PROFILE} />
                   <Text style={styles.name}>{strings.name}</Text>
-                  <Text>{strings.information}</Text>
+                  <Text style={styles.information}>{strings.information}</Text>
                   <Text style={styles.verify}>{strings.verify}</Text>
                 </View>
                 <View

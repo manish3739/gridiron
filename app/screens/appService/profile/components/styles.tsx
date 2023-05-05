@@ -2,6 +2,7 @@ import { Dimensions, Platform, PlatformIOSStatic, StyleSheet } from "react-nativ
 import { DimensionsScale } from "../../../../theme/Dimensions";
 import { platformIOS, verticalScale } from "../../../../utils/scale";
 import { colors } from "../../../../theme/colors";
+import { fonts } from "../../../../theme/Fonts";
 
 export const windowWidth = Dimensions.get("window").width;
 export const windowHeight = Dimensions.get("window").height;
@@ -33,6 +34,12 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
     marginLeft: 20,
+    fontFamily: fonts.medium
+
+  },
+  information:{
+    fontFamily: fonts.medium
+
   },
   button: {
     flexDirection: "row",
@@ -66,7 +73,7 @@ const styles = StyleSheet.create({
   },
   dataContainer: {
     width: DimensionsScale.width / 4,
-    height: DimensionsScale.height / 7,
+    height: DimensionsScale.height / 6,
     backgroundColor: "#E3E8ED",
     marginLeft: 8,
     marginTop: 15,
@@ -80,12 +87,16 @@ const styles = StyleSheet.create({
     color: colors.primaryButtonColor,
     borderBottomWidth: 1,
     borderColor: colors.primaryButtonColor,
+    fontFamily: fonts.medium
+
   },
   passing: {
     marginLeft: 15,
     fontWeight: "bold",
     fontSize: 16,
     marginTop: 10,
+    fontFamily: fonts.medium
+
   },
   passingContainer: {
     flexDirection: "column",
@@ -96,13 +107,19 @@ const styles = StyleSheet.create({
   },
   number: {
     color: colors.commonGreyColor,
+    fontFamily: fonts.medium
+
   },
   passingName: {
     color: colors.blackColorCode,
+    fontFamily: fonts.medium
+
   },
   verify: {
     color: "red",
     fontWeight: "bold",
+    fontFamily: fonts.medium
+
   },
   addNew: {
     alignItems: "center",
@@ -137,17 +154,22 @@ const styles = StyleSheet.create({
   trainerName: {
     color: colors.commonGreyColor,
     fontSize: 17,
+    fontFamily: fonts.medium
+
   },
   trainerNumber: {
     color: "#000",
     fontSize: 20,
-    fontWeight: "bold"
+    fontWeight: "bold",
+    fontFamily: fonts.medium
+
   },
   about: {
     fontWeight: "bold",
     marginLeft: verticalScale(30),
     fontSize: 16,
     color: "#000",
+    fontFamily: fonts.medium
   },
   aboutContainer: {
     flexDirection: "row",
@@ -155,8 +177,18 @@ const styles = StyleSheet.create({
     marginHorizontal: verticalScale(30),
     marginTop: 10,
   },
+  birthDate:{
+    fontFamily: fonts.medium
+
+  },
+  gender:{
+    fontFamily: fonts.medium
+
+  },
   date: {
     color: "#000",
+    fontFamily: fonts.medium
+
   },
   locationContainer: {
     backgroundColor: "#eee",
@@ -165,10 +197,14 @@ const styles = StyleSheet.create({
     marginLeft: verticalScale(30),
     fontSize: 16,
     color: "#000",
+    fontFamily: fonts.medium
+
   },
   location: {
     marginTop: 10,
     marginLeft: verticalScale(30),
+    fontFamily: fonts.medium
+
   },
   school: {
     fontWeight: "bold",
@@ -176,10 +212,26 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#000",
     marginTop: 10,
+    fontFamily: fonts.medium
+
+  },
+  Gamename:{
+    fontFamily: fonts.medium
+
+  },
+  vs:{
+    fontFamily: fonts.medium
+ 
+  },
+  name1:{
+    fontFamily: fonts.medium
+
   },
   nametext: {
     textAlign: "center",
-    color: colors.commonGreyColor
+    color: colors.commonGreyColor,
+    fontFamily: fonts.medium
+
   }
 });
 

@@ -10,7 +10,7 @@ const About = () => {
       <Text style={styles.about}>{strings.about}</Text>
       <View style={styles.aboutContainer}>
         <View>
-          <Text>
+          <Text style={styles.birthDate}>
             {strings.BirthDate}
           </Text>
           <Text style={styles.date}>
@@ -18,7 +18,7 @@ const About = () => {
           </Text>
         </View>
         <View>
-          <Text>
+          <Text style={styles.gender}>
             {strings.gender}
           </Text>
           <Text style={styles.date}>

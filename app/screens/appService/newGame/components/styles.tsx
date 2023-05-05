@@ -2,6 +2,7 @@ import { Dimensions, StyleSheet } from "react-native";
 import { DimensionsScale } from "../../../../theme/Dimensions";
 import { verticalScale } from "../../../../utils/scale";
 import { colors } from "../../../../theme/colors";
+import { fonts } from "../../../../theme/Fonts";
 
 export const windowWidth = Dimensions.get("window").width;
 export const windowHeight = Dimensions.get("window").height;
@@ -32,11 +33,15 @@ const styles = StyleSheet.create({
     color: "#000",
     fontWeight: "bold",
     fontSize: verticalScale(20),
+    fontFamily: fonts.medium,
+
   },
   information: {
     fontSize: verticalScale(16),
     marginTop: verticalScale(2),
     marginBottom: verticalScale(10),
+    fontFamily: fonts.medium,
+
   },
   position: {
     marginTop: verticalScale(5),

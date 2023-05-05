@@ -2,6 +2,7 @@ import React from 'react'
 import { View, Text, StyleSheet, Dimensions, StyleProp, ViewStyle, TextInput, TextInputProps, Image, TouchableOpacity } from 'react-native'
 import { verticalScale } from '../../utils/scale'
 import { colors } from '../../theme/colors';
+import { fonts } from '../../theme/Fonts';
 
 interface RNTextInputProps extends TextInputProps {
     title?: string,
@@ -65,11 +66,13 @@ const styles = StyleSheet.create({
         color: "red",
         marginLeft: 7,
         marginTop: 4,
+        fontFamily: fonts.medium,
     },
     textStyle: {
         color: "#000",
         paddingVertical: verticalScale(6),
-        fontWeight:"bold"
+        fontWeight:"bold",
+        fontFamily: fonts.medium,
     },
     textInput: {
         paddingLeft: verticalScale(20),

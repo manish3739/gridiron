@@ -3,6 +3,7 @@ import { verticalScale } from "../../../../utils/scale";
 import { DimensionsScale } from "../../../../theme/Dimensions";
 import { colors } from "../../../../theme/colors";
 import { fonts } from "../../../../theme/Fonts";
+import { Platform } from "react-native";
 
 export const windowWidth = Dimensions.get("window").width;
 export const windowHeight = Dimensions.get("window").height;
@@ -45,12 +46,16 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
     marginLeft: 20,
-    fontFamily: fonts.medium
+    fontFamily: fonts.medium,
   },
   verify: {
     color: "red",
     fontWeight: "bold",
     marginTop: verticalScale(10),
+    fontFamily: fonts.medium,
+  },
+  information: {
+    fontFamily: fonts.medium,
   },
   image: {
     height: verticalScale(15),
@@ -69,12 +74,13 @@ const styles = StyleSheet.create({
   },
   Stats: {
     color: colors.commonWhiteColor,
-    fontFamily: fonts.medium
+    fontFamily: fonts.medium,
   },
   games: {
     color: colors.blackColorCode,
     fontSize: verticalScale(20),
     fontWeight: "bold",
+    fontFamily: fonts.medium,
   },
   gamesFlatlist: {
     width: "90%",
@@ -105,23 +111,26 @@ const styles = StyleSheet.create({
   },
   gameName: {
     color: colors.blackColorCode,
+    fontFamily: fonts.medium,
   },
   date: {
     color: colors.blackColorCode,
+    fontFamily: fonts.medium,
   },
   stats: {
     color: colors.primaryButtonColor,
     borderBottomWidth: 1,
     borderColor: colors.primaryButtonColor,
+    fontFamily: fonts.medium,
   },
   allStats: {
     width: DimensionsScale.width / 2.8,
-    paddingVertical: verticalScale(15),
+    paddingVertical: Platform.OS === 'ios' ? verticalScale(15) : verticalScale(10),
     marginRight: 5,
   },
   addNew: {
     width: DimensionsScale.width / 3,
-    paddingVertical: verticalScale(15),
+    paddingVertical: Platform.OS === 'ios' ? verticalScale(15) : verticalScale(10),
     marginRight: 5,
   },
   button: {
@@ -164,6 +173,7 @@ const styles = StyleSheet.create({
     color: colors.commonGreyColor,
     fontSize: verticalScale(17),
     marginTop: verticalScale(10),
+    fontFamily: fonts.medium,
   },
   trainerNumber: {
     color: "#000",
@@ -173,6 +183,7 @@ const styles = StyleSheet.create({
   nametext: {
     fontSize: verticalScale(20),
     color: colors.commonGreyColor,
+    fontFamily: fonts.medium,
   },
   flatlist: {
     alignItems: "center",
@@ -182,9 +193,11 @@ const styles = StyleSheet.create({
     fontSize: verticalScale(16),
     color: colors.blackColorCode,
     marginTop: verticalScale(8),
+    fontFamily: fonts.medium,
   },
   challenges: {
     color: colors.commonWhiteColor,
+    fontFamily: fonts.medium,
   },
   IQchallenges: {
     flexDirection: "row",
@@ -200,14 +213,17 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: colors.blackColorCode,
     marginBottom: verticalScale(5),
+    fontFamily: fonts.medium,
   },
   dateChallenges: {
     fontSize: verticalScale(18),
     color: colors.blackColorCode,
+    fontFamily: fonts.medium,
   },
   scoreChallenges: {
     fontSize: verticalScale(18),
     color: colors.blackColorCode,
+    fontFamily: fonts.medium,
   },
   mainContain: {
     flex: 1,

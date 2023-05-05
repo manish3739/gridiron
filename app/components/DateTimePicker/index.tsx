@@ -7,6 +7,7 @@ import { colors } from '../../theme/colors';
 import { CALENDER_ICON, CLOCK_ICON } from '../../theme/constantImages';
 import moment from 'moment';
 import { verticalScale } from '../../utils/scale';
+import { fonts } from '../../theme/Fonts';
 
 interface RNDatePickerProps {
   pickerContainer?: any,
@@ -106,7 +107,8 @@ const styles = StyleSheet.create({
   textstyle:{
   fontWeight:"bold",
   marginBottom:0,
-  color:"#000"
+  color:"#000",
+  fontFamily: fonts.medium,
   },
   datePicker: {
     justifyContent: 'center',
@@ -126,7 +128,8 @@ const styles = StyleSheet.create({
   },
   selectedDateTimeStyle: {
     fontSize: verticalScale(16),
-    color: colors.secondaryGreyColor
+    color: colors.secondaryGreyColor,
+    fontFamily: fonts.medium,
   },
   pickerIconStyle: {
     width: 20,

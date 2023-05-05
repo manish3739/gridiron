@@ -20,6 +20,7 @@ import Stats from "./Stats";
 import Training from "./Training";
 import About from "./About";
 import { useNavigation } from "@react-navigation/native";
+import { fonts } from "../../../../theme/Fonts";
 
 const ProfileView = (props: any) => {
   const navigation: any = useNavigation();
@@ -46,7 +47,7 @@ const ProfileView = (props: any) => {
             style={styles.noProfile}
             source={NO_IMAGE_PROFILE} />
           <Text style={styles.name}>{strings.name}</Text>
-          <Text>{strings.information}</Text>
+          <Text style={styles.information}>{strings.information}</Text>
           <Text style={styles.verify}>{strings.verify}</Text>
         </View>
         <View style={styles.button}>
@@ -84,6 +85,7 @@ const ProfileView = (props: any) => {
                       props.status === e.status
                         ? colors.commonThemeColor
                         : colors.blackColorCode,
+                  fontFamily: fonts.medium
                   }}
                 >
                   {e.status}
