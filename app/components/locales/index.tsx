@@ -170,7 +170,10 @@ const strings = new LocalizedStrings({
         content:"Content",
         confirmDelete:"Yes, delete account",
         smsLabel:"SMS",
-        
+        testText:"You can only take this test once, so make sure you have to do this!",
+        textDetails:"Test Details/Description",
+        points:"1200 points",
+        beginText:"Begin Test"
     },
     fr: {
         continue: "test"
