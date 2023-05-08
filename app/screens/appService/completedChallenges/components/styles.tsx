@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "flex-end",
     alignItems: "center",
-    marginBottom: verticalScale(20),
+    paddingBottom:verticalScale(30)
   },
   descprtnTextLabel: {
     color: colors.blackColorCode,
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
   },
   testText: {
-    fontSize: verticalScale(24),
+    fontSize: verticalScale(20),
     marginBottom: verticalScale(25),
   },
   details: {

@@ -26,7 +26,7 @@ const Stats = (props: any) => {
                 dropDownLabelText={strings.season}
                 placeholder={strings.season}
                 renderSelectedItem={(value: any) =>
-                  console.log("value000", value)
+                  console.log("value", value)
                 }
                 labelField={"name"}
                 data_list={[
@@ -45,7 +45,7 @@ const Stats = (props: any) => {
                 dropDownLabelText={strings.sports}
                 placeholder={strings.sports}
                 renderSelectedItem={(value: any) =>
-                  console.log("value000", value)
+                  console.log("value", value)
                 }
                 labelField={"name"}
                 data_list={[
@@ -62,9 +62,9 @@ const Stats = (props: any) => {
               <Dropdown
                 dropDownMainStyle={{ width: DimensionsScale.width * 0.2 }}
                 dropDownLabelText={strings.position}
-                placeholder={strings.position}
+                placeholder={'QB'}
                 renderSelectedItem={(value: any) =>
-                  console.log("value000", value)
+                  console.log("value", value)
                 }
                 labelField={"name"}
                 data_list={[
@@ -73,7 +73,7 @@ const Stats = (props: any) => {
                     value: 1,
                   },
                   {
-                    name: "",
+                    name: "QB-1",
                     value: 2,
                   },
                 ]}
